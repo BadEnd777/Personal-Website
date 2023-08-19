@@ -82,7 +82,9 @@ export const Header = () => {
                         </MenuButton>
                         <MenuList>
                             {navLinks.map(link => (
-                                <MenuItem key={link.name}>{link.name}</MenuItem>
+                                <MenuItem as={NextLink} href={link.href} key={link.name}>
+                                    {link.name}
+                                </MenuItem>
                             ))}
                             <MenuItem as={Link} href="mailto:badend23@hotmail.com">
                                 Hire Me

@@ -42,7 +42,7 @@ const BlogPage = ({ posts }) => {
                                 src={post.meta.previewImage}
                                 alt={post.meta.title}
                                 w="100%"
-                                h="200px"
+                                h="300px"
                                 objectFit="cover"
                                 objectPosition="top"
                                 borderRadius="md"

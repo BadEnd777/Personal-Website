@@ -35,7 +35,7 @@ const Projects = () => {
                                     src={project.image}
                                     alt={project.name}
                                     w="100%"
-                                    h="200px"
+                                    h="300px"
                                     objectFit="cover"
                                     objectPosition="top"
                                     borderRadius="md"
