@@ -13,10 +13,11 @@ const HComponent = ({ children, level }) => {
     const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
     return (
         <Heading
-            id={children.replace(/\s+/g, '-').toLowerCase().replace('.', '')}
             as={`h${level}`}
             size={sizes[level - 1]}
-            borderBottom="1px"
+            w="100%"
+            id={children.replace(/\s+/g, '-').toLowerCase().replace('.', '')}
+            borderBottom="2px"
             borderColor="surface0"
             pb={2}
             mb={4}
@@ -46,6 +47,19 @@ export const MDXComponents = {
             opacity={0.8}
             mb={4}
             pl={4}
+            {...props}
+        />
+    ),
+    pre: props => (
+        <Box
+            as="pre"
+            w="100%"
+            overflowX="auto"
+            sx={{
+                '::-webkit-scrollbar': {
+                    display: 'none'
+                }
+            }}
             {...props}
         />
     ),

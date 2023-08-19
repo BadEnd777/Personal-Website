@@ -1,14 +1,4 @@
-import {
-    Flex,
-    Container,
-    VStack,
-    HStack,
-    Avatar,
-    Text,
-    Box,
-    ButtonGroup,
-    Badge
-} from '@chakra-ui/react'
+import { Flex, Container, VStack, HStack, Avatar, Text, ButtonGroup, Badge } from '@chakra-ui/react'
 import { MDXComponents } from '@/Components/MDXComponents'
 import { ContactItem } from '@/Components/ContactItem'
 import { MDXRemote } from 'next-mdx-remote'
@@ -33,12 +23,17 @@ const BlogPost = ({ post }) => {
                                 <Text color="mocha.blue">{post.meta.publishedAt}</Text>
                             </VStack>
                         </HStack>
-                        <ButtonGroup variant="ghost" spacing="4">
+                        <ButtonGroup variant="ghost" spacing="4" display={['none', 'flex']}>
                             {contact.map((item, index) => (
                                 <ContactItem key={index} icon={item.icon} href={item.href} />
                             ))}
                         </ButtonGroup>
                     </Flex>
+                    <ButtonGroup variant="ghost" spacing="4" display={['flex', 'none']}>
+                        {contact.map((item, index) => (
+                            <ContactItem key={index} icon={item.icon} href={item.href} />
+                        ))}
+                    </ButtonGroup>
                     <HStack spacing="2" align="flex-start">
                         {post.meta.tags.map((tag, index) => (
                             <Badge key={index} colorScheme="blue">
@@ -46,9 +41,9 @@ const BlogPost = ({ post }) => {
                             </Badge>
                         ))}
                     </HStack>
-                    <Box w="100%">
+                    <Flex direction="column" align="flex-start" w="100%">
                         <MDXRemote {...post.mdxSource} components={MDXComponents} />
-                    </Box>
+                    </Flex>
                 </VStack>
             </Container>
         </Layout>
