@@ -1,0 +1,42 @@
+{
+    "name": "portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "static-build": "next build && next export",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:functional": "eslint ./src",
+        "format": "prettier --write .",
+        "precommit": "yarn lint:functional && yarn format"
+    },
+    "dependencies": {
+        "@chakra-ui/react": "^2.8.0",
+        "@chakra-ui/theme-tools": "^2.1.0",
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "axios": "^1.4.0",
+        "dayjs": "^1.11.9",
+        "formik": "^2.4.3",
+        "framer-motion": "^10.16.0",
+        "gray-matter": "^4.0.3",
+        "next": "13.4.19",
+        "next-mdx-remote": "^4.4.1",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-icons": "^4.10.1",
+        "react-simple-typewriter": "^5.0.1",
+        "rehype-code-titles": "^1.2.0",
+        "rehype-prism-plus": "^1.6.3",
+        "yup": "^1.2.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.47.0",
+        "eslint-config-next": "13.4.19",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "prettier": "^3.0.2"
+    }
+}

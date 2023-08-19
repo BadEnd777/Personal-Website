@@ -1,0 +1,6 @@
+export { default as navLinks } from './navLinks'
+export { default as technologies } from './technologies'
+export { default as contact } from './contact'
+export { default as projects } from './projects'
+export { default as workExperience } from './workExperience'
+export { default as bio } from './bio'
