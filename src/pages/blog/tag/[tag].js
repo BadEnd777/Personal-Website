@@ -6,7 +6,11 @@ import dayjs from 'dayjs'
 
 const BlogTagPage = ({ posts, tag }) => {
     return (
-        <Layout>
+        <Layout
+            title={`Blog - Tag: ${tag}`}
+            description={`Visit our blog to learn more about ${tag}.`}
+            url={`blog/tag/${tag}`}
+        >
             <HeadingUnderline>Blog - {tag}</HeadingUnderline>
             <BlogList posts={posts} />
         </Layout>

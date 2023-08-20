@@ -5,8 +5,12 @@ import { projects } from '@/data'
 
 const Projects = () => {
     return (
-        <Layout>
-            <HeadingUnderline>Blog</HeadingUnderline>
+        <Layout
+            title="BadEnd - Projects"
+            description="A list of projects I've worked on."
+            url="projects"
+        >
+            <HeadingUnderline>Projects</HeadingUnderline>
             <Grid
                 templateColumns={{
                     base: 'repeat(1, 1fr)',

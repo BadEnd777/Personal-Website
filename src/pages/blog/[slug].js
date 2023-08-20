@@ -9,7 +9,12 @@ import NextLink from 'next/link'
 
 const BlogPost = ({ post }) => {
     return (
-        <Layout>
+        <Layout
+            title={post.meta.title}
+            description={post.meta.description}
+            image={post.meta.image}
+            url={`blog/${post.slug}`}
+        >
             <Container maxW="container.md">
                 <VStack spacing="4" align="flex-start" w="100%">
                     <Flex w="100%" justify="space-between" align="center">
