@@ -1,0 +1,118 @@
+---
+title: Creating a Blog Page with Syntax Highlighting
+description: Learn how to create a captivating blog using Next.js and MDX, and make your code snippets shine with syntax highlighting using Prism.js. In this tutorial, we'll guide you step by step through the process, from setting up your Next.js project to incorporating MDX for flexible content creation. Elevate your blog's visual appeal by adding Prism.js for syntax highlighting, making your code examples both readable and visually appealing. Join us on this journey to create an engaging blog that seamlessly integrates powerful technologies.
+publishedAt: August 20, 2023
+tags: ['Next.js', 'MDX', 'Prism.js']
+previewImage: '/images/blog/nextjs-markdown-blog.jpeg'
+---
+
+## How to Create a Blog Page with Syntax Highlighting
+
+In this tutorial, we will learn how to create a blog page with syntax highlighting using the following libraries:
+
+-   `gray-matter` for front matter extraction
+-   `next-mdx-remote` for rendering MDX content
+-   `rehype-prism-plus` for syntax highlighting
+-   A custom Prism.js CSS theme from [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes)
+
+### Set Up Your Next.js Project
+
+Assuming you already have a Next.js project set up, navigate to the project directory and install the required dependencies:
+
+```bash
+npm install gray-matter next-mdx-remote rehype-prism-plus
+# or
+yarn add gray-matter next-mdx-remote rehype-prism-plus
+# or
+pnpm add gray-matter next-mdx-remote rehype-prism-plus
+```
+
+### Configure Front Matter
+
+Use `gray-matter` to extract front matter (metadata) from your MDX files. Front matter typically includes information like the title and date of the blog post. Create an MDX file with front matter like this:
+
+```md
+---
+title: Getting Started with Syntax Highlighting
+date: 2023-08-20
+---
+
+# Your MDX Content Goes Here
+```
+
+### Render MDX Content
+
+Next, utilize `next-mdx-remote` to render the MDX content with the extracted front matter. Create a component that reads the MDX file, extracts front matter, and renders the MDX content:
+
+```jsx
+// components/BlogPost.js
+
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import matter from 'gray-matter'
+import fs from 'fs'
+
+const BlogPost = ({ source, frontMatter }) => {
+    return (
+        <div>
+            <h1>{frontMatter.title}</h1>
+            <MDXRemote {...source} />
+        </div>
+    )
+}
+
+export async function getStaticProps() {
+    const fileContent = fs.readFileSync('path-to-your-mdx-file.md', 'utf-8')
+    const { content, data } = matter(fileContent)
+    const mdxSource = await serialize(content)
+
+    return {
+        props: {
+            source: mdxSource,
+            frontMatter: data
+        }
+    }
+}
+
+export default BlogPost
+```
+
+### Add Syntax Highlighting
+
+To add syntax highlighting, we'll use the `rehype-prism-plus` library. First, install the Prism.js CSS theme from the [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes), and include it in your project.
+
+Then, modify the `getStaticProps` function in `BlogPost.js` component to include `rehype-prism-plus`:
+
+```jsx
+// components/BlogPost.js
+
+import rehypePrism from 'rehype-prism-plus'
+
+// ...
+
+export async function getStaticProps() {
+    // ...
+
+    const mdxSource = await serialize(content, {
+        mdxOptions: {
+            rehypePlugins: [rehypePrism]
+        }
+    })
+
+    // ...
+}
+```
+
+### Style Syntax Highlighting
+
+Apply the Prism.js CSS theme to your Next.js project. You can import the CSS file in your project's main CSS file or directly in your component:
+
+```jsx
+// components/BlogPost.js
+
+import 'path-to-your-prismjs-theme.css'
+```
+
+Now you have a blog page with syntax highlighting for your code snippets using Prism.js and the specified libraries.
+
+Happy blogging!

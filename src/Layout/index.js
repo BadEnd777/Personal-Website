@@ -46,7 +46,7 @@ export const Layout = ({ children }) => {
                 overflow="hidden"
             >
                 <Header />
-                <Container mt="75px" maxW="8xl" minH="100vh" p="4">
+                <Container mt="75px" maxW="8xl" minH="calc(100vh - 75px)" px="4" py="8">
                     {children}
                 </Container>
                 <Footer />

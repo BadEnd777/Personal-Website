@@ -6,7 +6,7 @@ import { projects } from '@/data'
 const Projects = () => {
     return (
         <Layout>
-            <HeadingUnderline>Projects</HeadingUnderline>
+            <HeadingUnderline>Blog</HeadingUnderline>
             <Grid
                 templateColumns={{
                     base: 'repeat(1, 1fr)',
@@ -17,33 +17,24 @@ const Projects = () => {
                 mt="8"
             >
                 {projects.map(project => (
-                    <GridItem
-                        key={project.name}
-                        colSpan="1"
-                        transition="all 0.2s ease-in-out"
-                        _hover={{ transform: 'scale(1.05)' }}
-                    >
-                        <Link href={project.link} isExternal _hover={{ textDecor: 'none' }}>
+                    <GridItem key={project.name} colSpan="1" role="group">
+                        <Link href={project.link} isExternal _hover={{ textDecoration: 'none' }}>
                             <VStack
                                 spacing="4"
                                 align="flex-start"
                                 bg="surface0"
+                                borderWidth="1px"
+                                borderColor="surface1"
                                 borderRadius="md"
+                                transition="all 0.2s ease-in-out"
                                 p="4"
+                                _hover={{ borderColor: 'mocha.blue' }}
                             >
-                                <Image
-                                    src={project.image}
-                                    alt={project.name}
-                                    w="100%"
-                                    h="300px"
-                                    objectFit="cover"
-                                    objectPosition="top"
-                                    borderRadius="md"
-                                />
-                                <Heading size="md" fontWeight="bold">
+                                <Image src={project.image} alt={project.name} borderRadius="md" />
+                                <Heading size="md" fontWeight="bold" noOfLines="1">
                                     {project.name}
                                 </Heading>
-                                <Text fontSize="sm" noOfLines="3" color="subtext0">
+                                <Text fontSize="sm" color="subtext0" noOfLines="3">
                                     {project.description}
                                 </Text>
                                 <HStack spacing="2" wrap="wrap">

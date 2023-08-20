@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { Layout } from '@/Layout'
 import { getPostBySlug, getAllPosts } from '@/lib/mdx'
 import { contact } from '@/data'
+import NextLink from 'next/link'
 
 const BlogPost = ({ post }) => {
     return (
@@ -36,9 +37,11 @@ const BlogPost = ({ post }) => {
                     </ButtonGroup>
                     <HStack spacing="2" align="flex-start">
                         {post.meta.tags.map((tag, index) => (
-                            <Badge key={index} colorScheme="blue">
-                                {tag}
-                            </Badge>
+                            <NextLink key={tag} href={`/blog/tag/${tag}`}>
+                                <Badge key={index} colorScheme="blue">
+                                    {tag}
+                                </Badge>
+                            </NextLink>
                         ))}
                     </HStack>
                     <Flex direction="column" align="flex-start" w="100%">

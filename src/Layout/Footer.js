@@ -6,7 +6,7 @@ export const Footer = () => {
     const year = useConst(() => new Date().getFullYear())
 
     return (
-        <Box as="footer" h="80px" borderTopWidth="2px" borderColor="surface0">
+        <Box as="footer" minH="80px" borderTopWidth="2px" borderColor="surface0">
             <Container maxW="8xl" p="4" h="100%">
                 <Flex
                     direction={{ base: 'column', md: 'row' }}

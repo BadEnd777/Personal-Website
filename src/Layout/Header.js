@@ -29,7 +29,7 @@ export const Header = () => {
             top="0"
             left="0"
             right="0"
-            zIndex="sticky"
+            zIndex="1"
         >
             <Container maxW="8xl" h="100%">
                 <Flex justify="space-between" align="center" h="100%" w="100%">
