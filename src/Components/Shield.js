@@ -16,6 +16,7 @@ export const Shield = ({ name, logo }) => {
                 width: 'auto',
                 height: 'auto'
             }}
+            priority
         />
     )
 }

@@ -21,7 +21,7 @@ export const BlogList = ({ posts }) => {
                             alt={post.meta.title}
                             width={500}
                             height={500}
-                            layout="responsive"
+                            priority
                             style={{
                                 borderRadius: 'var(--chakra-radii-md)'
                             }}
