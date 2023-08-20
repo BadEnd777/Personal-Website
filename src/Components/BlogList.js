@@ -1,16 +1,6 @@
-import {
-    VStack,
-    HStack,
-    Grid,
-    GridItem,
-    Heading,
-    Text,
-    Image,
-    Link,
-    Button,
-    Badge
-} from '@chakra-ui/react'
+import { VStack, HStack, Grid, GridItem, Heading, Text, Button, Badge } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import Image from 'next/image'
 
 export const BlogList = ({ posts }) => {
     return (
@@ -29,7 +19,12 @@ export const BlogList = ({ posts }) => {
                         <Image
                             src={post.meta.previewImage}
                             alt={post.meta.title}
-                            borderRadius="md"
+                            width={500}
+                            height={500}
+                            layout="responsive"
+                            style={{
+                                borderRadius: 'var(--chakra-radii-md)'
+                            }}
                         />
                         <Heading size="md" fontWeight="bold" noOfLines="1">
                             {post.meta.title}
@@ -46,13 +41,19 @@ export const BlogList = ({ posts }) => {
                                 </NextLink>
                             ))}
                         </HStack>
-                        <Link
+                        <Button
                             as={NextLink}
                             href={`/blog/${post.slug}`}
-                            _hover={{ textDecor: 'none' }}
+                            rounded="md"
+                            _hover={{
+                                textDecor: 'none',
+                                bg: 'mocha.blue',
+                                color: 'base',
+                                opacity: '0.8'
+                            }}
                         >
-                            <Button rounded="md">Read More</Button>
-                        </Link>
+                            Read More
+                        </Button>
                     </VStack>
                 </GridItem>
             ))}

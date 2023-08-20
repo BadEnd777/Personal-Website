@@ -1,7 +1,8 @@
-import { VStack, HStack, Grid, GridItem, Heading, Text, Image, Link, Badge } from '@chakra-ui/react'
+import { VStack, HStack, Grid, GridItem, Heading, Text, Link, Badge } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/Components/HeadingUnderline'
 import { Layout } from '@/Layout'
 import { projects } from '@/data'
+import Image from 'next/image'
 
 const Projects = () => {
     return (
@@ -34,7 +35,16 @@ const Projects = () => {
                                 p="4"
                                 _hover={{ borderColor: 'mocha.blue' }}
                             >
-                                <Image src={project.image} alt={project.name} borderRadius="md" />
+                                <Image
+                                    src={project.image}
+                                    alt={project.name}
+                                    width={500}
+                                    height={500}
+                                    layout="responsive"
+                                    style={{
+                                        borderRadius: 'var(--chakra-radii-md)'
+                                    }}
+                                />
                                 <Heading size="md" fontWeight="bold" noOfLines="1">
                                     {project.name}
                                 </Heading>

@@ -1,17 +1,8 @@
-import {
-    Flex,
-    VStack,
-    Heading,
-    Text,
-    Avatar,
-    Link,
-    ButtonGroup,
-    Button,
-    Divider
-} from '@chakra-ui/react'
+import { Flex, VStack, Heading, Text, Link, ButtonGroup, Button, Divider } from '@chakra-ui/react'
 import { ContactItem } from '@/Components/ContactItem'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { contact } from '@/data'
+import Image from 'next/image'
 
 export const Hero = () => {
     const [text] = useTypewriter({
@@ -81,7 +72,12 @@ export const Hero = () => {
                     <Divider maxW="xs" mx={{ base: 'auto', lg: '0' }} />
                     <ButtonGroup variant="ghost" spacing="4">
                         {contact.map((item, index) => (
-                            <ContactItem key={index} icon={item.icon} href={item.href} />
+                            <ContactItem
+                                key={index}
+                                icon={item.icon}
+                                href={item.href}
+                                aria-label={item.text}
+                            />
                         ))}
                     </ButtonGroup>
                 </VStack>
@@ -91,13 +87,13 @@ export const Hero = () => {
                 align={{ base: 'center', lg: 'flex-end' }}
                 w={{ base: '100%', lg: '50%' }}
             >
-                <Avatar
-                    name="BadEnd"
+                <Image
                     src="/images/profile.jpg"
-                    maxH="500px"
-                    maxW="500px"
-                    w="100%"
-                    h="100%"
+                    alt="BadEnd"
+                    width={500}
+                    height={500}
+                    priority
+                    style={{ borderRadius: '50%' }}
                 />
             </Flex>
         </Flex>

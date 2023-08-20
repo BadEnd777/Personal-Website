@@ -4,21 +4,28 @@ import { Footer } from './Footer'
 import Head from 'next/head'
 
 export const Layout = ({ children, title, description, image, url }) => {
+    const defaultTitle = 'BadEnd - Homepage'
+    const defaultDescription =
+        'Discover the portfolio of BadEnd, a skilled software developer passionate about crafting innovative web applications. Explore projects, skills, and a journey into the world of software engineering.'
+    const defaultImage = '/images/profile.jpg'
+    const canonicalUrl = `https://badend.pages.dev/${url}`
+
     const meta = {
-        title: title ? title : 'BadEnd - Homepage',
-        description: description
-            ? description
-            : 'A portfolio website for BadEnd, a software developer.',
-        image: image ? image : '/images/profile.jpg',
-        url: `https://badend.pages.dev/${url}`
+        title: title || defaultTitle,
+        description: description || defaultDescription,
+        image: image || defaultImage,
+        url: canonicalUrl
     }
 
     return (
         <>
             <Head>
-                <meta name="author" content="BadEnd" />
-                <meta name="keywords" content="BadEnd, Portfolio, Blog, Software Developer" />
                 <title>{meta.title}</title>
+                <meta name="author" content="BadEnd" />
+                <meta
+                    name="keywords"
+                    content="Software Developer, Web Applications, Portfolio, BadEnd, Software Engineering, Full Stack Developer, Frontend Development, Backend Development, Web Development, Programming, Coding, Projects, Resume, Skills, Thailand, Samut Sakhon"
+                />
                 <meta name="title" content={meta.title} />
                 <meta name="description" content={meta.description} />
                 <meta property="og:type" content="website" />
@@ -36,6 +43,7 @@ export const Layout = ({ children, title, description, image, url }) => {
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 <link rel="manifest" href="/site.webmanifest" />
+                <link rel="canonical" href={meta.url} />
             </Head>
             <Flex
                 direction="column"

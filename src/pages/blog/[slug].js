@@ -12,7 +12,7 @@ const BlogPost = ({ post }) => {
         <Layout
             title={post.meta.title}
             description={post.meta.description}
-            image={post.meta.image}
+            image={post.meta.previewImage}
             url={`blog/${post.slug}`}
         >
             <Container maxW="container.md">

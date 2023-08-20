@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://badend.pages.dev/sitemap.xml

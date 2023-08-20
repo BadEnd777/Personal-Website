@@ -25,7 +25,7 @@ export const Footer = () => {
                     </VStack>
                     <HStack spacing="4">
                         {contact.map((item, index) => (
-                            <ContactItem key={index} icon={item.icon} />
+                            <ContactItem key={index} icon={item.icon} href={item.href} />
                         ))}
                     </HStack>
                 </Flex>

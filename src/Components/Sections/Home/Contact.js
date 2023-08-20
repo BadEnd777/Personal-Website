@@ -4,7 +4,6 @@ import {
     HStack,
     Heading,
     Text,
-    Avatar,
     FormControl,
     FormLabel,
     Input,
@@ -16,6 +15,7 @@ import {
 import { Formik, Form, Field } from 'formik'
 import { ContactItem } from '@/Components/ContactItem'
 import { contact } from '@/data'
+import Image from 'next/image'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
@@ -115,7 +115,14 @@ export const Contact = () => {
                 >
                     <Flex direction="column" w={{ base: 'full', lg: '50%' }} align="center">
                         <VStack spacing="4">
-                            <Avatar name="BadEnd" src="/images/profile.jpg" boxSize="300px" />
+                            <Image
+                                src="/images/profile.jpg"
+                                alt="BadEnd"
+                                width={300}
+                                height={300}
+                                priority
+                                style={{ borderRadius: '50%' }}
+                            />
                             <Heading as="h3" size="md">
                                 You can also find me on
                             </Heading>
