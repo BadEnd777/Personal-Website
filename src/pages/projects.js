@@ -8,7 +8,7 @@ const Projects = () => {
     return (
         <Layout
             title="BadEnd - Projects"
-            description="A list of projects I've worked on."
+            description="Explore a collection of innovative projects by BadEnd. Discover our creative endeavors, ranging from web development to design and technology. Get inspired by our diverse portfolio and the technologies we employ."
             url="projects"
         >
             <HeadingUnderline>Projects</HeadingUnderline>

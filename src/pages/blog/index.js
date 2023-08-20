@@ -8,7 +8,7 @@ const BlogPage = ({ posts }) => {
     return (
         <Layout
             title="BadEnd - Blog"
-            description="Visit our blog to learn more about us."
+            description="Explore the BadEnd blog for insightful articles, tutorials, and updates. Stay informed about our latest endeavors and learn from our expert contributors."
             url="blog"
         >
             <HeadingUnderline>Blog</HeadingUnderline>
