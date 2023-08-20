@@ -10,8 +10,7 @@
         "lint": "next lint",
         "lint:functional": "eslint ./src",
         "format": "prettier --write .",
-        "precommit": "yarn lint:functional && yarn format",
-        "push": "git add . && git commit -m $1 && git push origin main"
+        "precommit": "yarn lint:functional && yarn format"
     },
     "dependencies": {
         "@chakra-ui/react": "^2.8.0",
