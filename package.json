@@ -29,7 +29,9 @@
         "react-icons": "^4.10.1",
         "react-simple-typewriter": "^5.0.1",
         "rehype-code-titles": "^1.2.0",
+        "rehype-css-to-top": "^3.0.0",
         "rehype-prism-plus": "^1.6.3",
+        "rehype-slug": "^5.1.0",
         "yup": "^1.2.0"
     },
     "devDependencies": {

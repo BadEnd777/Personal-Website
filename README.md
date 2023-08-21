@@ -1,6 +1,6 @@
 # Portfolio Website
 
-![Project Preview](/assets/preview.png)
+![Project Preview](/assets/preview.jpeg)
 
 This is a personal portfolio website built using [Next.js](https://nextjs.org/) and [Chakra UI](https://chakra-ui.com/), which can be used to showcase your projects and skills. The website is designed to be fully responsive, ensuring a seamless experience across different devices.
 
