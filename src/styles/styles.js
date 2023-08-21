@@ -42,9 +42,7 @@ export const styles = {
             borderTopLeftRadius: 'md',
             borderTopRightRadius: 'md',
             px: 4,
-            py: 2,
-            mb: 0,
-            mt: 4
+            py: 2
         },
         '.rehype-code-title+pre': {
             mt: 0,
@@ -53,12 +51,11 @@ export const styles = {
         },
         table: {
             width: '100%',
-            border: '2px solid',
-            borderColor: 'surface0',
             borderCollapse: 'collapse',
             th: {
-                bg: 'surface0',
-                fontWeight: 'bold',
+                border: '1px solid',
+                borderColor: 'surface0',
+                fontWeight: 'semibold',
                 p: 2
             },
             td: {
@@ -68,11 +65,12 @@ export const styles = {
             }
         },
         code: {
-            bg: 'surface0',
-            color: 'text',
-            borderRadius: 'md',
-            px: 2,
-            py: 1
+            padding: '.2em .4em',
+            margin: 0,
+            fontSize: '85%',
+            whiteSpace: 'break-spaces',
+            backgroundColor: 'surface0',
+            borderRadius: '6px'
         }
     }
 }

@@ -6,11 +6,11 @@ tags: ['rest', 'api', 'http']
 previewImage: '/images/blog/understanding-rest-api-methods.jpg'
 ---
 
-## Understanding REST API Methods
+# Understanding REST API Methods
 
 REST (Representational State Transfer) is a widely used architectural style for designing networked applications. One of its key features is the use of various HTTP methods to perform different actions on resources. In this blog post, we'll delve into the five primary REST API methods: GET, POST, PUT, PATCH, and DELETE.
 
-### GET Method
+## GET Method
 
 The GET method is used to retrieve data from a server. It's a safe and idempotent operation, meaning that repeated calls to the same endpoint with the same parameters will produce the same result. This method does not modify any data on the server.
 
@@ -22,7 +22,7 @@ GET /api/users
 GET /api/users/123
 ```
 
-### POST Method
+## POST Method
 
 The POST method is used to submit data to be processed to a specified resource. It's often used to create new resources on the server. The data to be sent is included in the request body.
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-### PUT Method
+## PUT Method
 
 The PUT method is used to update or replace an existing resource with new data. It requires sending the complete updated data to the server, even if only a small part of the resource needs to be changed.
 
@@ -50,7 +50,7 @@ Content-Type: application/json
 }
 ```
 
-### PATCH Method
+## PATCH Method
 
 The PATCH method is used to apply partial modifications to a resource. Unlike PUT, which requires sending the complete updated data, PATCH allows you to send only the specific fields that need to be updated.
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 ```
 
-### DELETE Method
+## DELETE Method
 
 The DELETE method is used to request the removal of a resource from the server. It performs the deletion of the specified resource.
 
@@ -71,7 +71,7 @@ The DELETE method is used to request the removal of a resource from the server. 
 DELETE /api/users/789
 ```
 
-### Conclusion
+## Conclusion
 
 Understanding the various REST API methods is essential for designing and interacting with RESTful APIs effectively. Each method serves a specific purpose and plays a role in creating, reading, updating, and deleting resources on a server.
 

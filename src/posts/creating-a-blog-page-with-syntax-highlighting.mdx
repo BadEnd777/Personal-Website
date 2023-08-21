@@ -6,7 +6,7 @@ tags: ['nextjs', 'mdx', 'prismjs']
 previewImage: '/images/blog/nextjs-markdown-blog.jpeg'
 ---
 
-## How to Create a Blog Page with Syntax Highlighting
+# How to Create a Blog Page with Syntax Highlighting
 
 In this tutorial, we will learn how to create a blog page with syntax highlighting using the following libraries:
 
@@ -15,7 +15,7 @@ In this tutorial, we will learn how to create a blog page with syntax highlighti
 -   `rehype-prism-plus` for syntax highlighting
 -   A custom Prism.js CSS theme from [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes)
 
-### Table of Contents
+## Table of Contents
 
 -   [Prerequisites](#prerequisites)
 -   [Set Up Your Next.js Project](#set-up-your-nextjs-project)
@@ -24,12 +24,12 @@ In this tutorial, we will learn how to create a blog page with syntax highlighti
 -   [Add Syntax Highlighting](#add-syntax-highlighting)
 -   [Style Syntax Highlighting](#style-syntax-highlighting)
 
-### Prerequisites
+## Prerequisites
 
 -   [Next.js](https://nextjs.org/docs/getting-started)
 -   [MDX](https://mdxjs.com/getting-started/next)
 
-### Set Up Your Next.js Project
+## Set Up Your Next.js Project
 
 Assuming you already have a Next.js project set up, navigate to the project directory and install the required dependencies:
 
@@ -41,7 +41,7 @@ yarn add gray-matter next-mdx-remote rehype-prism-plus
 pnpm add gray-matter next-mdx-remote rehype-prism-plus
 ```
 
-### Configure Front Matter
+## Configure Front Matter
 
 Use `gray-matter` to extract front matter (metadata) from your MDX files. Front matter typically includes information like the title and date of the blog post. Create an MDX file with front matter like this:
 
@@ -54,7 +54,7 @@ date: 2023-08-20
 # Your MDX Content Goes Here
 ```
 
-### Render MDX Content
+## Render MDX Content
 
 Next, utilize `next-mdx-remote` to render the MDX content with the extracted front matter. Create a component that reads the MDX file, extracts front matter, and renders the MDX content:
 
@@ -89,7 +89,7 @@ export async function getStaticProps() {
 export default BlogPost
 ```
 
-### Add Syntax Highlighting
+## Add Syntax Highlighting
 
 To add syntax highlighting, we'll use the `rehype-prism-plus` library. First, install the Prism.js CSS theme from the [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes), and include it in your project.
 
@@ -113,7 +113,7 @@ export async function getStaticProps() {
 }
 ```
 
-### Style Syntax Highlighting
+## Style Syntax Highlighting
 
 Apply the Prism.js CSS theme to your Next.js project. You can import the CSS file in your project's main CSS file or directly in your component:
 

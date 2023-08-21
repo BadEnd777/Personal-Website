@@ -1,14 +1,15 @@
 import { Box, UnorderedList, OrderedList, ListItem, Heading, Text, Divider } from '@chakra-ui/react'
 
 const HComponent = ({ children, level, id }) => {
-    const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
+    const sizes = ['2em', '1.5em', '1.17em', '1em', '0.83em', '0.67em']
     return (
         <Box
             w="100%"
-            borderBottom="2px"
+            borderBottom="1px"
             borderColor="surface0"
-            pb={2}
-            my={4}
+            mt="24px"
+            mb="16px"
+            pb="0.3em"
             pos="relative"
             role="group"
             id={id}
@@ -29,7 +30,12 @@ const HComponent = ({ children, level, id }) => {
             >
                 #
             </Heading>
-            <Heading as={`h${level}`} size={sizes[level - 1]}>
+            <Heading
+                as={`h${level}`}
+                fontSize={sizes[level - 1]}
+                fontWeight="semibold"
+                lineHeight="1.25"
+            >
                 {children}
             </Heading>
         </Box>
@@ -43,10 +49,10 @@ export const MDXComponents = {
     h4: props => <HComponent level={4} {...props} />,
     h5: props => <HComponent level={5} {...props} />,
     h6: props => <HComponent level={6} {...props} />,
-    p: props => <Text {...props} my={2} />,
-    ul: props => <UnorderedList {...props} pl={8} my={2} />,
-    ol: props => <OrderedList {...props} pl={8} my={2} />,
-    li: props => <ListItem {...props} my={2} />,
+    p: props => <Text {...props} fontSize="16px" lineHeight="1.5" mb="16px" />,
+    ul: props => <UnorderedList {...props} pl="32px" />,
+    ol: props => <OrderedList {...props} pl="32px" />,
+    li: props => <ListItem {...props} mb="4px" />,
     blockquote: props => (
         <Box
             as="blockquote"
@@ -54,8 +60,8 @@ export const MDXComponents = {
             borderLeft="4px"
             borderColor="surface0"
             opacity={0.8}
-            my={2}
             pl={4}
+            mb="16px"
             {...props}
         />
     ),
@@ -72,5 +78,5 @@ export const MDXComponents = {
             {...props}
         />
     ),
-    hr: props => <Divider {...props} my={8} />
+    hr: props => <Divider {...props} mb="16px" />
 }
