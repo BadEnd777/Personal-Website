@@ -19,7 +19,7 @@ export const getPostBySlug = async slug => {
     const { data, content } = matter(fileContents)
     const mdxSource = await serialize(content, {
         mdxOptions: {
-            rehypePlugins: [rehypeCodeTitles, rehypeCssToTop, rehypePrism, rehypeSlug]
+            rehypePlugins: [rehypeSlug, rehypeCodeTitles, rehypeCssToTop, rehypePrism]
         }
     })
 

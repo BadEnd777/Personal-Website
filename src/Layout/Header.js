@@ -23,7 +23,7 @@ export const Header = () => {
             bg={transparentize('base', 0.5)}
             borderBottom="2px solid"
             borderBottomColor="surface0"
-            backdropFilter="blur(10px)"
+            backdropFilter="blur(8px)"
             position="fixed"
             top="0"
             left="0"

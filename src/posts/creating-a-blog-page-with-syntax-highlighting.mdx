@@ -48,7 +48,6 @@ Use `gray-matter` to extract front matter (metadata) from your MDX files. Front 
 ```md:blog-post.mdx
 ---
 title: Getting Started with Syntax Highlighting
-date: 2023-08-20
 ---
 
 # Your MDX Content Goes Here
@@ -73,20 +72,45 @@ const BlogPost = ({ source, frontMatter }) => {
     )
 }
 
-export async function getStaticProps() {
-    const fileContent = fs.readFileSync('path-to-your-mdx-file.md', 'utf-8')
-    const { content, data } = matter(fileContent)
-    const mdxSource = await serialize(content)
+export default BlogPost
+
+export const getStaticPaths = async () => {
+    const postFilePaths = fs.readdirSync(path.join(process.cwd(), "src", "posts"));
+
+    const paths = postFilePaths.map((path) => ({
+        params: {
+            slug: path.replace(/\.mdx/, "")
+        }
+    }));
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export const getStaticProps = async ({ params }) => {
+    const postFilePath = path.join(process.cwd(), "src", "posts", `${params.slug}.mdx`);
+    const source = fs.readFileSync(postFilePath);
+
+    const { content, data } = matter(source);
+
+    const mdxSource = await serialize(content, {
+        mdxOptions: {
+            rehypePlugins: [rehypePrism]
+        }
+    });
 
     return {
         props: {
             source: mdxSource,
-            frontMatter: data
+            frontMatter: {
+                slug: params.slug,
+                ...data
+            }
         }
     }
 }
-
-export default BlogPost
 ```
 
 ## Add Syntax Highlighting
@@ -115,7 +139,7 @@ export async function getStaticProps() {
 
 ## Style Syntax Highlighting
 
-Apply the Prism.js CSS theme to your Next.js project. You can import the CSS file in your project's main CSS file or directly in your component:
+Apply the Prism.js CSS theme to your Next.js project. You can import the CSS file in your project's main CSS file or directly in your component, You can find the CSS file in the [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes).
 
 ```jsx:pages/_app.js
 import 'path-to-your-prismjs-theme.css'

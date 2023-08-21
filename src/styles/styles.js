@@ -63,14 +63,6 @@ export const styles = {
                 borderColor: 'surface0',
                 p: 2
             }
-        },
-        code: {
-            padding: '.2em .4em',
-            margin: 0,
-            fontSize: '85%',
-            whiteSpace: 'break-spaces',
-            backgroundColor: 'surface0',
-            borderRadius: '6px'
         }
     }
 }

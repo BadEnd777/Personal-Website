@@ -17,6 +17,16 @@ export const Button = {
                 opacity: '0.8'
             }
         },
+        secondary: {
+            bg: 'surface0',
+            color: 'text',
+            px: '4',
+            _hover: {
+                bg: 'surface0',
+                color: 'text',
+                opacity: '0.8'
+            }
+        },
         outline: {
             bg: 'transparent',
             color: 'mocha.blue',
