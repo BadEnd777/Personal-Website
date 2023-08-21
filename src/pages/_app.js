@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '@/styles/theme'
-import '@/styles/syntex.css'
+import '@/styles/prism.css'
 
 const Website = ({ Component, pageProps }) => {
     return (

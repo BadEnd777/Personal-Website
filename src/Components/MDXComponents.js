@@ -1,29 +1,38 @@
-import {
-    Box,
-    UnorderedList,
-    OrderedList,
-    ListItem,
-    Heading,
-    Text,
-    Code,
-    Divider
-} from '@chakra-ui/react'
+import { Box, UnorderedList, OrderedList, ListItem, Heading, Text, Divider } from '@chakra-ui/react'
 
-const HComponent = ({ children, level }) => {
+const HComponent = ({ children, level, id }) => {
     const sizes = ['2xl', 'xl', 'lg', 'md', 'sm', 'xs']
     return (
-        <Heading
-            as={`h${level}`}
-            size={sizes[level - 1]}
+        <Box
             w="100%"
-            id={children.replace(/\s+/g, '-').toLowerCase().replace('.', '')}
             borderBottom="2px"
             borderColor="surface0"
             pb={2}
-            mb={4}
+            my={4}
+            pos="relative"
+            role="group"
+            id={id}
+            sx={{
+                scrollMarginTop: '150px'
+            }}
         >
-            {children}
-        </Heading>
+            <Heading
+                as="a"
+                href={`#${id}`}
+                fontSize={sizes[level - 1]}
+                pos="absolute"
+                top="50%"
+                left={-4}
+                transform="translate(-100%, -50%)"
+                opacity={0}
+                _groupHover={{ opacity: 1 }}
+            >
+                #
+            </Heading>
+            <Heading as={`h${level}`} size={sizes[level - 1]}>
+                {children}
+            </Heading>
+        </Box>
     )
 }
 
@@ -34,10 +43,10 @@ export const MDXComponents = {
     h4: props => <HComponent level={4} {...props} />,
     h5: props => <HComponent level={5} {...props} />,
     h6: props => <HComponent level={6} {...props} />,
-    p: props => <Text {...props} mb={4} />,
-    ul: props => <UnorderedList {...props} pl={8} mb={4} />,
-    ol: props => <OrderedList {...props} pl={8} mb={4} />,
-    li: props => <ListItem {...props} mb={2} />,
+    p: props => <Text {...props} my={2} />,
+    ul: props => <UnorderedList {...props} pl={8} my={2} />,
+    ol: props => <OrderedList {...props} pl={8} my={2} />,
+    li: props => <ListItem {...props} my={2} />,
     blockquote: props => (
         <Box
             as="blockquote"
@@ -45,7 +54,7 @@ export const MDXComponents = {
             borderLeft="4px"
             borderColor="surface0"
             opacity={0.8}
-            mb={4}
+            my={2}
             pl={4}
             {...props}
         />
@@ -63,6 +72,5 @@ export const MDXComponents = {
             {...props}
         />
     ),
-    code: props => <Code {...props} bg="hsl(220, 13%, 18%)" color="hsl(220, 14%, 71%)" />,
     hr: props => <Divider {...props} my={8} />
 }

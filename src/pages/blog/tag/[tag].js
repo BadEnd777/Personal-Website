@@ -8,7 +8,7 @@ const BlogTagPage = ({ posts, tag }) => {
     return (
         <Layout
             title={`Blog - Tag: ${tag}`}
-            description={`Visit our blog to learn more about ${tag}.`}
+            description={`Explore our blog posts related to the ${tag} tag. Gain insights, tutorials, and updates on ${tag}-related topics. Stay informed and engaged with our diverse range of articles.`}
             url={`blog/tag/${tag}`}
         >
             <HeadingUnderline>Blog - {tag}</HeadingUnderline>

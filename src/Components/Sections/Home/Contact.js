@@ -121,7 +121,7 @@ export const Contact = () => {
                                 width={300}
                                 height={300}
                                 priority
-                                style={{ borderRadius: '50%' }}
+                                className="rounded-full"
                             />
                             <Heading as="h3" size="md">
                                 You can also find me on

@@ -24,7 +24,6 @@ export const Header = () => {
             borderBottom="2px solid"
             borderBottomColor="surface0"
             backdropFilter="blur(10px)"
-            transition="all 0.2s ease-in-out"
             position="fixed"
             top="0"
             left="0"
