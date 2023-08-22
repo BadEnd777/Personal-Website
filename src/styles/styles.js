@@ -63,6 +63,12 @@ export const styles = {
                 borderColor: 'surface0',
                 p: 2
             }
+        },
+        '::selection': {
+            background: 'surface2'
+        },
+        '::-moz-selection': {
+            background: 'surface2'
         }
     }
 }
