@@ -16,6 +16,9 @@ This is a personal portfolio website built using [Next.js](https://nextjs.org/) 
 -   **Responsive Design**: The website is designed to be fully responsive, ensuring a seamless experience across different devices.
 -   **Skills Highlight**: Showcase your skills and expertise using interactive UI elements.
 -   **Portfolio Showcase**: Display your projects with detailed information, including project descriptions, screenshots, and links.
+-   **Blog**: Write blog posts using Markdown and display them on your website.
+-   **Syntax Highlighting**: Highlight code blocks in blog posts using [Prism](https://prismjs.com/).
+-   **SEO**: Optimized for search engines with support for Open Graph and Twitter cards.
 -   **Resume**: Display summary of your education, work experience, and bio.
 -   **Contact**: Provide contact information or a contact form for visitors to get in touch with you.
 
@@ -60,11 +63,13 @@ The project structure is organized as follows:
 -   `src/`: Source code of the Next.js application.
     -   `Components/`: Reusable React components.
     -   `data/`: Data used to populate the website.
+    -   `Hooks/`: Custom React hooks.
     -   `Layout/`: Layout components.
     -   `lib/`: Utility functions.
     -   `pages/`: Pages accessible via routes.
     -   `posts/`: Markdown files for blog posts.
     -   `styles/`: Global styles and Chakra UI theme customization.
+    -   `utils/`: Utility functions.
 
 ## License
 
