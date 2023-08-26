@@ -13,6 +13,7 @@ export const colors = {
         sky: '#89dceb',
         sapphire: '#74c7ec',
         blue: '#89b4fa',
+        'blue/20': '#89b4fa33',
         lavender: '#b4befe'
     },
     text: '#cdd6f4',

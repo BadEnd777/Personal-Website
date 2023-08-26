@@ -1,15 +1,19 @@
+// Importing necessary dependencies
 import { Flex, Container } from '@chakra-ui/react'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import Head from 'next/head'
 
+// Defining the Layout component
 export const Layout = ({ children, title, description, image, url }) => {
+    // Default values for metadata
     const defaultTitle = 'BadEnd - Homepage'
     const defaultDescription =
         'Discover the portfolio of BadEnd, a skilled software developer passionate about crafting innovative web applications. Explore projects, skills, and a journey into the world of software engineering.'
     const defaultImage = '/images/profile.jpg'
     const canonicalUrl = `https://badend.pages.dev/${url}`
 
+    // Constructing metadata object
     const meta = {
         title: title || defaultTitle,
         description: description || defaultDescription,
@@ -17,6 +21,7 @@ export const Layout = ({ children, title, description, image, url }) => {
         url: canonicalUrl
     }
 
+    // Rendering the component
     return (
         <>
             <Head>
@@ -52,11 +57,15 @@ export const Layout = ({ children, title, description, image, url }) => {
                 bg="base"
                 color="text"
                 overflow="hidden"
+                id="top"
             >
+                {/* Including the Header */}
                 <Header />
                 <Container mt="75px" maxW="8xl" minH="calc(100vh - 75px)" px="4" py="8">
+                    {/* Inserting the actual content */}
                     {children}
                 </Container>
+                {/* Including the Footer */}
                 <Footer />
             </Flex>
         </>

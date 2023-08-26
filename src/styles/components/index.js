@@ -5,6 +5,7 @@ import { Input } from './Input'
 import { Textarea } from './Textarea'
 import { Tooltip } from './Tooltip'
 import { Menu } from './Menu'
+import { Badge } from './Badge'
 
 export const components = {
     Link,
@@ -13,5 +14,6 @@ export const components = {
     Input,
     Textarea,
     Tooltip,
-    Menu
+    Menu,
+    Badge
 }

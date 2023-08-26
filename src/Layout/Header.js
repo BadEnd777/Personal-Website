@@ -1,3 +1,4 @@
+// Importing necessary dependencies
 import {
     Box,
     Flex,
@@ -16,6 +17,7 @@ import { transparentize } from '@chakra-ui/theme-tools'
 import { navLinks } from '@/data'
 import NextLink from 'next/link'
 
+// Defining the Header component
 export const Header = () => {
     return (
         <Box
@@ -32,6 +34,7 @@ export const Header = () => {
         >
             <Container maxW="8xl" h="100%">
                 <Flex justify="space-between" align="center" h="100%" w="100%">
+                    {/* Application logo */}
                     <Heading
                         as={NextLink}
                         href="/"
@@ -44,6 +47,7 @@ export const Header = () => {
                     >
                         BadEnd
                     </Heading>
+                    {/* Navigation links */}
                     <HStack spacing="4" display={{ base: 'none', md: 'flex' }}>
                         {navLinks.map(link => (
                             <Link
@@ -56,6 +60,7 @@ export const Header = () => {
                                 {link.name}
                             </Link>
                         ))}
+                        {/* "Hire Me" button */}
                         <Button
                             as={Link}
                             href="mailto:badend23@hotmail.com"
@@ -70,6 +75,7 @@ export const Header = () => {
                             Hire Me
                         </Button>
                     </HStack>
+                    {/* Dropdown menu for small screens */}
                     <Menu placement="bottom-end">
                         <MenuButton
                             as={Button}
@@ -85,6 +91,7 @@ export const Header = () => {
                                     {link.name}
                                 </MenuItem>
                             ))}
+                            {/* "Hire Me" menu item */}
                             <MenuItem as={Link} href="mailto:badend23@hotmail.com">
                                 Hire Me
                             </MenuItem>

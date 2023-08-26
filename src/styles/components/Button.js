@@ -14,7 +14,8 @@ export const Button = {
             _hover: {
                 bg: 'mocha.blue',
                 color: 'base',
-                opacity: '0.8'
+                opacity: '0.8',
+                textDecoration: 'none'
             }
         },
         secondary: {
@@ -24,7 +25,8 @@ export const Button = {
             _hover: {
                 bg: 'surface0',
                 color: 'text',
-                opacity: '0.8'
+                opacity: '0.8',
+                textDecoration: 'none'
             }
         },
         outline: {

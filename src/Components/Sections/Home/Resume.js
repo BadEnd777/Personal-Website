@@ -1,3 +1,4 @@
+// Importing necessary components, icons, and data
 import { Flex, VStack, HStack, Heading, Text, useConst, Grid } from '@chakra-ui/react'
 import { ContactItem } from '@/Components/ContactItem'
 import { AiFillPhone } from 'react-icons/ai'
@@ -5,7 +6,9 @@ import { MdEmail } from 'react-icons/md'
 import { FaHome } from 'react-icons/fa'
 import { workExperience, bio } from '@/data'
 
+// Defining the Resume component
 export const Resume = () => {
+    // Calculating years of experience
     const yearsOfExperience = useConst(new Date().getFullYear() - 2018)
 
     return (
@@ -19,6 +22,7 @@ export const Resume = () => {
             px="4"
         >
             <VStack spacing="2" align="flex-start">
+                {/* Resume heading */}
                 <Heading
                     as="h2"
                     size="xl"
@@ -28,15 +32,18 @@ export const Resume = () => {
                 >
                     Resume
                 </Heading>
+                {/* Resume description */}
                 <Text fontSize="md" color="mocha.blue">
                     View my resume
                 </Text>
             </VStack>
             <VStack spacing="6" align="flex-start" mt="8">
+                {/* Personal Information section */}
                 <VStack spacing="4" align="flex-start">
                     <Heading as="h4" size="md">
                         Personal Information
                     </Heading>
+                    {/* Contact information */}
                     <HStack spacing="4" flexWrap="wrap">
                         <ContactItem
                             icon={MdEmail}
@@ -51,22 +58,27 @@ export const Resume = () => {
                         <ContactItem icon={FaHome} text="Samut Sakhon, Thailand" />
                     </HStack>
                 </VStack>
+                {/* Summary section */}
                 <VStack spacing="4" align="flex-start">
                     <Heading as="h4" size="md">
                         Summary
                     </Heading>
+                    {/* Summary text */}
                     <Text fontSize="md" color="subtext0">
-                        I am a full-stack developer with {yearsOfExperience} years of experience in
-                        web development. I have a passion for learning and sharing my knowledge with
-                        others as publicly as possible. I develop web applications with Next.js,
-                        React, and Node.js. I am also familiar with C# and .NET. I am currently
-                        looking for a full-time position as a back-end developer.
+                        {/* Years of experience */}I am a full-stack developer with{' '}
+                        {yearsOfExperience} years of experience in web development. I have a passion
+                        for learning and sharing my knowledge with others as publicly as possible. I
+                        develop web applications with Next.js, React, and Node.js. I am also
+                        familiar with C# and .NET. I am currently looking for a full-time position
+                        as a back-end developer.
                     </Text>
                 </VStack>
+                {/* Work Experience section */}
                 <VStack spacing="4" align="flex-start">
                     <Heading as="h4" size="md">
                         Work Experience
                     </Heading>
+                    {/* Mapping through workExperience data */}
                     {workExperience.map((work, index) => (
                         <VStack
                             key={index}
@@ -77,10 +89,12 @@ export const Resume = () => {
                             pl="4"
                         >
                             <HStack spacing="2">
+                                {/* Position and date */}
                                 <Text fontSize="md" color="text">
                                     {work.position} &bull; {work.date}
                                 </Text>
                             </HStack>
+                            {/* Company and description */}
                             <Text fontSize="md" color="subtext0">
                                 {work.company}
                             </Text>
@@ -90,10 +104,12 @@ export const Resume = () => {
                         </VStack>
                     ))}
                 </VStack>
+                {/* Bio section */}
                 <VStack spacing="4" align="flex-start" w="full">
                     <Heading as="h4" size="md">
                         Bio
                     </Heading>
+                    {/* Mapping through bio data */}
                     <Grid templateColumns="repeat(auto-fit, minmax(300px, 1fr))" gap="4" w="full">
                         {bio.map((bio, index) => (
                             <VStack
@@ -104,9 +120,11 @@ export const Resume = () => {
                                 p="4"
                                 borderRadius="md"
                             >
+                                {/* Year */}
                                 <Heading as="h5" size="md" color="mocha.blue">
                                     {bio.year}
                                 </Heading>
+                                {/* Description */}
                                 <Text fontSize="md">{bio.description}</Text>
                             </VStack>
                         ))}
