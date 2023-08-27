@@ -1,5 +1,5 @@
 // Import necessary components and data
-import { ProjectList } from '@/Components/ProjectList'
+import { ProjectList } from '@/Components/Project/ProjectList'
 import { Layout } from '@/Layout'
 import { projects } from '@/data'
 

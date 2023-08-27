@@ -13,9 +13,11 @@ import {
     Button,
     useToast
 } from '@chakra-ui/react'
-import { Formik, Form, Field } from 'formik'
 import { ContactItem } from '@/Components/ContactItem'
+import { MotionFlex } from '@/Components/Motion'
+import { Formik, Form, Field } from 'formik'
 import { contact } from '@/data'
+import { fadeInUp } from '@/styles/animations'
 import Image from 'next/image'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -111,123 +113,126 @@ export const Contact = () => {
     }
 
     return (
-        <Flex
-            as="section"
-            direction="column"
-            id="contact"
-            borderTop="1px"
-            borderColor="surface0"
-            py="16"
-            px="4"
-        >
-            <VStack w="full" spacing="2" align="flex-start">
-                {/* Contact section heading */}
-                <Heading
-                    as="h2"
-                    size="xl"
-                    borderBottom="4px"
-                    borderColor="mocha.blue"
-                    w="fit-content"
-                >
-                    Contact
-                </Heading>
-                {/* Contact section description */}
-                <Text fontSize="md" color="mocha.blue">
-                    Get in touch
-                </Text>
-                {/* Contact form and details */}
-                <Flex
-                    direction={{ base: 'column', lg: 'row' }}
-                    w="full"
-                    align="center"
-                    justify="space-between"
-                    minH="2xl"
-                    gridGap="8"
-                >
-                    {/* Contact details */}
-                    <Flex direction="column" w={{ base: 'full', lg: '50%' }} align="center">
-                        <VStack spacing="4">
-                            {/* Profile image */}
-                            <Image
-                                src="/images/profile.jpg"
-                                alt="BadEnd"
-                                width={300}
-                                height={300}
-                                priority
-                                className="rounded-full"
-                            />
-                            {/* Heading for contact details */}
-                            <Heading as="h3" size="md">
-                                You can also find me on
-                            </Heading>
-                            {/* Displaying contact items */}
-                            <HStack spacing="4" flexWrap="wrap" justify="center">
-                                {contact.map((item, index) => (
-                                    <ContactItem key={index} {...item} />
-                                ))}
-                            </HStack>
-                        </VStack>
+        <MotionFlex {...fadeInUp({ initial: 20 })} w="full">
+            <Flex
+                as="section"
+                direction="column"
+                id="contact"
+                borderTop="1px"
+                borderColor="surface0"
+                py="16"
+                px="4"
+                w="full"
+            >
+                <VStack w="full" spacing="2" align="flex-start">
+                    {/* Contact section heading */}
+                    <Heading
+                        as="h2"
+                        size="xl"
+                        borderBottom="4px"
+                        borderColor="mocha.blue"
+                        w="fit-content"
+                    >
+                        Contact
+                    </Heading>
+                    {/* Contact section description */}
+                    <Text fontSize="md" color="mocha.blue">
+                        Get in touch
+                    </Text>
+                    {/* Contact form and details */}
+                    <Flex
+                        direction={{ base: 'column', lg: 'row' }}
+                        w="full"
+                        align="center"
+                        justify="space-between"
+                        minH="2xl"
+                        gridGap="8"
+                    >
+                        {/* Contact details */}
+                        <Flex direction="column" w={{ base: 'full', lg: '50%' }} align="center">
+                            <VStack spacing="4">
+                                {/* Profile image */}
+                                <Image
+                                    src="/images/profile.jpg"
+                                    alt="BadEnd"
+                                    width={300}
+                                    height={300}
+                                    priority
+                                    className="rounded-full"
+                                />
+                                {/* Heading for contact details */}
+                                <Heading as="h3" size="md">
+                                    You can also find me on
+                                </Heading>
+                                {/* Displaying contact items */}
+                                <HStack spacing="4" flexWrap="wrap" justify="center">
+                                    {contact.map((item, index) => (
+                                        <ContactItem key={index} {...item} />
+                                    ))}
+                                </HStack>
+                            </VStack>
+                        </Flex>
+                        {/* Contact form */}
+                        <Flex direction="column" w={{ base: 'full', lg: '50%' }}>
+                            {/* Formik wrapper */}
+                            <Formik
+                                initialValues={initialValues}
+                                validationSchema={ContactSchema}
+                                onSubmit={handleSubmit}
+                            >
+                                {({ isSubmitting }) => (
+                                    <Form>
+                                        {/* Form fields */}
+                                        <VStack spacing="4" align="flex-start">
+                                            {formFields.map((item, index) => (
+                                                <Field key={index} name={item.name}>
+                                                    {({ field, form }) => (
+                                                        <FormControl
+                                                            isInvalid={
+                                                                form.errors[item.name] &&
+                                                                form.touched[item.name]
+                                                            }
+                                                        >
+                                                            <FormLabel htmlFor={item.name}>
+                                                                {item.label}
+                                                            </FormLabel>
+                                                            {item.name !== 'message' ? (
+                                                                <Input
+                                                                    {...field}
+                                                                    id={item.name}
+                                                                    placeholder={item.placeholder}
+                                                                />
+                                                            ) : (
+                                                                <Textarea
+                                                                    {...field}
+                                                                    id={item.name}
+                                                                    placeholder={item.placeholder}
+                                                                />
+                                                            )}
+                                                            <FormErrorMessage>
+                                                                {form.errors[item.name]}
+                                                            </FormErrorMessage>
+                                                        </FormControl>
+                                                    )}
+                                                </Field>
+                                            ))}
+                                            {/* Submit button */}
+                                            <Button
+                                                type="submit"
+                                                minW="50%"
+                                                alignSelf="center"
+                                                isLoading={isSubmitting}
+                                            >
+                                                Submit
+                                            </Button>
+                                        </VStack>
+                                    </Form>
+                                )}
+                            </Formik>
+                        </Flex>
                     </Flex>
-                    {/* Contact form */}
-                    <Flex direction="column" w={{ base: 'full', lg: '50%' }}>
-                        {/* Formik wrapper */}
-                        <Formik
-                            initialValues={initialValues}
-                            validationSchema={ContactSchema}
-                            onSubmit={handleSubmit}
-                        >
-                            {({ isSubmitting }) => (
-                                <Form>
-                                    {/* Form fields */}
-                                    <VStack spacing="4" align="flex-start">
-                                        {formFields.map((item, index) => (
-                                            <Field key={index} name={item.name}>
-                                                {({ field, form }) => (
-                                                    <FormControl
-                                                        isInvalid={
-                                                            form.errors[item.name] &&
-                                                            form.touched[item.name]
-                                                        }
-                                                    >
-                                                        <FormLabel htmlFor={item.name}>
-                                                            {item.label}
-                                                        </FormLabel>
-                                                        {item.name !== 'message' ? (
-                                                            <Input
-                                                                {...field}
-                                                                id={item.name}
-                                                                placeholder={item.placeholder}
-                                                            />
-                                                        ) : (
-                                                            <Textarea
-                                                                {...field}
-                                                                id={item.name}
-                                                                placeholder={item.placeholder}
-                                                            />
-                                                        )}
-                                                        <FormErrorMessage>
-                                                            {form.errors[item.name]}
-                                                        </FormErrorMessage>
-                                                    </FormControl>
-                                                )}
-                                            </Field>
-                                        ))}
-                                        {/* Submit button */}
-                                        <Button
-                                            type="submit"
-                                            minW="50%"
-                                            alignSelf="center"
-                                            isLoading={isSubmitting}
-                                        >
-                                            Submit
-                                        </Button>
-                                    </VStack>
-                                </Form>
-                            )}
-                        </Formik>
-                    </Flex>
-                </Flex>
-            </VStack>
-        </Flex>
+                </VStack>
+            </Flex>
+        </MotionFlex>
     )
 }

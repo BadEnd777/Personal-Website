@@ -1,5 +1,5 @@
 // Importing necessary components and libraries
-import { VStack, HStack, Heading, Text, Button, Badge } from '@chakra-ui/react'
+import { VStack, HStack, Heading, Text, Button, Badge, Tooltip } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
 
@@ -25,9 +25,7 @@ export const BlogCard = ({ post }) => {
                 width={500}
                 height={500}
                 priority
-                style={{
-                    borderRadius: 'var(--chakra-radii-md)'
-                }}
+                className="rounded-md"
             />
             {/* Displaying the published date */}
             <Text fontSize="xs" color="subtext0">
@@ -51,19 +49,25 @@ export const BlogCard = ({ post }) => {
                 ))}
             </HStack>
             {/* Button to read the full blog post */}
-            <Button
-                as={NextLink}
-                href={`/blog/${post.slug}`}
-                rounded="md"
-                _hover={{
-                    textDecor: 'none',
-                    bg: 'mocha.blue',
-                    color: 'base',
-                    opacity: '0.8'
-                }}
+            <Tooltip
+                label={post.meta.description}
+                aria-label={post.meta.description}
+                placement="top-start"
             >
-                Read More
-            </Button>
+                <Button
+                    as={NextLink}
+                    href={`/blog/${post.slug}`}
+                    rounded="md"
+                    _hover={{
+                        textDecor: 'none',
+                        bg: 'mocha.blue',
+                        color: 'base',
+                        opacity: '0.8'
+                    }}
+                >
+                    Read More
+                </Button>
+            </Tooltip>
         </VStack>
     )
 }

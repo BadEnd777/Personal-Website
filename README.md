@@ -14,13 +14,14 @@ This is a personal portfolio website built using [Next.js](https://nextjs.org/) 
 ## Features
 
 -   **Responsive Design**: The website is designed to be fully responsive, ensuring a seamless experience across different devices.
+-   **Animations**: Add animations to your website using [Framer Motion](https://www.framer.com/motion/).
 -   **Skills Highlight**: Showcase your skills and expertise using interactive UI elements.
 -   **Portfolio Showcase**: Display your projects with detailed information, including project descriptions, screenshots, and links.
+-   **Resume**: Display summary of your education, work experience, and bio.
+-   **Contact**: Provide contact information or a contact form for visitors to get in touch with you.
 -   **Blog**: Write blog posts using Markdown and display them on your website.
 -   **Syntax Highlighting**: Highlight code blocks in blog posts using [Prism](https://prismjs.com/).
 -   **SEO**: Optimized for search engines with support for Open Graph and Twitter cards.
--   **Resume**: Display summary of your education, work experience, and bio.
--   **Contact**: Provide contact information or a contact form for visitors to get in touch with you.
 
 ## Getting Started
 
@@ -53,7 +54,7 @@ To get a local copy of the project up and running, follow these steps:
     pnpm dev
     ```
 
-4. Access the site by opening `http://localhost:3000` in your web browser.
+4. Access the site by opening [`http://localhost:3000`](http://localhost:3000) in your browser.
 
 ## Folder Structure
 

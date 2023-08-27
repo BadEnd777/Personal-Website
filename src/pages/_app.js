@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '@/styles/theme'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import '@/styles/prism.css'
+import '@/styles/css/prism.css'
 
 // Define the Website component
 const Website = ({ Component, pageProps }) => {
@@ -36,6 +36,7 @@ const Website = ({ Component, pageProps }) => {
     return (
         // Wrap the entire application in ChakraProvider with the specified theme
         <ChakraProvider {...options}>
+            {/* Render the component */}
             <Component {...pageProps} />
         </ChakraProvider>
     )
