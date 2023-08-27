@@ -18,6 +18,21 @@ export const styles = {
                 color: 'mocha.blue'
             }
         },
+        table: {
+            width: '100%',
+            borderCollapse: 'collapse',
+            th: {
+                border: '1px solid',
+                borderColor: 'surface0',
+                fontWeight: 'semibold',
+                p: 2
+            },
+            td: {
+                border: '1px solid',
+                borderColor: 'surface0',
+                p: 2
+            }
+        },
         '::-webkit-scrollbar': {
             width: '8px'
         },
@@ -27,6 +42,12 @@ export const styles = {
         '::-webkit-scrollbar-thumb': {
             background: 'mocha.blue',
             borderRadius: '8px'
+        },
+        '::selection': {
+            background: 'surface2'
+        },
+        '::-moz-selection': {
+            background: 'surface2'
         },
         '.rounded-full': {
             borderRadius: 'full'
@@ -48,27 +69,6 @@ export const styles = {
             mt: 0,
             borderTopLeftRadius: 0,
             borderTopRightRadius: 0
-        },
-        table: {
-            width: '100%',
-            borderCollapse: 'collapse',
-            th: {
-                border: '1px solid',
-                borderColor: 'surface0',
-                fontWeight: 'semibold',
-                p: 2
-            },
-            td: {
-                border: '1px solid',
-                borderColor: 'surface0',
-                p: 2
-            }
-        },
-        '::selection': {
-            background: 'surface2'
-        },
-        '::-moz-selection': {
-            background: 'surface2'
         }
     }
 }
