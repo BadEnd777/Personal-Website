@@ -2,9 +2,9 @@
 import { Flex, VStack, Heading, Text, Link, ButtonGroup, Button, Divider } from '@chakra-ui/react'
 import { MotionFlex } from '@/Components/Motion'
 import { Contacts } from '@/Components/Contacts'
+import { Image } from '@/Components/Image'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { fadeInUp } from '@/styles/animations'
-import Image from 'next/image'
 
 // Defining the Hero component
 export const Hero = () => {
@@ -111,7 +111,6 @@ export const Hero = () => {
                         alt="BadEnd"
                         width={500}
                         height={500}
-                        priority
                         className="rounded-full"
                     />
                 </MotionFlex>

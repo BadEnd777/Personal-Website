@@ -1,6 +1,6 @@
 // Importing necessary dependencies
 import { useTheme } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Image } from '@/Components/Image'
 
 // Defining the Shield component
 export const Shield = ({ name, logo }) => {
@@ -22,7 +22,6 @@ export const Shield = ({ name, logo }) => {
                 width: 'auto',
                 height: 'auto'
             }}
-            priority
         />
     )
 }

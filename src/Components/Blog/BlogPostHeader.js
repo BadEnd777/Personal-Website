@@ -2,9 +2,9 @@
 import { Flex, Container, VStack, HStack, Text, Tag } from '@chakra-ui/react'
 import { Contacts } from '@/Components/Contacts'
 import { MotionFlex } from '@/Components/Motion/MotionFlex'
+import { Image } from '@/Components/Image'
 import { fadeInUp } from '@/styles/animations'
 import NextLink from 'next/link'
-import Image from 'next/image'
 
 // Defining the BlogPostHeader component which takes 'post' prop
 export const BlogPostHeader = ({ post }) => (
@@ -23,7 +23,6 @@ export const BlogPostHeader = ({ post }) => (
                             alt="BadEnd"
                             width={50}
                             height={50}
-                            priority
                             className="rounded-full"
                         />
                         {/* Vertical stack for profile text */}

@@ -1,7 +1,7 @@
 // Importing necessary components and libraries
 import { VStack, HStack, Heading, Text, Button, Tag, Tooltip } from '@chakra-ui/react'
+import { Image } from '@/Components/Image'
 import NextLink from 'next/link'
-import Image from 'next/image'
 
 // Defining the BlogCard component which takes a 'post' prop
 export const BlogCard = ({ post }) => (
@@ -23,7 +23,6 @@ export const BlogCard = ({ post }) => (
             alt={post.meta.title}
             width={500}
             height={500}
-            priority
             className="rounded-md"
         />
         {/* Displaying the published date */}

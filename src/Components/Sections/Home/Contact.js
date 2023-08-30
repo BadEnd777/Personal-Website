@@ -3,8 +3,8 @@ import { Flex, VStack, Heading, Text } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/Components/HeadingUnderline'
 import { MotionFlex } from '@/Components/Motion'
 import { Contacts } from '@/Components/Contacts'
+import { Image } from '@/Components/Image'
 import { fadeInUp } from '@/styles/animations'
-import Image from 'next/image'
 
 // Defining the Contact component
 export const Contact = () => {
@@ -37,7 +37,6 @@ export const Contact = () => {
                                     alt="BadEnd"
                                     width={400}
                                     height={400}
-                                    priority
                                     className="rounded-full"
                                 />
                                 {/* Heading for contact details */}
