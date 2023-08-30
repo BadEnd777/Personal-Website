@@ -7,18 +7,16 @@ import { capitalize } from '@/utils/capitalize'
 import dayjs from 'dayjs'
 
 // Define the BlogTagPage component
-const BlogTagPage = ({ posts, tag }) => {
-    return (
-        <Layout
-            title={`Blog - Tag: ${capitalize(tag)}`}
-            description={`Explore our blog posts related to the ${tag} tag. Gain insights, tutorials, and updates on ${tag}-related topics. Stay informed and engaged with our diverse range of articles.`}
-            url={`blog/tag/${tag}`}
-        >
-            <HeadingUnderline>Blog - {capitalize(tag)}</HeadingUnderline>
-            <BlogList posts={posts} />
-        </Layout>
-    )
-}
+const BlogTagPage = ({ posts, tag }) => (
+    <Layout
+        title={`Blog - Tag: ${capitalize(tag)}`}
+        description={`Explore our blog posts related to the ${tag} tag. Gain insights, tutorials, and updates on ${tag}-related topics. Stay informed and engaged with our diverse range of articles.`}
+        url={`blog/tag/${tag}`}
+    >
+        <HeadingUnderline>Blog - {capitalize(tag)}</HeadingUnderline>
+        <BlogList posts={posts} />
+    </Layout>
+)
 
 // Export the component as the default export
 export default BlogTagPage

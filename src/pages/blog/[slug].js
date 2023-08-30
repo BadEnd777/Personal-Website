@@ -5,19 +5,17 @@ import { Layout } from '@/Layout'
 import { getPostBySlug, getAllPosts } from '@/lib/mdx'
 
 // Define the BlogPost component
-const BlogPost = ({ post }) => {
-    return (
-        <Layout
-            title={post.meta.title}
-            description={post.meta.description}
-            image={post.meta.previewImage}
-            url={`blog/${post.slug}`}
-        >
-            <BlogPostHeader post={post} />
-            <BlogPostContent post={post} />
-        </Layout>
-    )
-}
+const BlogPost = ({ post }) => (
+    <Layout
+        title={post.meta.title}
+        description={post.meta.description}
+        image={post.meta.previewImage}
+        url={`blog/${post.slug}`}
+    >
+        <BlogPostHeader post={post} />
+        <BlogPostContent post={post} />
+    </Layout>
+)
 
 // Export the component as the default export
 export default BlogPost

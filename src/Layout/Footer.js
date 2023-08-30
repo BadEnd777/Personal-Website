@@ -1,7 +1,6 @@
 // Importing necessary dependencies
-import { Box, Flex, Container, VStack, HStack, Text, Link, useConst } from '@chakra-ui/react'
-import { ContactItem } from '@/Components/ContactItem' // Importing ContactItem component
-import { contact } from '@/data' // Importing contact data
+import { Box, Flex, Container, VStack, Text, Link, useConst } from '@chakra-ui/react'
+import { Contacts } from '@/Components/Contacts'
 
 // Defining the Footer component
 export const Footer = () => {
@@ -11,7 +10,7 @@ export const Footer = () => {
     return (
         <Box as="footer" minH="80px" borderTopWidth="2px" borderColor="surface0">
             {/* Container for layout and spacing */}
-            <Container maxW="8xl" p="4" h="100%">
+            <Container maxW="7xl" py="4" h="100%">
                 <Flex
                     direction={{ base: 'column', md: 'row' }} // Adjusting flex direction for different screen sizes
                     justify="space-between" // Spacing between content
@@ -28,18 +27,8 @@ export const Footer = () => {
                             </Link>
                         </Text>
                     </VStack>
-                    {/* Horizontal stack of contact items */}
-                    <HStack spacing="4">
-                        {/* Mapping through contact data to display contact items */}
-                        {contact.map((item, index) => (
-                            <ContactItem
-                                key={index}
-                                icon={item.icon}
-                                href={item.href}
-                                aria-label={item.text}
-                            />
-                        ))}
-                    </HStack>
+                    {/* Stack of contact information */}
+                    <Contacts ignore={['location']} />
                 </Flex>
             </Container>
         </Box>

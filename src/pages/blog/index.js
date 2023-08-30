@@ -4,17 +4,15 @@ import { Layout } from '@/Layout'
 import { getAllPosts } from '@/lib/mdx'
 
 // Define the BlogPages component
-const BlogPages = ({ posts }) => {
-    return (
-        <Layout
-            title="BadEnd - Blog"
-            description="Explore the BadEnd blog for insightful articles, tutorials, and updates. Stay informed about our latest endeavors and learn from our expert contributors."
-            url="blog"
-        >
-            <BlogList title="Blog" posts={posts} />
-        </Layout>
-    )
-}
+const BlogPages = ({ posts }) => (
+    <Layout
+        title="BadEnd - Blog"
+        description="Explore the BadEnd blog for insightful articles, tutorials, and updates. Stay informed about our latest endeavors and learn from our expert contributors."
+        url="blog"
+    >
+        <BlogList title="Blog" posts={posts} />
+    </Layout>
+)
 
 // Export the component as the default export
 export default BlogPages

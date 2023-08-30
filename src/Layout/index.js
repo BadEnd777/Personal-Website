@@ -61,7 +61,7 @@ export const Layout = ({ children, title, description, image, url }) => {
             >
                 {/* Including the Header */}
                 <Header />
-                <Container mt="75px" maxW="8xl" minH="calc(100vh - 75px)" px="4" py="8">
+                <Container mt="75px" maxW="7xl" minH="calc(100vh - 75px)" py="8">
                     {/* Inserting the actual content */}
                     {children}
                 </Container>

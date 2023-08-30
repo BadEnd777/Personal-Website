@@ -15,7 +15,13 @@ export const Button = {
                 bg: 'mocha.blue',
                 color: 'base',
                 opacity: '0.8',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                _disabled: {
+                    bg: 'mocha.blue',
+                    color: 'base',
+                    opacity: '0.4',
+                    textDecoration: 'none'
+                }
             }
         },
         secondary: {
@@ -26,7 +32,13 @@ export const Button = {
                 bg: 'surface0',
                 color: 'text',
                 opacity: '0.8',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                _disabled: {
+                    bg: 'surface0',
+                    color: 'text',
+                    opacity: '0.4',
+                    textDecoration: 'none'
+                }
             }
         },
         outline: {
@@ -39,7 +51,13 @@ export const Button = {
                 bg: 'transparent',
                 color: 'mocha.blue',
                 opacity: '0.8',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                _disabled: {
+                    bg: 'transparent',
+                    color: 'mocha.blue',
+                    opacity: '0.4',
+                    textDecoration: 'none'
+                }
             }
         },
         ghost: {
@@ -49,7 +67,13 @@ export const Button = {
                 bg: 'transparent',
                 color: 'text',
                 opacity: '0.8',
-                textDecoration: 'none'
+                textDecoration: 'none',
+                _disabled: {
+                    bg: 'transparent',
+                    color: 'text',
+                    opacity: '0.4',
+                    textDecoration: 'none'
+                }
             }
         }
     },

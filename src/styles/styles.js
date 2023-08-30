@@ -15,7 +15,7 @@ export const styles = {
             color: 'mocha.blue',
             _hover: {
                 textDecoration: 'underline',
-                color: 'mocha.blue'
+                color: 'inherit'
             }
         },
         table: {
