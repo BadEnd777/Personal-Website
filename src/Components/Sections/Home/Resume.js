@@ -1,5 +1,6 @@
 // Importing necessary components, icons, and data
 import { VStack, HStack, Heading, Text, useConst, Grid } from '@chakra-ui/react'
+import { HeadingUnderline } from '@/Components/HeadingUnderline'
 import { MotionFlex } from '@/Components/Motion'
 import { Contacts } from '@/Components/Contacts'
 import { fadeInUp, fadeInLeft } from '@/styles/animations'
@@ -23,18 +24,10 @@ export const Resume = () => {
             <MotionFlex {...fadeInUp({ initial: 20, delay: 0.1 })}>
                 <VStack spacing="2" align="flex-start">
                     {/* Resume heading */}
-                    <Heading
-                        as="h2"
-                        size="xl"
-                        borderBottom="4px"
-                        borderColor="mocha.blue"
-                        w="fit-content"
-                    >
-                        Resume
-                    </Heading>
+                    <HeadingUnderline>My Resume</HeadingUnderline>
                     {/* Resume description */}
                     <Text fontSize="md" color="mocha.blue">
-                        View my resume
+                        Summary of my work experience and biography:
                     </Text>
                 </VStack>
             </MotionFlex>

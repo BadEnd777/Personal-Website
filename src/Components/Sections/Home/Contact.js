@@ -1,5 +1,6 @@
 // Importing necessary components, libraries, and data
 import { Flex, VStack, Heading, Text } from '@chakra-ui/react'
+import { HeadingUnderline } from '@/Components/HeadingUnderline'
 import { MotionFlex } from '@/Components/Motion'
 import { Contacts } from '@/Components/Contacts'
 import { fadeInUp } from '@/styles/animations'
@@ -20,15 +21,7 @@ export const Contact = () => {
             >
                 <VStack w="full" spacing="2" align="flex-start">
                     {/* Contact section heading */}
-                    <Heading
-                        as="h2"
-                        size="xl"
-                        borderBottom="4px"
-                        borderColor="mocha.blue"
-                        w="fit-content"
-                    >
-                        Contact
-                    </Heading>
+                    <HeadingUnderline>Contact</HeadingUnderline>
                     {/* Contact section description */}
                     <Text fontSize="md" color="mocha.blue">
                         Contact me for freelance work or anything else!
@@ -49,7 +42,7 @@ export const Contact = () => {
                                 />
                                 {/* Heading for contact details */}
                                 <Heading as="h3" size="md">
-                                    You can also find me on
+                                    Contact Details
                                 </Heading>
                                 {/* Displaying contact items */}
                                 <Contacts text ignore={['location']} justify="center" />
