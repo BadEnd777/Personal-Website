@@ -44,7 +44,7 @@ export const Button = {
         outline: {
             bg: 'transparent',
             color: 'mocha.blue',
-            border: '2px solid',
+            border: '1px solid',
             borderColor: 'mocha.blue',
             px: '4',
             _hover: {

@@ -2,7 +2,7 @@ export const Menu = {
     baseStyle: {
         list: {
             bg: 'base',
-            border: '2px solid',
+            border: '1px solid',
             borderColor: 'surface0',
             borderRadius: 'md',
             py: '2',

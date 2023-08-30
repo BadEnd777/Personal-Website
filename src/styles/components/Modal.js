@@ -5,7 +5,7 @@ export const Modal = {
         },
         dialog: {
             bg: 'base',
-            border: '2px solid',
+            border: '1px solid',
             borderColor: 'surface0',
             py: 6
         }

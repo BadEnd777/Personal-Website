@@ -1,6 +1,6 @@
 export const Divider = {
     baseStyle: {
-        borderWidth: '2px',
+        borderWidth: '1px',
         borderColor: 'surface1'
     }
 }
