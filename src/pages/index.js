@@ -8,7 +8,7 @@ import { Contact } from '@/Components/Sections/Home/Contact'
 // Define the HomePages component
 const HomePages = () => (
     // Wrap the sections in the common layout
-    <Layout>
+    <Layout mt="0">
         <Hero /> {/* Render the Hero section */}
         <Skills /> {/* Render the Skills section */}
         <Resume /> {/* Render the Resume section */}
