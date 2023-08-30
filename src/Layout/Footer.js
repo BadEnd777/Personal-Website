@@ -8,7 +8,7 @@ export const Footer = () => {
     const year = useConst(() => new Date().getFullYear())
 
     return (
-        <Box as="footer" minH="80px" borderTopWidth="2px" borderColor="surface0">
+        <Box as="footer" minH="80px" borderTopWidth="1px" borderColor="surface0">
             {/* Container for layout and spacing */}
             <Container maxW="7xl" py="4" h="100%">
                 <Flex

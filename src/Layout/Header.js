@@ -25,7 +25,7 @@ export const Header = () => (
         <Box
             h="75px"
             bg={transparentize('base', 0.5)}
-            borderBottom="2px solid"
+            borderBottom="1px solid"
             borderBottomColor="surface0"
             backdropFilter="blur(8px)"
             position="fixed"
