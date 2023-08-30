@@ -1,10 +1,9 @@
 // Importing necessary components, libraries, and data
 import { Flex, VStack, Heading, Text, Link, ButtonGroup, Button, Divider } from '@chakra-ui/react'
-import { ContactItem } from '@/Components/ContactItem'
 import { MotionFlex } from '@/Components/Motion'
+import { Contacts } from '@/Components/Contacts'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { fadeInUp } from '@/styles/animations'
-import { contact } from '@/data'
 import Image from 'next/image'
 
 // Defining the Hero component
@@ -32,7 +31,7 @@ export const Hero = () => {
             align="center"
             justify="space-around"
             py="16"
-            px="4"
+            gap="8"
             {...fadeInUp({ initial: 20 })}
         >
             {/* Left section */}
@@ -95,16 +94,7 @@ export const Hero = () => {
                     </MotionFlex>
                     {/* Contact icons */}
                     <MotionFlex {...fadeInUp({ initial: 20, delay: 0.5 })}>
-                        <ButtonGroup variant="ghost" spacing="4">
-                            {contact.map((item, index) => (
-                                <ContactItem
-                                    key={index}
-                                    icon={item.icon}
-                                    href={item.href}
-                                    aria-label={item.text}
-                                />
-                            ))}
-                        </ButtonGroup>
+                        <Contacts ignore={['location']} />
                     </MotionFlex>
                 </VStack>
             </Flex>

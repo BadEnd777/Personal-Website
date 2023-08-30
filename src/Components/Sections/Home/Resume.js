@@ -1,10 +1,7 @@
 // Importing necessary components, icons, and data
 import { VStack, HStack, Heading, Text, useConst, Grid } from '@chakra-ui/react'
-import { ContactItem } from '@/Components/ContactItem'
 import { MotionFlex } from '@/Components/Motion'
-import { AiFillPhone } from 'react-icons/ai'
-import { MdEmail } from 'react-icons/md'
-import { FaHome } from 'react-icons/fa'
+import { Contacts } from '@/Components/Contacts'
 import { fadeInUp, fadeInLeft } from '@/styles/animations'
 import { workExperience, bio } from '@/data'
 
@@ -21,7 +18,6 @@ export const Resume = () => {
             borderTop="1px"
             borderColor="surface0"
             py="16"
-            px="4"
             {...fadeInUp({ initial: 20 })}
         >
             <MotionFlex {...fadeInUp({ initial: 20, delay: 0.1 })}>
@@ -50,25 +46,7 @@ export const Resume = () => {
                             Personal Information
                         </Heading>
                         {/* Contact information */}
-                        <HStack spacing="4" flexWrap="wrap">
-                            <MotionFlex {...fadeInLeft({ initial: 20 })}>
-                                <ContactItem
-                                    icon={MdEmail}
-                                    href="mailto:badend23@hotmail.com"
-                                    text="badend23@hotmail.com"
-                                />
-                            </MotionFlex>
-                            <MotionFlex {...fadeInLeft({ initial: 20, delay: 0.1 })}>
-                                <ContactItem
-                                    icon={AiFillPhone}
-                                    href="tel:+66953351342"
-                                    text="095 335 1342"
-                                />
-                            </MotionFlex>
-                            <MotionFlex {...fadeInLeft({ initial: 20, delay: 0.2 })}>
-                                <ContactItem icon={FaHome} text="Samut Sakhon, Thailand" />
-                            </MotionFlex>
-                        </HStack>
+                        <Contacts text ignore={['github', 'instagram']} />
                     </VStack>
                 </MotionFlex>
                 {/* Summary section */}
