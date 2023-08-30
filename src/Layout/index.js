@@ -5,7 +5,7 @@ import { Footer } from './Footer'
 import Head from 'next/head'
 
 // Defining the Layout component
-export const Layout = ({ children, title, description, image, url }) => {
+export const Layout = ({ children, title, description, image, url, ...props }) => {
     // Default values for metadata
     const defaultTitle = 'BadEnd - Homepage'
     const defaultDescription =
@@ -61,7 +61,7 @@ export const Layout = ({ children, title, description, image, url }) => {
             >
                 {/* Including the Header */}
                 <Header />
-                <Container mt="75px" maxW="7xl" minH="calc(100vh - 75px)" py="8">
+                <Container mt="75px" maxW="7xl" minH="calc(100vh - 75px)" py="8" {...props}>
                     {/* Inserting the actual content */}
                     {children}
                 </Container>
