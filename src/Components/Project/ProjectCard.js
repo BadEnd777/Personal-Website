@@ -14,18 +14,18 @@ export const ProjectCard = ({ project }) => (
                 borderWidth="1px"
                 borderColor="surface1"
                 borderRadius="md"
-                transition="all 0.2s ease-in-out"
+                transition="all 0.3s ease-in-out"
                 p="4"
                 _hover={{ borderColor: 'mocha.blue' }}
             >
                 {/* Project image */}
-                <Box w="full" h="full" pos="relative">
+                <Box pos="relative" w="full">
                     <Image
                         src={project.image}
                         alt={project.name}
                         width={500}
                         height={500}
-                        className="rounded-md"
+                        rounded="md"
                     />
                     <Box
                         pos="absolute"
@@ -35,7 +35,7 @@ export const ProjectCard = ({ project }) => (
                         h="full"
                         bgGradient="linear(to-b, transparent, surface0)"
                         opacity="0"
-                        transition="all 0.2s ease-in-out"
+                        transition="all 0.3s ease-in-out"
                         _groupHover={{ opacity: '1' }}
                     >
                         <Heading

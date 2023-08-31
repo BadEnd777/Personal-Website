@@ -49,16 +49,20 @@ export const styles = {
         '::-moz-selection': {
             background: 'surface2'
         },
-        '.rounded-full': {
-            borderRadius: 'full'
-        },
+        ...['none', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', 'full'].reduce((acc, curr) => {
+            acc[`.rounded-${curr}`] = {
+                borderRadius: curr
+            }
+            return acc
+        }, {}),
         '.rehype-code-title': {
             width: '100%',
             bg: 'mantle',
             color: 'text',
             fontSize: 'sm',
             fontWeight: 'bold',
-            border: '1px solid',
+            borderX: '1px solid',
+            borderTop: '1px solid',
             borderColor: 'surface0',
             borderTopLeftRadius: 'md',
             borderTopRightRadius: 'md',

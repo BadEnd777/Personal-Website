@@ -11,6 +11,8 @@ export const Menu = {
         item: {
             bg: 'transparent',
             color: 'text',
+            rounded: 'md',
+            transition: 'all 0.3s ease-in-out',
             _hover: {
                 bg: 'surface0',
                 color: 'mocha.blue',

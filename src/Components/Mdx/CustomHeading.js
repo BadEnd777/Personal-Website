@@ -28,12 +28,14 @@ export const CustomHeading = ({ children, level, id }) => (
         <Heading
             as="a"
             href={`#${id}`} // Linking to the corresponding anchor
+            display={{ md: 'none', lg: 'block' }} // Hide on mobile
             fontSize={headingSizes[level - 1]} // Applying font size based on level
             pos="absolute"
             top="50%"
             left={-4}
             transform="translate(-100%, -50%)"
             opacity={0} // Initially hidden
+            transition="opacity 0.3s ease-in-out"
             _groupHover={{ opacity: 1 }} // Show on hover
         >
             #

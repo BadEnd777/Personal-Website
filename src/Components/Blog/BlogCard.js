@@ -13,7 +13,8 @@ export const BlogCard = ({ post }) => (
         borderWidth="1px"
         borderColor="surface1"
         borderRadius="md"
-        transition="all 0.2s ease-in-out"
+        cursor="pointer"
+        transition="all 0.3s ease-in-out"
         p="4"
         _hover={{ borderColor: 'mocha.blue' }}
     >
@@ -23,7 +24,7 @@ export const BlogCard = ({ post }) => (
             alt={post.meta.title}
             width={500}
             height={500}
-            className="rounded-md"
+            rounded="md"
         />
         {/* Displaying the published date */}
         <Text fontSize="xs" color="subtext0">
