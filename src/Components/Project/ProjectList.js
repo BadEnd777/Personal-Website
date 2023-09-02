@@ -6,11 +6,12 @@ import { ProjectCard } from '@/Components/Project/ProjectCard'
 // Defining the ProjectList component
 export const ProjectList = ({ projects }) => (
     // Outer container for the project list
-    <VStack spacing="8" align="flex-start">
+    <VStack as="section" spacing="8" align="flex-start">
         {/* Projects section heading */}
-        <HeadingUnderline>Projects</HeadingUnderline>
+        <HeadingUnderline as="header">Projects</HeadingUnderline>
         {/* Grid layout for projects */}
         <Grid
+            as="article"
             templateColumns={{
                 base: 'repeat(1, 1fr)',
                 md: 'repeat(2, 1fr)',
@@ -20,7 +21,7 @@ export const ProjectList = ({ projects }) => (
         >
             {/* Mapping through project data */}
             {projects.map((project, i) => (
-                <GridItem role="group" key={i}>
+                <GridItem as="section" role="group" key={i}>
                     {/* Displaying the ProjectCard component for each project */}
                     <ProjectCard project={project} />
                 </GridItem>

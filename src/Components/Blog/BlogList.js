@@ -6,11 +6,12 @@ import { BlogCard } from '@/Components/Blog/BlogCard'
 // Defining the BlogList component which takes 'title' and 'posts' props
 export const BlogList = ({ title, posts }) => (
     // Outer container for the blog list
-    <VStack spacing="8" align="flex-start">
+    <VStack as="section" spacing="8" align="flex-start">
         {/* Displaying the title with an underline */}
-        <HeadingUnderline>{title}</HeadingUnderline>
+        <HeadingUnderline as="header">{title}</HeadingUnderline>
         {/* Grid for displaying blog cards */}
         <Grid
+            as="article"
             templateColumns={{
                 base: 'repeat(1, 1fr)',
                 md: 'repeat(2, 1fr)',
@@ -20,7 +21,7 @@ export const BlogList = ({ title, posts }) => (
         >
             {/* Mapping through each blog post and creating a GridItem */}
             {posts.map((post, i) => (
-                <GridItem colSpan="1" key={i}>
+                <GridItem as="section" key={i}>
                     {/* Displaying the BlogCard component for each post */}
                     <BlogCard post={post} />
                 </GridItem>

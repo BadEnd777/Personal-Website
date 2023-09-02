@@ -7,9 +7,9 @@ import NextLink from 'next/link'
 // Defining the BlogPostHeader component which takes 'post' prop
 export const BlogPostHeader = ({ post }) => (
     // Container with a maximum width
-    <Container maxW="container.md" px="0">
+    <Container as="header" maxW="container.md" px="0">
         {/* Vertical stack for content alignment */}
-        <VStack spacing="4" align="flex-start" w="100%">
+        <VStack spacing="4" align="stretch">
             {/* Flex container for header content */}
             <Flex w="100%" justify="space-between" align="center">
                 {/* Horizontal stack for profile information */}
@@ -34,7 +34,7 @@ export const BlogPostHeader = ({ post }) => (
                 <Contacts ignore={['location']} />
             </Flex>
             {/* Horizontal stack for displaying tags */}
-            <HStack spacing="2" align="flex-start">
+            <HStack as="nav" spacing="2" align="flex-start">
                 {/* Mapping through each tag and creating a Tag */}
                 {post.meta.tags.map((tag, index) => (
                     <NextLink key={tag} href={`/blog/tag/${tag}`}>

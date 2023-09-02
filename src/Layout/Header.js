@@ -20,8 +20,9 @@ import NextLink from 'next/link'
 // Defining the Header component
 export const Header = () => (
     <Box
+        as="header"
         h="75px"
-        bg={transparentize('base', 0.5)}
+        bg={transparentize('base', 0.8)}
         borderBottom="1px solid"
         borderBottomColor="surface0"
         backdropFilter="blur(8px)"
@@ -31,7 +32,7 @@ export const Header = () => (
         right="0"
         zIndex="1"
     >
-        <Container maxW="7xl" h="100%">
+        <Container as="nav" maxW="7xl" h="100%">
             <Flex justify="space-between" align="center" h="100%" w="100%">
                 {/* Application logo */}
                 <Heading
