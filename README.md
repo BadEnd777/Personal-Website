@@ -8,7 +8,7 @@ Welcome to my personal website, a showcase of my work and skills. This website i
 
 -   [Key Features](#key-features)
 -   [Getting Started](#getting-started)
--   [Project Structure](#folder-structure)
+-   [Project Structure](#project-structure)
 -   [License](#license)
 
 ## Key Features
