@@ -1,7 +1,7 @@
 // Importing necessary components
 import { VStack, Grid, GridItem } from '@chakra-ui/react'
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { ProjectCard } from '@/Components/Project/ProjectCard'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { ProjectCard } from '@/components/project/ProjectCard'
 
 // Defining the ProjectList component
 export const ProjectList = ({ projects }) => (

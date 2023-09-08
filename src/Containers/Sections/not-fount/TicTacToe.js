@@ -1,6 +1,6 @@
 // Importing necessary components and libraries
 import { VStack, Text, Flex, IconButton, Tooltip, HStack, useToast } from '@chakra-ui/react'
-import { Board } from '@/Components/TicTacToe/Board'
+import { Board } from '@/components/tictactoe/Board'
 import { GrPowerReset } from 'react-icons/gr'
 import { useEffect, useState, useCallback } from 'react'
 import { calculateWinner } from '@/utils/tictactoe'

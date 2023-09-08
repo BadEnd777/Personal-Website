@@ -1,7 +1,7 @@
 // Importing necessary components
 import { HStack, Text, Icon, Link, useDisclosure } from '@chakra-ui/react'
-import { ContactForm } from '@/Components/ContactForm'
-import { Contacts } from '@/Data'
+import { ContactForm } from '@/components/ContactForm'
+import { Contacts } from '@/data'
 
 // Defining the Contact component
 export const ContactItems = ({ text, ignore = [], ...rest }) => {

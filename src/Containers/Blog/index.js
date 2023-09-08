@@ -1,6 +1,6 @@
 // Import necessary components and functions
-import { BlogList } from '@/Components/Blog/BlogList'
-import { Layout } from '@/Containers/Layout'
+import { BlogList } from '@/components/blog/BlogList'
+import { Layout } from '@/containers/layout'
 import { getAllPosts } from '@/lib/mdx'
 
 // Define the BlogPage component

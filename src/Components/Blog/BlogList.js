@@ -1,7 +1,7 @@
 // Importing necessary components and libraries
 import { VStack, Grid, GridItem } from '@chakra-ui/react'
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { BlogCard } from '@/Components/Blog/BlogCard'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { BlogCard } from '@/components/blog/BlogCard'
 
 // Defining the BlogList component which takes 'title' and 'posts' props
 export const BlogList = ({ title, posts }) => (

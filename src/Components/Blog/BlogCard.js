@@ -1,6 +1,6 @@
 // Importing necessary components and libraries
 import { VStack, HStack, Heading, Text, Button, Tag, Tooltip } from '@chakra-ui/react'
-import { Image } from '@/Components/Image'
+import { Image } from '@/components/Image'
 import NextLink from 'next/link'
 
 // Defining the BlogCard component which takes a 'post' prop

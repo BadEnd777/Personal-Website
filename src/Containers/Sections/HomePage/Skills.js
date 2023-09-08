@@ -1,8 +1,8 @@
 // Importing necessary components and data
 import { Flex, VStack, Heading, Text } from '@chakra-ui/react'
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { Shield } from '@/Components/Shield'
-import { Technologies } from '@/Data'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { Shield } from '@/components/Shield'
+import { Technologies } from '@/data'
 
 // Defining the Skills component
 export const Skills = () => (

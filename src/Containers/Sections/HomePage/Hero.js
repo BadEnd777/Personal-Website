@@ -9,8 +9,8 @@ import {
     Divider,
     useBreakpointValue
 } from '@chakra-ui/react'
-import { ContactItems } from '@/Components/ContactItems'
-import { Image } from '@/Components/Image'
+import { ContactItems } from '@/components/ContactItems'
+import { Image } from '@/components/Image'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 // Defining the Hero component

@@ -1,8 +1,8 @@
 // Importing necessary components, libraries, and data
 import { Flex, VStack, Heading, Text, useBreakpoint, useBreakpointValue } from '@chakra-ui/react'
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { ContactItems } from '@/Components/ContactItems'
-import { Image } from '@/Components/Image'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { ContactItems } from '@/components/ContactItems'
+import { Image } from '@/components/Image'
 
 // Defining the Contact component
 export const Contact = () => {

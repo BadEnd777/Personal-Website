@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { transparentize } from '@chakra-ui/theme-tools'
-import { NavLinks } from '@/Data'
+import { NavLinks } from '@/data'
 import NextLink from 'next/link'
 
 // Defining the Header component

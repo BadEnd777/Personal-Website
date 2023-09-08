@@ -1,6 +1,6 @@
 // Importing necessary components and libraries
 import { Container } from '@chakra-ui/react'
-import { MDXComponents } from '@/Components/Mdx/MDXComponents'
+import { MDXComponents } from '@/components/mdx/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
 
 // Defining the BlogPostContent component which takes 'post' prop

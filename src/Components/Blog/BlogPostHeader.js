@@ -1,7 +1,7 @@
 // Importing necessary components and libraries
 import { Flex, Container, VStack, HStack, Text, Tag } from '@chakra-ui/react'
-import { ContactItems } from '@/Components/ContactItems'
-import { Image } from '@/Components/Image'
+import { ContactItems } from '@/components/ContactItems'
+import { Image } from '@/components/Image'
 import NextLink from 'next/link'
 
 // Defining the BlogPostHeader component which takes 'post' prop

@@ -1,6 +1,6 @@
 // Importing necessary components
 import { Grid, GridItem } from '@chakra-ui/react'
-import { Square } from '@/Components/TicTacToe/Square'
+import { Square } from '@/components/tictactoe/Square'
 
 // Defining the Board component
 export const Board = ({ squares, onClick }) => (

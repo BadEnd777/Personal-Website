@@ -12,11 +12,11 @@ import {
     Link,
     useToast
 } from '@chakra-ui/react'
-import { FormikTextarea } from '@/Components/Formik/FormikTextarea'
-import { FormikInput } from '@/Components/Formik/FormikInput'
+import { FormikTextarea } from '@/components/formik/FormikTextarea'
+import { FormikInput } from '@/components/formik/FormikInput'
 import { FaArrowRight } from 'react-icons/fa'
 import { Formik, Form } from 'formik'
-import { Contacts } from '@/Data'
+import { Contacts } from '@/data'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'

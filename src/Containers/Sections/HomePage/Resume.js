@@ -1,8 +1,8 @@
 // Importing necessary components, icons, and data
 import { Flex, VStack, Heading, Text, Grid } from '@chakra-ui/react'
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { ContactItems } from '@/Components/ContactItems'
-import { WorkExperiences, Biography } from '@/Data'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { ContactItems } from '@/components/ContactItems'
+import { WorkExperiences, Biography } from '@/data'
 
 // Defining the Resume component
 export const Resume = () => {

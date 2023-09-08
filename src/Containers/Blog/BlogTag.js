@@ -1,7 +1,7 @@
 // Import necessary components and functions
-import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { BlogList } from '@/Components/Blog/BlogList'
-import { Layout } from '@/Containers/Layout'
+import { HeadingUnderline } from '@/components/HeadingUnderline'
+import { BlogList } from '@/components/blog/BlogList'
+import { Layout } from '@/containers/layout'
 import { getAllPosts } from '@/lib/mdx'
 import { capitalize } from '@/utils/capitalize'
 import dayjs from 'dayjs'

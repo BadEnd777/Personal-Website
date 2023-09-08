@@ -1,7 +1,7 @@
 // Import necessary components and data
-import { ProjectList } from '@/Components/Project/ProjectList'
-import { Layout } from '@/Containers/Layout'
-import { Projects } from '@/Data'
+import { ProjectList } from '@/components/project/ProjectList'
+import { Layout } from '@/containers/layout'
+import { Projects } from '@/data'
 
 // Define the Project component
 export const Project = () => (

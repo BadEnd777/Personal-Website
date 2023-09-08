@@ -1,6 +1,6 @@
 // Importing necessary components
 import { Box, VStack, HStack, Heading, Text, Link, Tag, Tooltip } from '@chakra-ui/react'
-import { Image } from '@/Components/Image'
+import { Image } from '@/components/Image'
 
 // Defining the ProjectList component
 export const ProjectCard = ({ project }) => (

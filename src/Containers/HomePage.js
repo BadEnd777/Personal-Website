@@ -1,9 +1,9 @@
 // Import necessary components
-import { Layout } from '@/Containers/Layout'
-import { Hero } from '@/Containers/Sections/HomePage/Hero'
-import { Skills } from '@/Containers/Sections/HomePage/Skills'
-import { Resume } from '@/Containers/Sections/HomePage/Resume'
-import { Contact } from '@/Containers/Sections/HomePage/Contact'
+import { Layout } from '@/containers/layout'
+import { Hero } from '@/containers/sections/homepage/Hero'
+import { Skills } from '@/containers/sections/homepage/Skills'
+import { Resume } from '@/containers/sections/homepage/Resume'
+import { Contact } from '@/containers/sections/homepage/Contact'
 
 // Define the HomePage component
 export const HomePage = () => (

@@ -63,15 +63,15 @@ Here's how this project is organized:
 
 -   `public/`: Stores static assets like images, fonts, and icons.
 -   `src/`: Home to the Next.js application's source code.
-    -   `Components/`: Contains reusable React components.
-    -   `Config/`: Houses configuration files.
-    -   `Containers/`: Manages layout components.
-        -   `Blog/`: Layout components for the blog.
-        -   `Layout/`: Layout components for the website.
-        -   `Skills/`: Layout components for the skills page.
-    -   `Data/`: Holds data used to populate the website.
-        -   `Blog/`: Stores Markdown files for blog posts.
-    -   `Hooks/`: Includes custom React hooks.
+    -   `components/`: Contains reusable React components.
+    -   `config/`: Houses configuration files.
+    -   `containers/`: Manages layout components.
+        -   `blog/`: Layout components for the blog.
+        -   `layout/`: Layout components for the website.
+        -   `sections/`: Layout components for the website's sections.
+    -   `data/`: Holds data used to populate the website.
+        -   `blog/`: Stores Markdown files for blog posts.
+    -   `hooks/`: Includes custom React hooks.
     -   `lib/`: Stores utility functions.
     -   `pages/`: Contains pages accessible via routes.
     -   `styles/`: Manages global styles and customizes the Chakra UI theme.

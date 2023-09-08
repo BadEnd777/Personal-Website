@@ -1,8 +1,8 @@
 // Importing necessary components and libraries
 import { Flex, Container } from '@chakra-ui/react'
-import { NotFountContent } from '@/Containers/Sections/NotFount/NotFountContent'
-import { TicTacToe } from '@/Containers/Sections/NotFount/TicTacToe'
-import { useTitle } from '@/Hooks/useTitle'
+import { NotFountContent } from '@/containers/sections/not-fount/NotFountContent'
+import { TicTacToe } from '@/containers/sections/not-fount/TicTacToe'
+import { useTitle } from '@/hooks/useTitle'
 
 // Defining the Custom404 component
 export const NotFount = () => {
