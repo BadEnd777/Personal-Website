@@ -34,20 +34,58 @@ export const TicTacToe = () => {
         setXIsNext(true)
     }, [])
 
+    const calculateBestMove = useCallback((squares, maximizingPlayer) => {
+        // Check if the game is over
+        const winner = calculateWinner(squares)
+        if (winner) {
+            return winner === 'X' ? -1 : 1
+        }
+
+        // Check for a draw
+        if (squares.every(square => square !== null)) {
+            return 0
+        }
+
+        // Initialize the best move
+        let bestMove
+        let bestScore = maximizingPlayer ? -Infinity : Infinity
+
+        // Iterate through empty squares and calculate scores
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i] === null) {
+                squares[i] = maximizingPlayer ? 'O' : 'X'
+                const score = calculateBestMove(squares, !maximizingPlayer)
+                squares[i] = null
+
+                if (maximizingPlayer) {
+                    if (score > bestScore) {
+                        bestScore = score
+                        bestMove = i
+                    }
+                } else {
+                    if (score < bestScore) {
+                        bestScore = score
+                        bestMove = i
+                    }
+                }
+            }
+        }
+
+        return maximizingPlayer ? bestScore : bestMove
+    }, [])
+
     // Function to make the AI's move
     const makeAiMove = useCallback(() => {
-        const newSquares = [...squares]
         if (winner) return
-        const emptySquares = newSquares.reduce((acc, curr, i) => {
+        squares.reduce((acc, curr, i) => {
             if (curr === null) acc.push(i)
             return acc
         }, [])
-        const randomIndex = Math.floor(Math.random() * emptySquares.length)
-        const randomSquare = emptySquares[randomIndex]
-        newSquares[randomSquare] = xIsNext ? 'X' : 'O'
-        setSquares(newSquares)
+        const bestMove = calculateBestMove(squares, false)
+        squares[bestMove] = xIsNext ? 'X' : 'O'
+        setSquares([...squares])
         setXIsNext(!xIsNext)
-    }, [squares, winner, xIsNext])
+    }, [calculateBestMove, squares, winner, xIsNext])
 
     // useEffect to update game status and check for a winner/draw
     useEffect(() => {
