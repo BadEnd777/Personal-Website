@@ -1,6 +1,6 @@
 // Import necessary packages and components
 import { ChakraProvider } from '@chakra-ui/react'
-import { useResetPosition } from '@/Hooks/useResetPosition'
+import { useResetPosition } from '@/hooks/useResetPosition'
 import { options } from '@/config/Chakra'
 import '@/styles/css/prism.css'
 
