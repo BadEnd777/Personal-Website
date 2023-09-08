@@ -1,6 +1,0 @@
-export { default as Biography } from './Biography'
-export { default as Contacts } from './Contacts'
-export { default as NavLinks } from './navLinks'
-export { default as Projects } from './Projects'
-export { default as Technologies } from './Technologies'
-export { default as WorkExperiences } from './WorkExperiences'
