@@ -33,15 +33,15 @@ export const BlogPostHeader = ({ post }) => (
                 {/* Contact information */}
                 <ContactItems ignore={['location']} />
             </Flex>
-            {/* Horizontal stack for displaying tags */}
-            <HStack as="nav" spacing="2" align="flex-start">
+            {/* Displaying tags */}
+            <Flex wrap="wrap" gap="2">
                 {/* Mapping through each tag and creating a Tag */}
                 {post.meta.tags.map((tag, index) => (
                     <NextLink key={tag} href={`/blog/tag/${tag}`}>
                         <Tag key={index}>{tag}</Tag>
                     </NextLink>
                 ))}
-            </HStack>
+            </Flex>
         </VStack>
     </Container>
 )
