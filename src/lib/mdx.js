@@ -11,7 +11,7 @@ import fs from 'fs'
 
 // Define the root directory and posts directory
 const root = process.cwd()
-const postsDir = join(root, 'src', 'posts')
+const postsDir = join(root, 'src', 'Data', 'Blog')
 
 // Function to retrieve a single post by its slug
 export const getPostBySlug = async slug => {

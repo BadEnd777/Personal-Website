@@ -1,8 +1,8 @@
 // Importing necessary components, icons, and data
 import { Flex, VStack, Heading, Text, Grid } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { Contacts } from '@/Components/Contacts'
-import { workExperience, bio } from '@/data'
+import { ContactItems } from '@/Components/ContactItems'
+import { WorkExperiences, Biography } from '@/Data'
 
 // Defining the Resume component
 export const Resume = () => {
@@ -27,7 +27,7 @@ export const Resume = () => {
                             Personal Information
                         </Heading>
                         {/* Contact information */}
-                        <Contacts text ignore={['github', 'instagram']} />
+                        <ContactItems text ignore={['github', 'instagram']} />
                     </VStack>
                     {/* Summary section */}
                     <VStack spacing="4" align="stretch">
@@ -49,8 +49,8 @@ export const Resume = () => {
                         <Heading as="h4" size="md">
                             Work Experience
                         </Heading>
-                        {/* Mapping through workExperience data */}
-                        {workExperience.map((work, i) => (
+                        {/* Mapping through WorkExperiences data */}
+                        {WorkExperiences.map((work, i) => (
                             <VStack
                                 key={i}
                                 spacing="2"
@@ -76,15 +76,15 @@ export const Resume = () => {
                     {/* Bio section */}
                     <VStack spacing="4" align="stretch">
                         <Heading as="h4" size="md">
-                            Bio
+                            Biography
                         </Heading>
-                        {/* Mapping through bio data */}
+                        {/* Mapping through Biography data */}
                         <Grid
                             templateColumns="repeat(auto-fit, minmax(300px, 1fr))"
                             gap="4"
                             w="full"
                         >
-                            {bio.map((bio, i) => (
+                            {Biography.map((bio, i) => (
                                 <VStack
                                     key={i}
                                     spacing="2"

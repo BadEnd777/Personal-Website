@@ -1,7 +1,7 @@
 // Importing necessary components, libraries, and data
 import { Flex, VStack, Heading, Text, useBreakpoint, useBreakpointValue } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/Components/HeadingUnderline'
-import { Contacts } from '@/Components/Contacts'
+import { ContactItems } from '@/Components/ContactItems'
 import { Image } from '@/Components/Image'
 
 // Defining the Contact component
@@ -45,7 +45,7 @@ export const Contact = () => {
                         Contact Details
                     </Heading>
                     {/* Displaying contact items */}
-                    <Contacts text={!isMobile} ignore={['location']} justify="center" />
+                    <ContactItems text={!isMobile} ignore={['location']} justify="center" />
                     <Text fontSize="md" color="mocha.blue">
                         Feel free to contact me anytime!
                     </Text>

@@ -6,8 +6,8 @@ export const Square = ({ value, onClick }) => (
     <Flex
         align="center"
         justify="center"
-        w="100px"
-        h="100px"
+        w={{ base: '90px', md: '150px' }}
+        h={{ base: '90px', md: '150px' }}
         border="1px solid"
         borderColor="surface1"
         onClick={onClick}

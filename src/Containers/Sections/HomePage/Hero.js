@@ -9,7 +9,7 @@ import {
     Divider,
     useBreakpointValue
 } from '@chakra-ui/react'
-import { Contacts } from '@/Components/Contacts'
+import { ContactItems } from '@/Components/ContactItems'
 import { Image } from '@/Components/Image'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
@@ -97,7 +97,7 @@ export const Hero = () => {
                 {/* Divider */}
                 <Divider maxW="xs" />
                 {/* Contact icons */}
-                <Contacts ignore={['location']} />
+                <ContactItems ignore={['location']} />
             </Flex>
             {/* Right section */}
             <Flex as="aside" direction="column" align={{ base: 'center', lg: 'flex-end' }} flex="1">

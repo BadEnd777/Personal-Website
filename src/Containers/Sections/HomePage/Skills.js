@@ -2,7 +2,7 @@
 import { Flex, VStack, Heading, Text } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/Components/HeadingUnderline'
 import { Shield } from '@/Components/Shield'
-import { technologies } from '@/data'
+import { Technologies } from '@/Data'
 
 // Defining the Skills component
 export const Skills = () => (
@@ -18,7 +18,7 @@ export const Skills = () => (
             </VStack>
             <VStack spacing="4" align="stretch">
                 {/* Mapping through technologies data */}
-                {Object.entries(technologies).map(([category, techs]) => (
+                {Object.entries(Technologies).map(([category, techs]) => (
                     <VStack key={category} align="stretch">
                         {/* Category heading */}
                         <Heading as="h4" size="md">

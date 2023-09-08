@@ -1,6 +1,6 @@
 // Importing necessary components and libraries
 import { Flex, Container, VStack, HStack, Text, Tag } from '@chakra-ui/react'
-import { Contacts } from '@/Components/Contacts'
+import { ContactItems } from '@/Components/ContactItems'
 import { Image } from '@/Components/Image'
 import NextLink from 'next/link'
 
@@ -31,7 +31,7 @@ export const BlogPostHeader = ({ post }) => (
                     </VStack>
                 </HStack>
                 {/* Contact information */}
-                <Contacts ignore={['location']} />
+                <ContactItems ignore={['location']} />
             </Flex>
             {/* Horizontal stack for displaying tags */}
             <HStack as="nav" spacing="2" align="flex-start">

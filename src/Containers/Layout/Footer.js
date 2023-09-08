@@ -1,6 +1,6 @@
 // Importing necessary dependencies
 import { Box, Flex, Container, VStack, Text, Link, useConst } from '@chakra-ui/react'
-import { Contacts } from '@/Components/Contacts'
+import { ContactItems } from '@/Components/ContactItems'
 
 // Defining the Footer component
 export const Footer = () => {
@@ -28,7 +28,7 @@ export const Footer = () => {
                         </Text>
                     </VStack>
                     {/* Stack of contact information */}
-                    <Contacts ignore={['location']} />
+                    <ContactItems ignore={['location']} />
                 </Flex>
             </Container>
         </Box>

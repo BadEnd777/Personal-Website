@@ -70,7 +70,7 @@ export const TicTacToe = () => {
     }, [makeAiMove, squares, toast, winner, xIsNext])
 
     return (
-        <Flex justify="center" w="50%">
+        <Flex justify="center" w={{ base: '100%', lg: '50%' }} align="center">
             <VStack spacing="4" align="flex-start">
                 {/* Status of the game */}
                 <Flex
@@ -81,7 +81,7 @@ export const TicTacToe = () => {
                     border="1px solid"
                     borderColor="surface1"
                     rounded="md"
-                    p="4"
+                    p="2"
                 >
                     <Text fontSize="xl">{status}</Text>
                 </Flex>

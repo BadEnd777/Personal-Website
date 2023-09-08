@@ -1,4 +1,4 @@
-const workExperience = [
+const WorkExperiences = [
     {
         position: 'Freelance',
         date: '2023 - Present',
@@ -15,4 +15,4 @@ const workExperience = [
     }
 ]
 
-export default workExperience
+export default WorkExperiences

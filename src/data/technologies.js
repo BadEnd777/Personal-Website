@@ -1,4 +1,4 @@
-const technologies = {
+const Technologies = {
     Languages: [
         {
             name: 'JavaScript',
@@ -115,4 +115,4 @@ const technologies = {
     ]
 }
 
-export default technologies
+export default Technologies

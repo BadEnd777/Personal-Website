@@ -1,10 +1,10 @@
-# Personal Website
+# Welcome to My Personal Website
 
 ![Project Preview](/assets/preview.jpeg)
 
-Welcome to my personal website, a showcase of my work and skills. This website is crafted using [Next.js](https://nextjs.org/) and [Chakra UI](https://chakra-ui.com/), designed to provide a seamless experience on various devices.
+Thank you for visiting my personal website, a digital canvas where I showcase my skills and projects. Crafted with precision using [Next.js](https://nextjs.org/) and polished with the elegance of [Chakra UI](https://chakra-ui.com/), this site offers a seamless experience across various devices.
 
-## Table of Contents
+## Explore What's Inside
 
 -   [Key Features](#key-features)
 -   [Getting Started](#getting-started)
@@ -13,27 +13,29 @@ Welcome to my personal website, a showcase of my work and skills. This website i
 
 ## Key Features
 
--   **Responsive Design**: This website adapts beautifully to all screen sizes, ensuring an optimal user experience.
--   **Skills Showcase**: Impress your visitors by showcasing your skills.
--   **Portfolio Showcase**: Display your projects with rich details, including project descriptions, screenshots, and links.
--   **Resume**: Share a summary of your education, work experience, and bio.
--   **Contact**: Make it easy for visitors to reach out to you with contact information or a user-friendly contact form.
--   **Blog**: Write and publish blog posts using Markdown and seamlessly integrate them into your website.
--   **Syntax Highlighting**: Enhance your blog with beautifully highlighted code blocks using [Prism](https://prismjs.com/).
--   **SEO**: Boost your website's discoverability with optimized SEO support, including Open Graph and Twitter cards.
+Discover the essence of my website:
+
+-   **Responsive Design**: Adapts gracefully to all screen sizes for an optimal user experience.
+-   **Skills Showcase**: Impress visitors by showcasing your skills with style.
+-   **Portfolio Showcase**: Present your projects with rich details, including descriptions, screenshots, and links.
+-   **Resume**: Share a summary of your educational journey, work experience, and a touch of your biography.
+-   **Contact**: Facilitate visitor engagement with your contact information or a user-friendly contact form.
+-   **Blog**: Share your thoughts with the world through blog posts authored in Markdown and seamlessly integrated into your website.
+-   **Syntax Highlighting**: Elevate your blog with beautifully highlighted code blocks using [Prism](https://prismjs.com/).
+-   **SEO**: Elevate your website's discoverability with optimized SEO support, including Open Graph and Twitter cards.
 
 ## Getting Started
 
-To set up a local copy of this project, follow these simple steps:
+To get this project running locally, follow these simple steps:
 
-1. **Clone the repository**:
+1. **Clone the Repository**:
 
     ```bash
     git clone https://github.com/BadEnd777/Portfolio-Website.git
     cd Portfolio-Website
     ```
 
-2. **Install dependencies**:
+2. **Install Dependencies**:
 
     ```bash
     npm install
@@ -43,7 +45,7 @@ To set up a local copy of this project, follow these simple steps:
     pnpm install
     ```
 
-3. **Run the Development Server**:
+3. **Start the Development Server**:
 
     ```bash
     npm run dev
@@ -57,20 +59,24 @@ To set up a local copy of this project, follow these simple steps:
 
 ## Project Structure
 
-The project is structured as follows:
+Here's how this project is organized:
 
--   `public/`: Store static assets such as images, fonts, and icons.
--   `src/`: Houses the source code for the Next.js application.
+-   `public/`: Stores static assets like images, fonts, and icons.
+-   `src/`: Home to the Next.js application's source code.
     -   `Components/`: Contains reusable React components.
-    -   `data/`: Holds data used to populate the website.
+    -   `Config/`: Houses configuration files.
+    -   `Containers/`: Manages layout components.
+        -   `Blog/`: Layout components for the blog.
+        -   `Layout/`: Layout components for the website.
+        -   `Skills/`: Layout components for the skills page.
+    -   `Data/`: Holds data used to populate the website.
+        -   `Blog/`: Stores Markdown files for blog posts.
     -   `Hooks/`: Includes custom React hooks.
-    -   `Layout/`: Manages the layout of the website.
     -   `lib/`: Stores utility functions.
     -   `pages/`: Contains pages accessible via routes.
-    -   `posts/`: Stores Markdown files for blog posts.
     -   `styles/`: Manages global styles and customizes the Chakra UI theme.
     -   `utils/`: Provides utility functions.
 
 ## License
 
-This project is licensed under the [MIT License](/LICENSE).
+This project is licensed under the [MIT License](/LICENSE). Thank you for respecting the open-source spirit!

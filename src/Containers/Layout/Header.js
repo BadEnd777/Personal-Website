@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { transparentize } from '@chakra-ui/theme-tools'
-import { navLinks } from '@/data'
+import { NavLinks } from '@/Data'
 import NextLink from 'next/link'
 
 // Defining the Header component
@@ -49,7 +49,7 @@ export const Header = () => (
                 </Heading>
                 {/* Navigation links */}
                 <HStack spacing="4" display={{ base: 'none', md: 'flex' }}>
-                    {navLinks.map(link => (
+                    {NavLinks.map(link => (
                         <Link
                             key={link.name}
                             as={NextLink}
@@ -86,7 +86,7 @@ export const Header = () => (
                         Menu
                     </MenuButton>
                     <MenuList>
-                        {navLinks.map(link => (
+                        {NavLinks.map(link => (
                             <MenuItem as={NextLink} href={link.href} key={link.name}>
                                 {link.name}
                             </MenuItem>

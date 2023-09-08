@@ -1,4 +1,4 @@
-const projects = [
+const Projects = [
     {
         name: 'Chat Bridge',
         description: 'A library that help you to create chatbots for Facebook Messenger.',
@@ -31,4 +31,4 @@ const projects = [
     }
 ]
 
-export default projects
+export default Projects

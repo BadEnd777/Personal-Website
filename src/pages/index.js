@@ -1,20 +1,5 @@
-// Import necessary components
-import { Layout } from '@/Layout'
-import { Hero } from '@/Components/Sections/Home/Hero'
-import { Skills } from '@/Components/Sections/Home/Skills'
-import { Resume } from '@/Components/Sections/Home/Resume'
-import { Contact } from '@/Components/Sections/Home/Contact'
+// Import HomePage component
+import { HomePage } from '@/Containers/HomePage'
 
-// Define the HomePages component
-const HomePages = () => (
-    // Wrap the sections in the common layout
-    <Layout mt="0">
-        <Hero /> {/* Render the Hero section */}
-        <Skills /> {/* Render the Skills section */}
-        <Resume /> {/* Render the Resume section */}
-        <Contact /> {/* Render the Contact section */}
-    </Layout>
-)
-
-// Export the component as the default export
-export default HomePages
+// Export HomePage component as default
+export default HomePage

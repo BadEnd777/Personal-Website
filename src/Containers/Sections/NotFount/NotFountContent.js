@@ -5,8 +5,12 @@ import NextLink from 'next/link'
 
 // Defining the NotFountContent component
 export const NotFountContent = () => (
-    <Flex justify="center" w="50%">
-        <VStack spacing="4" align="flex-start">
+    <Flex justify="center" w={{ base: '100%', lg: '50%' }} align="center">
+        <VStack
+            spacing="4"
+            align={{ base: 'center', lg: 'flex-start' }}
+            textAlign={{ base: 'center', lg: 'left' }}
+        >
             <Heading as="h1" size="4xl" fontWeight="normal">
                 404
             </Heading>
@@ -18,7 +22,13 @@ export const NotFountContent = () => (
                 previous page.
             </Text>
             {/* Button to go back to the home page */}
-            <Button as={NextLink} href="/" leftIcon={<BsArrowLeft />} rounded="md">
+            <Button
+                as={NextLink}
+                href="/"
+                size={{ base: 'md', md: 'lg' }}
+                leftIcon={<BsArrowLeft />}
+                rounded="md"
+            >
                 Back to Home
             </Button>
             <Text fontSize="sx">Or play a game of Tic Tac Toe while you&apos;re here.</Text>

@@ -1,4 +1,4 @@
-const bio = [
+const Biography = [
     {
         year: '2003',
         description: 'Born in Samut Sakhon, Thailand'
@@ -13,4 +13,4 @@ const bio = [
     }
 ]
 
-export default bio
+export default Biography

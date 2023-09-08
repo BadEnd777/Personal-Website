@@ -16,7 +16,7 @@ import { FormikTextarea } from '@/Components/Formik/FormikTextarea'
 import { FormikInput } from '@/Components/Formik/FormikInput'
 import { FaArrowRight } from 'react-icons/fa'
 import { Formik, Form } from 'formik'
-import { contact } from '@/data'
+import { Contacts } from '@/Data'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
@@ -169,13 +169,14 @@ export const ContactForm = ({ isOpen, onClose }) => {
                         <Text fontSize="sm" color="mocha.blue" align="center">
                             Or you can email me at{' '}
                             <Link
-                                href={`mailto:${contact.find(item => item.type === 'email').open}`}
+                                href={`mailto:${Contacts.find(item => item.type === 'email').open}`}
                                 fontWeight="bold"
                                 isExternal
                             >
-                                {contact
-                                    .find(item => item.type === 'email')
-                                    .open.replace('mailto:', '')}
+                                {Contacts.find(item => item.type === 'email').open.replace(
+                                    'mailto:',
+                                    ''
+                                )}
                             </Link>
                         </Text>
                     </VStack>
