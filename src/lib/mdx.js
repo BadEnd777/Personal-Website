@@ -51,8 +51,11 @@ export const getAllPosts = async () => {
     // Get a list of slugs (file names) within the posts directory
     const slugs = fs.readdirSync(postsDir)
 
+    // Filter out the blog-example.mdx file from the list of slugs
+    const filteredSlugs = slugs.filter(slug => slug !== 'blog-example.mdx')
+
     // Fetch details of all posts using the getPostBySlug function
-    const posts = await Promise.all(slugs.map(async slug => await getPostBySlug(slug)))
+    const posts = await Promise.all(filteredSlugs.map(async slug => await getPostBySlug(slug)))
 
     // Sort the posts based on their published date in descending order
     const sortedPosts = posts.sort((a, b) => dayjs(b.meta.publishedAt) - dayjs(a.meta.publishedAt))
