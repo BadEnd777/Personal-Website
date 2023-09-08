@@ -19,8 +19,8 @@ export const TicTacToe = () => {
     // Function to handle a player's move
     const handleClick = useCallback(
         i => {
+            if (winner || squares[i]) return
             const newSquares = [...squares]
-            if (winner || newSquares[i]) return
             newSquares[i] = xIsNext ? 'X' : 'O'
             setSquares(newSquares)
             setXIsNext(!xIsNext)
@@ -34,83 +34,98 @@ export const TicTacToe = () => {
         setXIsNext(true)
     }, [])
 
-    const calculateBestMove = useCallback((squares, maximizingPlayer) => {
-        // Check if the game is over
-        const winner = calculateWinner(squares)
-        if (winner) {
-            return winner === 'X' ? -1 : 1
-        }
+    // Define a function to check if the game board is full
+    const isBoardFull = board => {
+        return board.every(square => square !== null)
+    }
 
-        // Check for a draw
-        if (squares.every(square => square !== null)) {
+    // Define the minimax algorithm for the AI player
+    const minimax = useCallback((board, depth, isMaximizingPlayer) => {
+        // Check if there's a winner and return a score accordingly
+        const winner = calculateWinner(board)
+        if (winner === 'X') {
+            return -1
+        } else if (winner === 'O') {
+            return 1
+        } else if (isBoardFull(board)) {
             return 0
         }
 
-        // Initialize the best move
-        let bestMove
-        let bestScore = maximizingPlayer ? -Infinity : Infinity
+        if (isMaximizingPlayer) {
+            // Maximize the score for the AI player
+            let maxScore = -Infinity
+            for (let i = 0; i < board.length; i++) {
+                if (board[i] === null) {
+                    board[i] = 'O'
+                    const score = minimax(board, depth + 1, false)
+                    board[i] = null
+                    maxScore = Math.max(maxScore, score)
+                }
+            }
+            return maxScore
+        } else {
+            // Minimize the score for the human player
+            let minScore = Infinity
+            for (let i = 0; i < board.length; i++) {
+                if (board[i] === null) {
+                    board[i] = 'X'
+                    const score = minimax(board, depth + 1, true)
+                    board[i] = null
+                    minScore = Math.min(minScore, score)
+                }
+            }
+            return minScore
+        }
+    }, [])
 
-        // Iterate through empty squares and calculate scores
-        for (let i = 0; i < squares.length; i++) {
-            if (squares[i] === null) {
-                squares[i] = maximizingPlayer ? 'O' : 'X'
-                const score = calculateBestMove(squares, !maximizingPlayer)
-                squares[i] = null
+    // Define a function to make the AI's move
+    const makeAiMove = useCallback(() => {
+        const boardCopy = [...squares]
+        let bestMove = -1
+        let bestScore = -Infinity
 
-                if (maximizingPlayer) {
-                    if (score > bestScore) {
-                        bestScore = score
-                        bestMove = i
-                    }
-                } else {
-                    if (score < bestScore) {
-                        bestScore = score
-                        bestMove = i
-                    }
+        for (let i = 0; i < boardCopy.length; i++) {
+            if (boardCopy[i] === null) {
+                boardCopy[i] = 'O'
+                const score = minimax(boardCopy, 0, false)
+                boardCopy[i] = null
+
+                if (score > bestScore) {
+                    bestScore = score
+                    bestMove = i
                 }
             }
         }
 
-        return maximizingPlayer ? bestScore : bestMove
-    }, [])
+        if (bestMove !== -1) {
+            handleClick(bestMove)
+        }
+    }, [handleClick, minimax, squares])
 
-    // Function to make the AI's move
-    const makeAiMove = useCallback(() => {
-        if (winner) return
-        squares.reduce((acc, curr, i) => {
-            if (curr === null) acc.push(i)
-            return acc
-        }, [])
-        const bestMove = calculateBestMove(squares, false)
-        squares[bestMove] = xIsNext ? 'X' : 'O'
-        setSquares([...squares])
-        setXIsNext(!xIsNext)
-    }, [calculateBestMove, squares, winner, xIsNext])
-
-    // useEffect to update game status and check for a winner/draw
+    // Use useEffect to update the game status and handle AI moves
     useEffect(() => {
         if (winner) {
             setStatus(`Winner: ${winner}`)
             toast({
-                title: `Winner: ${winner}`,
-                status: 'success'
+                title: winner === 'X' ? 'You Win!' : 'You Lose haha :)',
+                status: winner === 'X' ? 'success' : 'error'
             })
         } else if (squares.every(square => square !== null)) {
             setStatus('Draw')
             toast({
-                title: 'Draw',
+                title: 'Show me what you got!',
                 status: 'info'
             })
         } else {
             setStatus(`Next Player: ${xIsNext ? 'X' : 'O'}`)
-            if (!xIsNext) makeAiMove()
+            if (!xIsNext) makeAiMove() // Make AI move if it's not the human's turn
         }
     }, [makeAiMove, squares, toast, winner, xIsNext])
 
+    // Render the game components using Chakra UI
     return (
         <Flex justify="center" w={{ base: '100%', lg: '50%' }} align="center">
             <VStack spacing="4" align="flex-start">
-                {/* Status of the game */}
                 <Flex
                     align="center"
                     justify="center"
@@ -123,11 +138,9 @@ export const TicTacToe = () => {
                 >
                     <Text fontSize="xl">{status}</Text>
                 </Flex>
-                {/* Board component to render the Tic Tac Toe board */}
                 <Board squares={squares} onClick={handleClick} />
                 <HStack spacing="4">
                     <Text>Reset Game</Text>
-                    {/* Tooltip for the reset button */}
                     <Tooltip label="Reset Game" aria-label="Reset Game">
                         <IconButton
                             alignSelf="flex-end"
