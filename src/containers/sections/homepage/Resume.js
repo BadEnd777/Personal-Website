@@ -2,12 +2,12 @@
 import { Flex, VStack, Heading, Text, Grid } from '@chakra-ui/react'
 import { HeadingUnderline } from '@/components/HeadingUnderline'
 import { ContactItems } from '@/components/ContactItems'
-import { WorkExperiences, Biography } from '@/data'
+import { Education, WorkExperiences, Biography } from '@/data'
 
 // Defining the Resume component
 export const Resume = () => {
     // Calculating years of experience
-    const yearsOfExperience = new Date().getFullYear() - 2018
+    const yearsOfExperience = new Date().getFullYear() - 2021
 
     return (
         <Flex as="section" direction="column" borderTop="1px" borderColor="surface0" py="16">
@@ -36,13 +36,41 @@ export const Resume = () => {
                         </Heading>
                         {/* Summary text */}
                         <Text fontSize="md" color="subtext0">
-                            {/* Years of experience */}I am a full-stack developer with{' '}
-                            {yearsOfExperience} years of experience in web development. I have a
-                            passion for learning and sharing my knowledge with others as publicly as
-                            possible. I develop web applications with Next.js, React, and Node.js. I
-                            am also familiar with C# and .NET. I am currently looking for a
-                            full-time position as a back-end developer.
+                            Enthusiastic and results-driven freelance developer with a strong
+                            background in web development, a passion for creating responsive and
+                            efficient web solutions, and a commitment to delivering high-quality
+                            work. Seeking opportunities to contribute my skills and expertise to
+                            innovative projects.
                         </Text>
+                    </VStack>
+                    {/* Education section */}
+                    <VStack spacing="4" align="stretch">
+                        <Heading as="h4" size="md">
+                            Education
+                        </Heading>
+                        {/* Mapping through Education data */}
+                        {Education.map((edu, i) => (
+                            <VStack
+                                key={i}
+                                spacing="2"
+                                align="stretch"
+                                borderLeft="4px"
+                                borderColor="mocha.blue"
+                                pl="4"
+                            >
+                                {/* School and date */}
+                                <Text fontSize="md" color="text">
+                                    {edu.school} | {edu.date}
+                                </Text>
+                                {/* Degree and description */}
+                                <Text fontSize="md" color="subtext0">
+                                    {edu.degree}
+                                </Text>
+                                <Text fontSize="md" color="subtext0">
+                                    {edu.description}
+                                </Text>
+                            </VStack>
+                        ))}
                     </VStack>
                     {/* Work Experience section */}
                     <VStack spacing="4" align="stretch">

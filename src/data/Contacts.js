@@ -2,7 +2,7 @@ import { FaGithub, FaInstagram, FaHome } from 'react-icons/fa'
 import { AiFillPhone } from 'react-icons/ai'
 import { MdEmail } from 'react-icons/md'
 
-const contact = [
+const Contacts = [
     {
         icon: MdEmail,
         open: 'mailto:badend23@hotmail.com',
@@ -34,4 +34,4 @@ const contact = [
     }
 ]
 
-export default contact
+export default Contacts

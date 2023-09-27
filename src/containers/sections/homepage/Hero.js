@@ -88,7 +88,8 @@ export const Hero = () => {
                     {/* Resume button */}
                     <Button
                         as={Link}
-                        href="https://drive.google.com/file/d/1Z3Z3QZ3Z3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1KTP-CPeiGef7ELX_kAYw2u7K0wU0QYJF/view?usp=sharing"
+                        isExternal
                         variant="outline"
                     >
                         Resume
