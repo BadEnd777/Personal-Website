@@ -1,17 +1,19 @@
 # Welcome to My Personal Website
 
-![Project Preview](/assets/preview.jpeg)
+![Project Preview](/assets/portfolio.png)
 
 Thank you for visiting my personal website, a digital canvas where I showcase my skills and projects. Crafted with precision using [Next.js](https://nextjs.org/) and polished with the elegance of [Chakra UI](https://chakra-ui.com/), this site offers a seamless experience across various devices.
 
-## Explore What's Inside
+### Explore What's Inside
 
--   [Key Features](#key-features)
--   [Getting Started](#getting-started)
--   [Project Structure](#project-structure)
--   [License](#license)
+-   [Welcome to My Personal Website](#welcome-to-my-personal-website)
+    -   [Explore What's Inside](#explore-whats-inside)
+    -   [Key Features](#key-features)
+    -   [Getting Started](#getting-started)
+    -   [Project Structure](#project-structure)
+    -   [License](#license)
 
-## Key Features
+### Key Features
 
 Discover the essence of my website:
 
@@ -24,9 +26,9 @@ Discover the essence of my website:
 -   **Syntax Highlighting**: Elevate your blog with beautifully highlighted code blocks using [Prism](https://prismjs.com/).
 -   **SEO**: Elevate your website's discoverability with optimized SEO support, including Open Graph and Twitter cards.
 
-## Getting Started
+### Getting Started
 
-To get this project running locally, follow these simple steps:
+To get started, follow these steps:
 
 1. **Clone the Repository**:
 
@@ -38,28 +40,20 @@ To get this project running locally, follow these simple steps:
 2. **Install Dependencies**:
 
     ```bash
-    npm install
-    # or
-    yarn install
-    # or
-    pnpm install
+    bun install # Alternatively, use `npm install` or `yarn install`
     ```
 
-3. **Start the Development Server**:
+3. **Run the Project**:
 
     ```bash
-    npm run dev
-    # or
-    yarn dev
-    # or
-    pnpm dev
+    bun dev # Alternatively, use `npm run dev` or `yarn dev`
     ```
 
 4. Access the site by opening [`http://localhost:3000`](http://localhost:3000) in your preferred web browser.
 
-## Project Structure
+### Project Structure
 
-Here's how this project is organized:
+The project's structure is as follows:
 
 -   `public/`: Stores static assets like images, fonts, and icons.
 -   `src/`: Home to the Next.js application's source code.
@@ -77,6 +71,11 @@ Here's how this project is organized:
     -   `styles/`: Manages global styles and customizes the Chakra UI theme.
     -   `utils/`: Provides utility functions.
 
-## License
+> [!NOTE]\
+> Learn more about the project's structure in [this blog post](https://badend.pages.dev/blog/best-practices-and-tips-for-structuring-reactjs-projects).
 
-This project is licensed under the [MIT License](/LICENSE). Thank you for respecting the open-source spirit!
+### License
+
+This project is licensed under the [MIT License](LICENSE). Thank you for respecting the open-source spirit!
+
+---
