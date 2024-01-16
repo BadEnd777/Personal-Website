@@ -10,11 +10,12 @@ import {
     Menu,
     MenuButton,
     MenuList,
-    MenuItem
+    MenuItem,
+    Divider
 } from '@chakra-ui/react'
-import { MdKeyboardArrowDown } from 'react-icons/md'
-import { transparentize } from '@chakra-ui/theme-tools'
+import { FaGithub, FaAngleDown } from 'react-icons/fa'
 import { NavLinks } from '@/data'
+import { transparentize } from '@chakra-ui/theme-tools'
 import NextLink from 'next/link'
 
 // Defining the Header component
@@ -74,13 +75,23 @@ export const Header = () => (
                     >
                         Hire Me
                     </Button>
+                    <Divider orientation="vertical" h="30px" />
+                    {/* GitHub link */}
+                    <Link
+                        as={NextLink}
+                        href="https://github.com/BadEnd777/Personal-Website"
+                        aria-label="GitHub"
+                        isExternal
+                    >
+                        <FaGithub size="1.5em" />
+                    </Link>
                 </HStack>
                 {/* Dropdown menu for small screens */}
                 <Menu placement="bottom-end">
                     <MenuButton
                         as={Button}
                         variant="primary"
-                        rightIcon={<MdKeyboardArrowDown />}
+                        rightIcon={<FaAngleDown />}
                         display={{ base: 'flex', md: 'none' }}
                     >
                         Menu

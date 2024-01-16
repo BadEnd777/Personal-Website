@@ -1,16 +1,15 @@
-import { FaGithub, FaInstagram, FaHome } from 'react-icons/fa'
-import { AiFillPhone } from 'react-icons/ai'
-import { MdEmail } from 'react-icons/md'
+import { FaMailBulk, FaPhone, FaGithub, FaHome } from 'react-icons/fa'
+import { FaThreads } from 'react-icons/fa6'
 
 const Contacts = [
     {
-        icon: MdEmail,
-        open: 'mailto:badend23@hotmail.com',
+        icon: FaMailBulk,
+        href: 'mailto:badend777@proton.me',
         text: 'Email',
         type: 'email'
     },
     {
-        icon: AiFillPhone,
+        icon: FaPhone,
         href: 'tel:+66953351342',
         text: 'Phone',
         type: 'phone'
@@ -22,10 +21,10 @@ const Contacts = [
         type: 'github'
     },
     {
-        icon: FaInstagram,
-        href: 'https://www.instagram.com/pyyupsk_/',
-        text: 'Instagram',
-        type: 'instagram'
+        icon: FaThreads,
+        href: 'https://www.threads.net/@pyyupsk_',
+        text: 'Threads',
+        type: 'threads'
     },
     {
         icon: FaHome,

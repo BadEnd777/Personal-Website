@@ -1,5 +1,15 @@
 // Importing necessary components
-import { Box, VStack, HStack, Heading, Text, Link, Tag, Tooltip } from '@chakra-ui/react'
+import {
+    Box,
+    VStack,
+    HStack,
+    Heading,
+    Text,
+    Link,
+    Tag,
+    Tooltip,
+    AspectRatio
+} from '@chakra-ui/react'
 import { Image } from '@/components/Image'
 
 // Defining the ProjectList component
@@ -10,6 +20,7 @@ export const ProjectCard = ({ project }) => (
             <VStack
                 spacing="4"
                 align="flex-start"
+                h="full"
                 bg="surface0"
                 borderWidth="1px"
                 borderColor="surface1"
@@ -20,13 +31,16 @@ export const ProjectCard = ({ project }) => (
             >
                 {/* Project image */}
                 <Box pos="relative" w="full">
-                    <Image
-                        src={project.image}
-                        alt={project.name}
-                        width={500}
-                        height={500}
-                        rounded="md"
-                    />
+                    <AspectRatio ratio={16 / 9}>
+                        <Image
+                            src={project.image}
+                            alt={project.name}
+                            width={500}
+                            height={500}
+                            rounded="md"
+                        />
+                    </AspectRatio>
+                    {/* Project image overlay */}
                     <Box
                         pos="absolute"
                         top="0"

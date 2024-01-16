@@ -4,11 +4,11 @@ import { HeadingUnderline } from '@/components/HeadingUnderline'
 import { ProjectCard } from '@/components/project/ProjectCard'
 
 // Defining the ProjectList component
-export const ProjectList = ({ projects }) => (
+export const ProjectList = ({ title, projects }) => (
     // Outer container for the project list
     <VStack as="section" spacing="8" align="flex-start">
         {/* Projects section heading */}
-        <HeadingUnderline as="header">Projects</HeadingUnderline>
+        <HeadingUnderline as="header">{title}</HeadingUnderline>
         {/* Grid layout for projects */}
         <Grid
             as="article"

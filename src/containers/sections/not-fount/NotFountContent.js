@@ -1,6 +1,6 @@
 // Importing necessary components and libraries
 import { VStack, Heading, Text, Flex, Button } from '@chakra-ui/react'
-import { BsArrowLeft } from 'react-icons/bs'
+import { FaArrowLeft } from 'react-icons/fa'
 import NextLink from 'next/link'
 
 // Defining the NotFountContent component
@@ -26,7 +26,7 @@ export const NotFountContent = () => (
                 as={NextLink}
                 href="/"
                 size={{ base: 'md', md: 'lg' }}
-                leftIcon={<BsArrowLeft />}
+                leftIcon={<FaArrowLeft />}
                 rounded="md"
             >
                 Back to Home

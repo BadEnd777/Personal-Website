@@ -1,8 +1,22 @@
 {
-    "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:mdx/recommended",
+        "plugin:prettier/recommended",
+        "next",
+        "next/core-web-vitals"
+    ],
+    "settings": {
+        "mdx/code-blocks": true,
+        "mdx/language-mapper": {}
+    },
     "plugins": ["prettier"],
     "rules": {
         "no-unused-vars": "warn",
         "prettier/prettier": "error"
+    },
+    "globals": {
+        "Promise": "readonly",
+        "Set": "readonly"
     }
 }

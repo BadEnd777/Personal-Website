@@ -1,23 +1,11 @@
 // Importing necessary components, libraries, and data
-import {
-    Flex,
-    Heading,
-    Text,
-    Link,
-    ButtonGroup,
-    Button,
-    Divider,
-    useBreakpointValue
-} from '@chakra-ui/react'
+import { Flex, Heading, Text, Link, ButtonGroup, Button, Divider, Center } from '@chakra-ui/react'
 import { ContactItems } from '@/components/ContactItems'
 import { Image } from '@/components/Image'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 // Defining the Hero component
 export const Hero = () => {
-    // Using useBreakpointValue hook to determine the size of the text
-    const profileSize = useBreakpointValue({ base: 300, md: 500 })
-
     // Using the useTypewriter hook to create a typing effect
     const [text] = useTypewriter({
         words: [
@@ -102,14 +90,16 @@ export const Hero = () => {
             </Flex>
             {/* Right section */}
             <Flex as="aside" direction="column" align={{ base: 'center', lg: 'flex-end' }} flex="1">
-                {/* Profile image */}
-                <Image
-                    src="/images/profile.jpg"
-                    alt="Profile image"
-                    width={profileSize}
-                    height={profileSize}
-                    rounded="full"
-                />
+                <Center w={{ base: '90%', lg: '100%' }}>
+                    {/* Profile image */}
+                    <Image
+                        src="/images/profile.jpg"
+                        alt="Profile image"
+                        width={500}
+                        height={500}
+                        rounded="full"
+                    />
+                </Center>
             </Flex>
         </Flex>
     )

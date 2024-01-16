@@ -1,52 +1,58 @@
 // Importing necessary components and libraries
-import { VStack, HStack, Heading, Text, Button, Tag, Tooltip } from '@chakra-ui/react'
+import { Flex, VStack, HStack, Heading, Text, Button, Tag, Tooltip } from '@chakra-ui/react'
 import { Image } from '@/components/Image'
 import NextLink from 'next/link'
 
 // Defining the BlogCard component which takes a 'post' prop
 export const BlogCard = ({ post }) => (
     // Outer container for the blog card
-    <VStack
-        spacing="4"
+    <Flex
+        direction="column"
+        w="full"
+        h="full"
+        justify="space-between"
         align="flex-start"
         bg="surface0"
         borderWidth="1px"
         borderColor="surface1"
         borderRadius="md"
+        p="4"
+        gap="4"
         cursor="pointer"
         transition="all 0.3s ease-in-out"
-        p="4"
         _hover={{ borderColor: 'mocha.blue' }}
     >
-        {/* Displaying the preview image */}
-        <Image
-            src={post.meta.previewImage}
-            alt={post.meta.title}
-            width={500}
-            height={500}
-            rounded="md"
-        />
-        {/* Displaying the published date */}
-        <Text fontSize="xs" color="subtext0">
-            {post.meta.publishedAt}
-        </Text>
-        {/* Displaying the title */}
-        <Heading size="md" fontWeight="bold" noOfLines="1">
-            {post.meta.title}
-        </Heading>
-        {/* Displaying the description */}
-        <Text fontSize="sm" color="subtext0" noOfLines="2">
-            {post.meta.description}
-        </Text>
-        {/* Displaying tags */}
-        <HStack spacing="2" wrap="wrap">
-            {/* Mapping through each tag and creating a tag */}
-            {post.meta.tags.map(tag => (
-                <NextLink key={tag} href={`/blog/tag/${tag}`}>
-                    <Tag key={tag}>{tag}</Tag>
-                </NextLink>
-            ))}
-        </HStack>
+        <VStack align="flex-start" spacing="4">
+            {/* Displaying the preview image */}
+            <Image
+                src={post.meta.previewImage}
+                alt={post.meta.title}
+                width={500}
+                height={500}
+                rounded="md"
+            />
+            {/* Displaying the published date */}
+            <Text fontSize="xs" color="subtext0">
+                {post.meta.publishedAt}
+            </Text>
+            {/* Displaying the title */}
+            <Heading size="md" fontWeight="bold" noOfLines="1">
+                {post.meta.title}
+            </Heading>
+            {/* Displaying the description */}
+            <Text fontSize="sm" color="subtext0" noOfLines="2">
+                {post.meta.description}
+            </Text>
+            {/* Displaying tags */}
+            <HStack spacing="2" wrap="wrap">
+                {/* Mapping through each tag and creating a tag */}
+                {post.meta.tags.map(tag => (
+                    <NextLink key={tag} href={`/blog/tag/${tag}`}>
+                        <Tag key={tag}>{tag}</Tag>
+                    </NextLink>
+                ))}
+            </HStack>
+        </VStack>
         {/* Button to read the full blog post */}
         <Tooltip
             label={post.meta.description}
@@ -67,5 +73,5 @@ export const BlogCard = ({ post }) => (
                 Read More
             </Button>
         </Tooltip>
-    </VStack>
+    </Flex>
 )

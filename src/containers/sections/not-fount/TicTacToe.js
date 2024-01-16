@@ -1,7 +1,7 @@
 // Importing necessary components and libraries
 import { VStack, Text, Flex, IconButton, Tooltip, HStack, useToast } from '@chakra-ui/react'
 import { Board } from '@/components/tictactoe/Board'
-import { GrPowerReset } from 'react-icons/gr'
+import { FaUndo } from 'react-icons/fa'
 import { useEffect, useState, useCallback } from 'react'
 import { calculateWinner } from '@/utils/tictactoe'
 
@@ -142,11 +142,7 @@ export const TicTacToe = () => {
                 <HStack spacing="4">
                     <Text>Reset Game</Text>
                     <Tooltip label="Reset Game" aria-label="Reset Game">
-                        <IconButton
-                            alignSelf="flex-end"
-                            icon={<GrPowerReset />}
-                            onClick={handleReset}
-                        />
+                        <IconButton alignSelf="flex-end" icon={<FaUndo />} onClick={handleReset} />
                     </Tooltip>
                 </HStack>
             </VStack>
