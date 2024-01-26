@@ -6,12 +6,12 @@ Thank you for visiting my personal website, a digital canvas where I showcase my
 
 ### Explore What's Inside
 
-- [Welcome to My Personal Website](#welcome-to-my-personal-website)
-    - [Explore What's Inside](#explore-whats-inside)
-    - [Key Features](#key-features)
-    - [Getting Started](#getting-started)
-    - [Project Structure](#project-structure)
-    - [License](#license)
+-   [Welcome to My Personal Website](#welcome-to-my-personal-website)
+    -   [Explore What's Inside](#explore-whats-inside)
+    -   [Key Features](#key-features)
+    -   [Getting Started](#getting-started)
+    -   [Project Structure](#project-structure)
+    -   [License](#license)
 
 ### Key Features
 

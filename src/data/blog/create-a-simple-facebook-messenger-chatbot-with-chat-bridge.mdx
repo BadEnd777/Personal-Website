@@ -3,7 +3,7 @@ title: Create a simple Facebook Massager Chatbot with Chat Bridge
 description: Learn how to create a simple Facebook Messenger chatbot using Chat Bridge and Node.js.
 publishedAt: 2024-01-10
 tags: ['chatbot', 'facebook', 'messenger', 'nodejs', 'chat-bridge']
-previewImage: '/images/blog/create-a-simple-facebook-messenger-chatbot-with-chat-bridge.png'
+previewImage: '/images/blog/create-a-simple-facebook-messenger-chatbot-with-chat-bridge.jpg'
 ---
 
 # Create a simple Facebook Messenger Chatbot with Chat Bridge
@@ -25,7 +25,7 @@ Before diving into the tutorial, make sure you have Node.js installed on your ma
 
 Start by installing Chat Bridge using npm:
 
-```bash
+```bash:Terminal
 npm install chat-bridge
 ```
 
@@ -37,7 +37,7 @@ To create a Messenger chatbot, you need a Facebook App. Follow the [official Fac
 
 Now, let's create a simple chatbot using Chat Bridge. Copy the following code into your preferred Node.js environment:
 
-```javascript
+```javascript:index.js
 // Import the Client class
 const { Client } = require('chat-bridge')
 
@@ -67,8 +67,8 @@ Replace `'YOUR_ACCESS_TOKEN'` and `'YOUR_VERIFY_TOKEN'` with the respective acce
 
 Save the file and run your Node.js application:
 
-```bash
-node your-file-name.js
+```bash:Terminal
+node index.js
 ```
 
 Now, your chatbot is up and running, listening for incoming messages on your configured Facebook page.
