@@ -1,5 +1,5 @@
-// Import NotFount component
-import { NotFount } from '@/containers/NotFount'
+// Import NotFountPage component
+import { NotFountPage } from '@/containers/NotFountPage'
 
-// Export NotFount component as default
-export default NotFount
+// Export NotFountPage component as default
+export default NotFountPage

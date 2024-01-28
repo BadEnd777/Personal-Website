@@ -1,5 +1,5 @@
-// Import Projects component
-import { Project } from '@/containers/Project'
+// Import ProjectsPage component
+import { ProjectsPage } from '@/containers/ProjectsPage'
 
-// Export Projects component as default
-export default Project
+// Export ProjectsPage component as default
+export default ProjectsPage

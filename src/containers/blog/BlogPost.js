@@ -1,7 +1,7 @@
 // Import necessary components and functions
 import { BlogPostContent } from '@/components/blog/BlogPostContent'
 import { BlogPostHeader } from '@/components/blog/BlogPostHeader'
-import { Layout } from '@/containers/layout'
+import { Layout } from '@/components/layout'
 import { getPostBySlug, getAllPosts } from '@/lib/mdx'
 
 // Define the BlogPost component

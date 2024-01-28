@@ -4,8 +4,8 @@ import { NotFountContent } from '@/containers/sections/not-fount/NotFountContent
 import { TicTacToe } from '@/containers/sections/not-fount/TicTacToe'
 import { useTitle } from '@/hooks/useTitle'
 
-// Defining the Custom404 component
-export const NotFount = () => {
+// Defining the NotFountPage component
+export const NotFountPage = () => {
     // Using a custom hook to set the page title
     useTitle('404 - Page Not Found')
 

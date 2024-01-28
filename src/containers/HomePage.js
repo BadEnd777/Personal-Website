@@ -1,5 +1,5 @@
 // Import necessary components
-import { Layout } from '@/containers/layout'
+import { Layout } from '@/components/layout'
 import { Hero } from '@/containers/sections/homepage/Hero'
 import { Skills } from '@/containers/sections/homepage/Skills'
 import { Resume } from '@/containers/sections/homepage/Resume'

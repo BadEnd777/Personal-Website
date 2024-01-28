@@ -61,14 +61,7 @@ export const Layout = ({ children, title, description, image, url, ...props }) =
             >
                 {/* Including the Header */}
                 <Header />
-                <Container
-                    as="main"
-                    mt="75px"
-                    maxW="7xl"
-                    minH="calc(100vh - 75px)"
-                    py="8"
-                    {...props}
-                >
+                <Container as="main" maxW="7xl" minH="100vh" py="8" mt="75px" {...props}>
                     {/* Inserting the actual content */}
                     {children}
                 </Container>
