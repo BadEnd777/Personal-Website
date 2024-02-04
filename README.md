@@ -1,81 +1,34 @@
-# Welcome to My Personal Website
+## Usage
 
-![Project Preview](/assets/portfolio.png)
+Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
 
-Thank you for visiting my personal website, a digital canvas where I showcase my skills and projects. Crafted with precision using [Next.js](https://nextjs.org/) and polished with the elegance of [Chakra UI](https://chakra-ui.com/), this site offers a seamless experience across various devices.
+This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
 
-### Explore What's Inside
+```bash
+$ npm install # or pnpm install or yarn install
+```
 
--   [Welcome to My Personal Website](#welcome-to-my-personal-website)
-    -   [Explore What's Inside](#explore-whats-inside)
-    -   [Key Features](#key-features)
-    -   [Getting Started](#getting-started)
-    -   [Project Structure](#project-structure)
-    -   [License](#license)
+### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
-### Key Features
+## Available Scripts
 
-Discover the essence of my website:
+In the project directory, you can run:
 
--   **Responsive Design**: Adapts gracefully to all screen sizes for an optimal user experience.
--   **Skills Showcase**: Impress visitors by showcasing your skills with style.
--   **Portfolio Showcase**: Present your projects with rich details, including descriptions, screenshots, and links.
--   **Resume**: Share a summary of your educational journey, work experience, and a touch of your biography.
--   **Contact**: Facilitate visitor engagement with your contact information or a user-friendly contact form.
--   **Blog**: Share your thoughts with the world through blog posts authored in Markdown and seamlessly integrated into your website.
--   **Syntax Highlighting**: Elevate your blog with beautifully highlighted code blocks using [Prism](https://prismjs.com/).
--   **SEO**: Elevate your website's discoverability with optimized SEO support, including Open Graph and Twitter cards.
+### `npm run dev` or `npm start`
 
-### Getting Started
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-To get started, follow these steps:
+The page will reload if you make edits.<br>
 
-1. **Clone the Repository**:
+### `npm run build`
 
-    ```bash
-    git clone https://github.com/BadEnd777/Portfolio-Website.git
-    cd Portfolio-Website
-    ```
+Builds the app for production to the `dist` folder.<br>
+It correctly bundles Solid in production mode and optimizes the build for the best performance.
 
-2. **Install Dependencies**:
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-    ```bash
-    bun install # Alternatively, use `npm install` or `yarn install`
-    ```
+## Deployment
 
-3. **Run the Project**:
-
-    ```bash
-    bun dev # Alternatively, use `npm run dev` or `yarn dev`
-    ```
-
-4. Access the site by opening [`http://localhost:3000`](http://localhost:3000) in your preferred web browser.
-
-### Project Structure
-
-The project's structure is as follows:
-
--   `public/`: Stores static assets like images, fonts, and icons.
--   `src/`: Home to the Next.js application's source code.
-    -   `components/`: Contains reusable React components.
-    -   `config/`: Houses configuration files.
-    -   `containers/`: Manages layout components.
-        -   `blog/`: Layout components for the blog.
-        -   `layout/`: Layout components for the website.
-        -   `sections/`: Layout components for the website's sections.
-    -   `data/`: Holds data used to populate the website.
-        -   `blog/`: Stores Markdown files for blog posts.
-    -   `hooks/`: Includes custom React hooks.
-    -   `lib/`: Stores utility functions.
-    -   `pages/`: Contains pages accessible via routes.
-    -   `styles/`: Manages global styles and customizes the Chakra UI theme.
-    -   `utils/`: Provides utility functions.
-
-> [!NOTE]\
-> Learn more about the project's structure in [this blog post](https://badend.pages.dev/blog/best-practices-and-tips-for-structuring-reactjs-projects).
-
-### License
-
-This project is licensed under the [MIT License](LICENSE). Thank you for respecting the open-source spirit!
-
----
+You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
