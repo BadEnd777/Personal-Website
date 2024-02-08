@@ -1,41 +1,70 @@
+# Personal Website
+
+![https://badend.is-a.dev/](https://badend.is-a.dev/projects/personal-website.jpg)
+
+Welcome to my personal website project! This repository contains the code for my personal website, where I showcase my portfolio, projects, and other information about myself.
+
+## Technologies Used
+
+- [Vite](https://vitejs.dev/)
+- [SolidJS](https://solidjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
 ## Usage
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+### Development
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+To work on the project locally, ensure you have Node.js installed on your machine.
+
+- Clone the repository:
 
 ```bash
-$ npm install # or pnpm install or yarn install
+git clone https://github.com/BadEnd777/Personal-Website.git
 ```
 
-## Exploring the template
+- Navigate to the project directory:
 
-This template's goal is to showcase the routing features of Solid.
-It also showcase how the router and Suspense work together to parallelize data fetching tied to a route via the `.data.ts` pattern.
+```bash
+cd Personal-Website
+```
 
-You can learn more about it on the [`@solidjs/router` repository](https://github.com/solidjs/solid-router)
+- Install dependencies:
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+```bash
+npm install  # or `pnpm install` if you prefer pnpm
+```
 
-## Available Scripts
+- Start the development server:
 
-In the project directory, you can run:
+```bash
+npm run dev  # or `pnpm run dev` if you prefer pnpm
+```
 
-### `npm run dev` or `npm start`
+- Open your browser and visit [`http://localhost:3000`](http://localhost:3000) to view the website locally.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Production
 
-The page will reload if you make edits.<br>
+To build the project for production deployment, run:
 
-### `npm run build`
+```bash
+npm run build  # or `pnpm run build` if you prefer pnpm
+```
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+The optimized production-ready assets will be generated in the `dist` directory. You can then host these files on a web server to make the website accessible online.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Contributing
 
-## Deployment
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or create a pull request.
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+Feel free to contact me at [badend777@proton.me](mailto:badend777@proton.me) for any questions or inquiries.
+
+Happy coding! 🚀
+
+---
