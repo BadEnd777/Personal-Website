@@ -21,19 +21,13 @@
         ]
     },
     "dependencies": {
-        "@iconify-json/tabler": "^1.1.105",
         "@iconify/tailwind": "^0.1.4",
         "@kobalte/core": "^0.12.1",
         "@solidjs/meta": "^0.29.3",
         "@solidjs/router": "^0.11.5",
-        "@solidjs/start": "^0.5.2",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
-        "embla-carousel": "8.0.0-rc22",
-        "embla-carousel-solid": "8.0.0-rc22",
-        "solid-icons": "^1.1.0",
         "solid-js": "^1.8.14",
-        "swiper": "^11.0.6",
         "tailwind-merge": "^2.2.1",
         "tailwindcss-animate": "^1.0.7"
     },
@@ -42,7 +36,6 @@
         "@typescript-eslint/eslint-plugin": "^6.21.0",
         "@typescript-eslint/parser": "^6.21.0",
         "autoprefixer": "^10.4.17",
-        "daisyui": "^4.6.2",
         "eslint": "^8.56.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
