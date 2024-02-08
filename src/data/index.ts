@@ -1,0 +1,6 @@
+export * from '@/data/experience'
+export * from '@/data/education'
+export * from '@/data/biography'
+export * from '@/data/technologies'
+export * from '@/data/projects'
+export * from '@/data/contact'

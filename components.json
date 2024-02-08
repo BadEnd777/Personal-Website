@@ -1,0 +1,14 @@
+{
+    "$schema": "https://shadcn-solid.vercel.app/schema.json",
+    "tailwind": {
+        "config": "tailwing.config.ts",
+        "css": "src/styles/globals.css",
+        "baseColor": "gray",
+        "cssVariables": true,
+        "prefix": ""
+    },
+    "aliases": {
+        "components": "@/components",
+        "utils": "@/lib/utils"
+    }
+}
