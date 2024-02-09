@@ -32,7 +32,7 @@ const Home: Component = () => {
                     </div>
                 </div>
                 <img
-                    src="/images/profile.jpg"
+                    src="/Personal-Website/images/profile.jpg"
                     alt="Profile"
                     class="size-[300px] rounded-xl md:size-[450px] lg:size-[500px]"
                 />
@@ -150,7 +150,7 @@ const Home: Component = () => {
                     </p>
                     <div class="flex flex-col items-center space-y-4">
                         <img
-                            src="/images/profile.jpg"
+                            src="/Personal-Website/images/profile.jpg"
                             alt="Profile"
                             class="size-[300px] rounded-full md:size-[400px]"
                         />

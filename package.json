@@ -1,5 +1,5 @@
 {
-    "name": "vite-template-solid",
+    "name": "personal-website",
     "version": "0.0.0",
     "description": "",
     "license": "MIT",
@@ -13,9 +13,7 @@
         "format:fix": "prettier --write --list-different .",
         "depcheck": "pnpx depcheck --ignores=\"autoprefixer,postcss,prettier-plugin-tailwindcss\" --oneline",
         "pre-commit": "lint-staged",
-        "prepare": "husky install",
-        "test:local": "pnpm build && pnpm serve",
-        "test:prod": "pnpm build && pnpm serve --mode production"
+        "prepare": "husky install"
     },
     "lint-staged": {
         "*.{js,jsx,ts,ts,md,mdx}": [
