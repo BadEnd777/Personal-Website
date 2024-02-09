@@ -167,6 +167,7 @@ const Home: Component = () => {
                                         href={item.link}
                                         class="group flex items-center space-x-2 text-lg"
                                         target="_blank"
+                                        rel="noopener noreferrer"
                                         aria-label={item.label}
                                     >
                                         <item.icon class="size-6" />
