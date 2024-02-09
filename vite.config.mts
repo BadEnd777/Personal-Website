@@ -2,13 +2,16 @@ import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 import path from 'path'
 
+// Static site generation
 export default defineConfig({
-    plugins: [solidPlugin()],
+    base: '/Personal-Website/', // For GitHub Pages
+    plugins: [
+        solidPlugin({
+            ssr: false,
+        }),
+    ],
     server: {
         port: 3000,
-    },
-    build: {
-        target: 'esnext',
     },
     resolve: {
         alias: {

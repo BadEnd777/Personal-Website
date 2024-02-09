@@ -6,7 +6,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -18,16 +24,16 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - name: 🔄 Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        name: 🔄 Checkout
 
-      - name: 🛠️ Setup Node.js
-        uses: actions/setup-node@v4.0.2
+      - uses: actions/setup-node@v4.0.2
+        name: 🛠️ Setup Node.js
         with:
           node-version: 20
 
-      - name: ⚙️ Setup pnpm
-        uses: pnpm/action-setup@v3.0.0
+      - uses: pnpm/action-setup@v3.0.0
+        name: ⚙️ Setup pnpm
         with:
           version: latest
           run_install: false
@@ -37,8 +43,8 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - name: 🗄️ Cache pnpm store
-        uses: actions/cache@v3
+      - uses: actions/cache@v3
+        name: 🗄️ Cache pnpm store
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -51,11 +57,17 @@ jobs:
       - name: 🏗️ Build static content
         run: pnpm build
 
-      - name: 📤 Deploy to GitHub Pages
-        id: deployment
-        uses: crazy-max/ghaction-github-pages@v4
+      - uses: actions/configure-pages@v4.0.0
+        name: 📄 Configure GitHub Pages
         with:
-          target_branch: gh-pages
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        name: 🚀 Upload artifact
+        with:
+          path: dist
+
+      - uses: actions/deploy-pages@v4.0.4
+        id: deployment
+        name: 🚢 Deploy to GitHub Pages
