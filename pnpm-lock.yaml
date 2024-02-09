@@ -5,9 +5,6 @@ settings:
     excludeLinksFromLockfile: false
 
 dependencies:
-    '@iconify/tailwind':
-        specifier: ^0.1.4
-        version: 0.1.4
     '@kobalte/core':
         specifier: ^0.12.1
         version: 0.12.1(solid-js@1.8.14)
@@ -784,22 +781,6 @@ packages:
                 integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==,
             }
         dev: true
-
-    /@iconify/tailwind@0.1.4:
-        resolution:
-            {
-                integrity: sha512-U7RzcU2fkwOfMDsGQ3mtpLIaApSnqb+vgcJJknPPbg8/NF5s7tI1o5otEMfcpnLGk4PbYB8bxmKTz7IJVUlU2Q==,
-            }
-        dependencies:
-            '@iconify/types': 2.0.0
-        dev: false
-
-    /@iconify/types@2.0.0:
-        resolution:
-            {
-                integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==,
-            }
-        dev: false
 
     /@internationalized/date@3.5.1:
         resolution:

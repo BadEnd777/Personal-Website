@@ -21,7 +21,6 @@
         ]
     },
     "dependencies": {
-        "@iconify/tailwind": "^0.1.4",
         "@kobalte/core": "^0.12.1",
         "@solidjs/meta": "^0.29.3",
         "@solidjs/router": "^0.11.5",
