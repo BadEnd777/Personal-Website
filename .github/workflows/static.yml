@@ -10,6 +10,9 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
       STORE_PATH: ${{ github.workspace }}/.pnpm-store
 
@@ -49,6 +52,7 @@ jobs:
         run: pnpm build
 
       - name: 📤 Deploy to GitHub Pages
+        id: deployment
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
