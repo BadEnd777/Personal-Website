@@ -7,7 +7,7 @@ export const Layout = (props: {
     children: number | boolean | Node | JSX.ArrayElement | JSX.Element | JSX.Element[]
 }) => {
     return (
-        <div class="flex h-screen flex-col py-12">
+        <div class="flex h-screen max-w-[100vw] flex-col overflow-x-hidden">
             <Header />
             <main id="main" class={`container mt-[80px] flex-1 ${props.class}`}>
                 {props.children}

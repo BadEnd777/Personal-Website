@@ -4,9 +4,9 @@ import { contact } from '@/data'
 
 export const Footer = () => {
     return (
-        <footer class="h-[80px] w-full border-t bg-background">
-            <div class="container flex h-full items-center justify-between py-2">
-                <div class="flex flex-col space-y-2">
+        <footer class="w-full border-t bg-background">
+            <div class="container flex h-full flex-col items-center justify-between space-y-2 py-4 md:flex-row md:space-y-0">
+                <div class="flex flex-col items-center space-y-2 md:items-start">
                     <p>&copy; {new Date().getFullYear()} BadEnd, All Rights Reserved</p>
                     <p>
                         This website is open source.{' '}
