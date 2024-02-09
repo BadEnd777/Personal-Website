@@ -23,6 +23,7 @@ export const MobileNav = () => {
                 <DropdownMenuTrigger asChild>
                     <As component={Button} variant="ghost" size="icon">
                         <HamburgerMenu />
+                        <span class="sr-only">Dropdown Menu</span>
                     </As>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent class="min-w-[150px]">
