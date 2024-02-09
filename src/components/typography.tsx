@@ -22,7 +22,7 @@ export const Typography: Component<TypographyProps> = (props) => {
 
     const isUnderlined = underline ? 'border-b pb-4' : ''
 
-    const combinedClasses = `scroll-m-20 tracking-tight ${variants[variant]} ${isUnderlined} ${classes}`
+    const combinedClasses = `scroll-m-20 tracking-tight ${variants[variant]} ${isUnderlined} ${classes || ''}`
 
     const component = {
         h1: <h1 class={combinedClasses}>{children}</h1>,

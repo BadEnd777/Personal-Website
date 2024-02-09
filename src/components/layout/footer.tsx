@@ -10,7 +10,12 @@ export const Footer = () => {
                     <p>&copy; {new Date().getFullYear()} BadEnd, All Rights Reserved</p>
                     <p>
                         This website is open source.{' '}
-                        <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank" class="link">
+                        <A
+                            href="https://github.com/BadEnd777/Portfolio-Website"
+                            target="_blank"
+                            class="link"
+                            aria-label="GitHub repository"
+                        >
                             View on GitHub
                         </A>
                     </p>
@@ -19,7 +24,7 @@ export const Footer = () => {
                     <For each={contact}>
                         {(item) => (
                             // Use a normal anchor tag because there is a problem when the link is mailto:
-                            <a href={item.link} target="_blank">
+                            <a href={item.link} target="_blank" aria-label={item.label}>
                                 {<item.icon class="size-6" />}
                             </a>
                         )}

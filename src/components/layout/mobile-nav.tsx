@@ -31,8 +31,12 @@ export const MobileNav = () => {
                     </For>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                        <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank">
-                            GitHub
+                        <A
+                            href="https://github.com/BadEnd777/Portfolio-Website"
+                            target="_blank"
+                            aria-label="GitHub repository"
+                        >
+                            GitHub Repository
                         </A>
                     </DropdownMenuItem>
                 </DropdownMenuContent>

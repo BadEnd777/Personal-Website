@@ -25,16 +25,18 @@ const Home: Component = () => {
                         projects.
                     </p>
                     <div class="flex space-x-4">
-                        <Button onClick={() => goto('projects')}>View Projects</Button>
-                        <Button onClick={() => goto('contact')} variant="outline">
+                        <Button aria-label="View Projects" onClick={() => goto('projects')}>
+                            View Projects
+                        </Button>
+                        <Button aria-label="Contact Me" onClick={() => goto('contact')} variant="outline">
                             Contact Me
                         </Button>
                     </div>
                 </div>
                 <img
-                    src="/images/profile.jpg"
+                    src="/images/profile.webp"
                     alt="Profile"
-                    class="size-[300px] rounded-xl md:size-[450px] lg:size-[500px]"
+                    class="lazyload size-[300px] rounded-xl md:size-[450px] lg:size-[500px]"
                 />
             </section>
             <section id="about" class="flex flex-col space-y-8 py-4">
@@ -42,7 +44,7 @@ const Home: Component = () => {
                     📝 About Me
                 </Typography>
                 <div class="flex flex-col space-y-6">
-                    <Typography variant="h4">Summary</Typography>
+                    <Typography variant="h3">Summary</Typography>
                     <p class="text-lg text-muted-foreground">
                         Enthusiastic and results-driven freelance developer with a solid background in web development.
                         Passionate about crafting responsive and efficient web solutions, dedicated to delivering
@@ -51,7 +53,7 @@ const Home: Component = () => {
                     </p>
                 </div>
                 <div class="flex flex-col space-y-6">
-                    <Typography variant="h4">Education</Typography>
+                    <Typography variant="h3">Education</Typography>
                     <For each={education}>
                         {(item) => (
                             <div class="flex flex-col space-y-2 border-l-4 border-primary pl-4">
@@ -63,7 +65,7 @@ const Home: Component = () => {
                     </For>
                 </div>
                 <div class="flex flex-col space-y-6">
-                    <Typography variant="h4">Work Experience</Typography>
+                    <Typography variant="h3">Work Experience</Typography>
                     <For each={experience}>
                         {(item) => (
                             <div class="flex flex-col space-y-2 border-l-4 border-primary pl-4">
@@ -75,7 +77,7 @@ const Home: Component = () => {
                     </For>
                 </div>
                 <div class="flex flex-col space-y-6">
-                    <Typography variant="h4">Biography</Typography>
+                    <Typography variant="h3">Biography</Typography>
                     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                         <For each={biography}>
                             {(item) => (
@@ -97,6 +99,7 @@ const Home: Component = () => {
                                 href="https://github.com/BadEnd777"
                                 class="flex items-center space-x-2 text-muted-foreground"
                                 target="_blank"
+                                aria-label="View on GitHub"
                             >
                                 <p class="hidden text-lg md:block">View on GitHub</p>
                                 <ArrowRight class="size-6" />
@@ -124,6 +127,7 @@ const Home: Component = () => {
                                         href={project.status.link}
                                         class="flex items-center space-x-2 text-sm font-bold"
                                         target="_blank"
+                                        aria-label={project.status.text}
                                     >
                                         <p>{project.status.text}</p>
                                         <project.status.icon />
@@ -132,7 +136,7 @@ const Home: Component = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    class={`rounded object-contain ${project.isFullWidth ? 'w-full md:w-1/2' : 'w-full'}`}
+                                    class={`lazyload rounded object-contain ${project.isFullWidth ? 'w-full md:w-1/2' : 'w-full'}`}
                                 />
                             </div>
                         )}
@@ -150,9 +154,9 @@ const Home: Component = () => {
                     </p>
                     <div class="flex flex-col items-center space-y-4">
                         <img
-                            src="/images/profile.jpg"
+                            src="/images/profile.webp"
                             alt="Profile"
-                            class="size-[300px] rounded-full md:size-[400px]"
+                            class="lazyload size-[300px] rounded-full md:size-[400px]"
                         />
                         <Typography variant="h3">Contact Information</Typography>
                         <div class="flex space-x-4">
@@ -163,6 +167,7 @@ const Home: Component = () => {
                                         href={item.link}
                                         class="group flex items-center space-x-2 text-lg"
                                         target="_blank"
+                                        aria-label={item.label}
                                     >
                                         <item.icon class="size-6" />
                                         <p class="transition-colors group-hover:text-primary">{item.label}</p>

@@ -43,8 +43,8 @@ export const DesktopNav = () => {
             <div class="h-8 w-px bg-muted" />
             <div class="flex items-center space-x-1">
                 <ModeToggle />
-                <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank">
-                    <Button variant="ghost" size="icon">
+                <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank" aria-label="GitHub repository">
+                    <Button variant="ghost" size="icon" aria-label="GitHub repository">
                         <GitHubLogo />
                     </Button>
                 </A>
