@@ -4,7 +4,7 @@ export const projects = [
     {
         title: 'Personal Website',
         description: 'My personal website built with SolidJS, TypeScript, Vite, and Tailwind CSS.',
-        image: '/Personal-Website/projects/personal-website.jpg',
+        image: '/projects/personal-website.jpg',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Personal-Website',
@@ -16,7 +16,7 @@ export const projects = [
         title: 'Chat Bridge',
         description:
             'An npm package that makes it easier to integrate Facebook Page webhook into your Node.js application.',
-        image: '/Personal-Website/projects/chat-bridge.jpg',
+        image: '/projects/chat-bridge.jpg',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Chat-Bridge',
@@ -26,7 +26,7 @@ export const projects = [
     {
         title: 'VRConnectivity Shield',
         description: 'DNS blocking tool to prevent VRChat analytics and tracking.',
-        image: '/Personal-Website/projects/vrconnectivity-shield.jpg',
+        image: '/projects/vrconnectivity-shield.jpg',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/VRConnectivity-Shield',
@@ -36,7 +36,7 @@ export const projects = [
     {
         title: 'TikTok Harbor',
         description: 'Free online tool to download TikTok videos/slideshows without watermark.',
-        image: '/Personal-Website/projects/tiktok-harbor.jpg',
+        image: '/projects/tiktok-harbor.jpg',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/TikTok-Harbor',

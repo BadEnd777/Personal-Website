@@ -4,7 +4,6 @@ import path from 'path'
 
 // Static site generation
 export default defineConfig({
-    base: '/Personal-Website/', // For GitHub Pages
     plugins: [
         solidPlugin({
             ssr: false,
