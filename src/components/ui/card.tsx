@@ -1,32 +1,43 @@
+import * as React from 'react'
+
 import { cn } from '@/lib/utils'
-import { splitProps, type ComponentProps, type ParentComponent } from 'solid-js'
 
-export const Card: ParentComponent<ComponentProps<'div'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class'])
-    return <div class={cn('rounded-xl border bg-card text-card-foreground shadow', local.class)} {...rest} />
-}
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
+    <div ref={ref} className={cn('rounded-xl border bg-card text-card-foreground shadow', className)} {...props} />
+))
+Card.displayName = 'Card'
 
-export const CardHeader: ParentComponent<ComponentProps<'div'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class', 'classList'])
-    return <div class={cn('flex flex-col space-y-1.5 p-6', local.class)} {...rest} />
-}
+const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+    ({ className, ...props }, ref) => (
+        <div ref={ref} className={cn('flex flex-col space-y-1.5 p-6', className)} {...props} />
+    ),
+)
+CardHeader.displayName = 'CardHeader'
 
-export const CardTitle: ParentComponent<ComponentProps<'h3'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class', 'classList'])
-    return <h3 class={cn('font-semibold leading-none tracking-tight', local.class)} {...rest} />
-}
+const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
+    ({ className, ...props }, ref) => (
+        <h3 ref={ref} className={cn('font-semibold leading-none tracking-tight', className)} {...props} />
+    ),
+)
+CardTitle.displayName = 'CardTitle'
 
-export const CardDescription: ParentComponent<ComponentProps<'h3'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class', 'classList'])
-    return <h3 class={cn('text-sm text-muted-foreground', local.class)} {...rest} />
-}
+const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
+    ({ className, ...props }, ref) => (
+        <p ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
+    ),
+)
+CardDescription.displayName = 'CardDescription'
 
-export const CardContent: ParentComponent<ComponentProps<'div'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class', 'classList'])
-    return <div class={cn('p-6 pt-0', local.class)} {...rest} />
-}
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+    ({ className, ...props }, ref) => <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />,
+)
+CardContent.displayName = 'CardContent'
 
-export const CardFooter: ParentComponent<ComponentProps<'div'>> = (props) => {
-    const [local, rest] = splitProps(props, ['class', 'classList'])
-    return <div class={cn('flex items-center p-6 pt-0', local.class)} {...rest} />
-}
+const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+    ({ className, ...props }, ref) => (
+        <div ref={ref} className={cn('flex items-center p-6 pt-0', className)} {...props} />
+    ),
+)
+CardFooter.displayName = 'CardFooter'
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

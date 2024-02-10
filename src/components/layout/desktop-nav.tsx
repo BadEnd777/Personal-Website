@@ -1,34 +1,48 @@
+'use client'
+
 import { ModeToggle } from '@/components/mode-toggle'
+import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
-import { A } from '@solidjs/router'
-import { For } from 'solid-js'
+import { usePathname } from 'next/navigation'
+import { useMemo } from 'react'
+import { routes } from '@/data'
+import NextLink from 'next/link'
 
-import { slugToTitle } from '@/helper/slug-to-title'
-import { routes } from '@/routes'
+export const DesktopNav = () => {
+    const pathname = usePathname()
 
-export const DesktopNav = (props: { isActive: (path: string) => boolean }) => {
+    const isActive = useMemo(
+        () => (path: string) => {
+            return pathname === path
+        },
+        [pathname],
+    )
+
     return (
-        <div class="hidden items-center space-x-4 md:flex">
-            <nav class="flex space-x-6 font-medium">
-                <For each={routes.filter((route) => route.isNav)}>
-                    {(route) => (
-                        <A
-                            href={route.path}
-                            class={`cursor-pointer ${props.isActive(route.path) ? 'text-primary' : 'text-muted-foreground'}`}
-                        >
-                            {route.path === '/' ? 'Home' : slugToTitle(route.path.slice(1))}
-                        </A>
-                    )}
-                </For>
+        <div className="hidden items-center space-x-4 md:flex">
+            <nav className="flex space-x-6 font-medium">
+                {routes.map((route) => (
+                    <NextLink
+                        key={route.path}
+                        href={route.path}
+                        className={`${isActive(route.path) && 'text-primary'}`}
+                    >
+                        {route.label}
+                    </NextLink>
+                ))}
             </nav>
-            <div class="h-8 w-px bg-muted" />
-            <div class="flex items-center space-x-1">
+            <Separator orientation="vertical" className="h-8" />
+            <div className="flex items-center space-x-1">
                 <ModeToggle />
-                <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank" aria-label="GitHub repository">
+                <NextLink
+                    href="https://github.com/BadEnd777/Portfolio-Website"
+                    target="_blank"
+                    aria-label="GitHub repository"
+                >
                     <Button variant="ghost" size="icon" aria-label="GitHub repository">
-                        <span class="icon-[tabler--brand-github] size-4" />
+                        <span className="icon-[tabler--brand-github] size-5" />
                     </Button>
-                </A>
+                </NextLink>
             </div>
         </div>
     )

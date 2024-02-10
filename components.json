@@ -1,7 +1,10 @@
 {
-    "$schema": "https://shadcn-solid.vercel.app/schema.json",
+    "$schema": "https://ui.shadcn.com/schema.json",
+    "style": "new-york",
+    "rsc": true,
+    "tsx": true,
     "tailwind": {
-        "config": "tailwing.config.ts",
+        "config": "tailwind.config.ts",
         "css": "src/styles/globals.css",
         "baseColor": "gray",
         "cssVariables": true,

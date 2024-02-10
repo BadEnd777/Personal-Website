@@ -1,15 +1,17 @@
+import React, { ReactNode } from 'react'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { JSX } from 'solid-js'
 
-export const Layout = (props: {
-    class?: string
-    children: number | boolean | Node | JSX.ArrayElement | JSX.Element | JSX.Element[]
-}) => {
+interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+    children: ReactNode
+}
+
+export const Layout = ({ children, className: className }: LayoutProps) => {
     return (
-        <div class="flex h-screen max-w-[100vw] flex-col overflow-x-hidden">
+        <div className="flex h-screen max-w-[100vw] flex-col overflow-x-hidden">
             <Header />
-            <main class={`container mt-[80px] flex-1 ${props.class}`}>{props.children}</main>
+            <main className={`container mt-[80px] flex-1 ${className}`}>{children}</main>
             <Footer />
         </div>
     )

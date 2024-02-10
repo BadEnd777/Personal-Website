@@ -1,11 +1,10 @@
-import { Component } from 'solid-js'
-import { JSX } from 'solid-js/jsx-runtime'
+import React, { ReactNode } from 'react'
 
-interface TypographyProps {
-    variant: keyof typeof variants
+interface TypographyProps extends React.HTMLAttributes<HTMLHeadingElement> {
+    variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
     underline?: boolean
     classes?: string
-    children: JSX.Element
+    children: ReactNode
 }
 
 const variants = {
@@ -17,20 +16,18 @@ const variants = {
     h6: 'text-sm font-semibold leading-none tracking-tight',
 }
 
-export const Typography: Component<TypographyProps> = (props) => {
-    const { variant, underline, classes, children } = props as TypographyProps
-
+export const Typography = ({ variant, underline, classes, children }: TypographyProps) => {
     const isUnderlined = underline ? 'border-b pb-4' : ''
 
     const combinedClasses = `scroll-m-20 tracking-tight ${variants[variant]} ${isUnderlined} ${classes || ''}`
 
     const component = {
-        h1: <h1 class={combinedClasses}>{children}</h1>,
-        h2: <h2 class={combinedClasses}>{children}</h2>,
-        h3: <h3 class={combinedClasses}>{children}</h3>,
-        h4: <h4 class={combinedClasses}>{children}</h4>,
-        h5: <h5 class={combinedClasses}>{children}</h5>,
-        h6: <h6 class={combinedClasses}>{children}</h6>,
+        h1: <h1 className={combinedClasses}>{children}</h1>,
+        h2: <h2 className={combinedClasses}>{children}</h2>,
+        h3: <h3 className={combinedClasses}>{children}</h3>,
+        h4: <h4 className={combinedClasses}>{children}</h4>,
+        h5: <h5 className={combinedClasses}>{children}</h5>,
+        h6: <h6 className={combinedClasses}>{children}</h6>,
     }
 
     return component[variant]

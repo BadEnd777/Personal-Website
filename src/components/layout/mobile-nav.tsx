@@ -7,43 +7,36 @@ import {
     DropdownMenuTrigger,
     DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
-import { A } from '@solidjs/router'
-import { As } from '@kobalte/core'
-import { For } from 'solid-js'
+import NextLink from 'next/link'
 
-import { slugToTitle } from '@/helper/slug-to-title'
-import { routes } from '@/routes'
+import { routes } from '@/data'
 
 export const MobileNav = () => {
     return (
-        <div class="flex items-center space-x-1 md:hidden">
+        <div className="flex items-center space-x-1 md:hidden">
             <ModeToggle />
-            <DropdownMenu placement="bottom-end">
+            <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <As component={Button} variant="ghost" size="icon">
-                        <span class="icon-[tabler--align-right] size-5" />
-                        <span class="sr-only">Dropdown Menu</span>
-                    </As>
+                    <Button variant="ghost" size="icon">
+                        <span className="icon-[tabler--align-right] size-5" />
+                        <span className="sr-only">Dropdown Menu</span>
+                    </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent class="min-w-[150px]">
-                    <For each={routes.filter((route) => route.isNav)}>
-                        {(route) => (
-                            <A href={route.path}>
-                                <DropdownMenuItem>
-                                    {route.path === '/' ? 'Home' : slugToTitle(route.path.slice(1))}
-                                </DropdownMenuItem>
-                            </A>
-                        )}
-                    </For>
+                <DropdownMenuContent className="min-w-[150px]">
+                    {routes.map((route) => (
+                        <NextLink key={route.path} href={route.path}>
+                            <DropdownMenuItem>{route.label}</DropdownMenuItem>
+                        </NextLink>
+                    ))}
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
-                        <A
+                        <NextLink
                             href="https://github.com/BadEnd777/Portfolio-Website"
                             target="_blank"
                             aria-label="GitHub repository"
                         >
-                            GitHub Repository
-                        </A>
+                            View on GitHub
+                        </NextLink>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

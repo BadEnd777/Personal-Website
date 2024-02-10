@@ -4,7 +4,7 @@
 
 Welcome to my personal website project! This repository contains the code for my personal website, where I showcase my portfolio, projects, and other information about myself.
 
-The website is built using [Vite](https://vitejs.dev/) as the build tool, [SolidJS](https://solidjs.com/) as the JavaScript library for building user interfaces, [Tailwind CSS](https://tailwindcss.com/) for styling, and [TypeScript](https://www.typescriptlang.org/) for type checking and improved developer experience.
+The website is built using [Next.js](https://nextjs.org/) as the build tool, [Shadcn UI](https://ui.shadcn.com/) as the JavaScript library for building user interfaces, [Tailwind CSS](https://tailwindcss.com/) for styling, and [TypeScript](https://www.typescriptlang.org/) for type checking and improved developer experience.
 
 The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), and you can visit it to see the live version.
 
@@ -13,17 +13,17 @@ The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), a
 
 ## Table of Contents
 
--   [Personal Website](#personal-website)
-    -   [Table of Contents](#table-of-contents)
-    -   [Prerequisites](#prerequisites)
-    -   [Technologies Used](#technologies-used)
-    -   [Usage](#usage)
-        -   [Development](#development)
-        -   [Production](#production)
-    -   [Project Structure](#project-structure)
-    -   [Contributing](#contributing)
-    -   [License](#license)
-    -   [Contact](#contact)
+- [Personal Website](#personal-website)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Technologies Used](#technologies-used)
+  - [Usage](#usage)
+    - [Development](#development)
+    - [Production](#production)
+  - [Project Structure](#project-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
 
 ## Prerequisites
 
@@ -33,8 +33,8 @@ The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), a
 
 ## Technologies Used
 
--   [Vite](https://vitejs.dev/) — Build tool for modern web development
--   [SolidJS](https://solidjs.com/) — Performant and flexible JavaScript library for building user interfaces
+-   [Next.js](https://nextjs.org/) — The React framework for production
+-   [Shadcn UI](https://ui.shadcn.com/) — A JavaScript library for building user interfaces
 -   [Tailwind CSS](https://tailwindcss.com/) — A utility-first CSS framework for rapid UI development
 -   [TypeScript](https://www.typescriptlang.org/) — A typed superset of JavaScript that compiles to plain JavaScript
 
@@ -88,20 +88,15 @@ The project structure is as follows:
 
 -   `public`: Stores static assets like images, and icons.
 -   `src`: Contains the source files for the website.
-    -   `components`: Reusable components used across the website.
-        -   `ui`: UI components from shadcn-solid.
-    -   `data`: Data files for projects, skills, etc.
-    -   `helpers`: Helper functions.
-    -   `lib`: External libraries and utilities.
-    -   `pages`: Page components.
-    -   `styles`: Tailwind CSS styles.
-    -   `index.tsx`: Entry point for the website.
+    -   `app`: Contains the Next.js pages for the website.
+    -   `components`: Contains the React components used in the website.
+    -   `data`: Contains the data files for the website.
+    -   `lib`: Contains the utility functions and helper modules for the website.
+    -   `styles`: Contains the Tailwind CSS styles for the website.
 -   `components.json`: Shadcn-solid components configuration.
--   `index.html`: HTML template.
 -   `postcss.config.js`: PostCSS configuration.
 -   `tailwind.config.ts`: Tailwind CSS configuration.
 -   `tsconfig.json`: TypeScript configuration.
--   `vite.config.ts`: Vite configuration.
 
 ## Contributing
 
