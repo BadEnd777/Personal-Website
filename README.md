@@ -9,6 +9,7 @@ The website is built using [Vite](https://vitejs.dev/) as the build tool, [Solid
 The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), and you can visit it to see the live version.
 
 [![CodeQL](https://github.com/BadEnd777/Personal-Website/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/BadEnd777/Personal-Website/actions/workflows/github-code-scanning/codeql)
+[![🛡️ GitGuardian scan](https://github.com/BadEnd777/Personal-Website/actions/workflows/gitguardian.yml/badge.svg)](https://github.com/BadEnd777/Personal-Website/actions/workflows/gitguardian.yml)
 
 ## Table of Contents
 

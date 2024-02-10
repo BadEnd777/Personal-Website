@@ -1,14 +1,14 @@
 import type { Component } from 'solid-js'
+
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { Typography } from '@/components/typography'
 import { ArrowRight } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { Layout } from '@/components/layout'
-import { For } from 'solid-js'
 import { A } from '@solidjs/router'
+import { For } from 'solid-js'
 
 import { education, experience, biography, projects, contact } from '@/data'
-import { goto } from '@/helper/goto'
 
 const Home: Component = () => {
     return (
@@ -25,12 +25,14 @@ const Home: Component = () => {
                         projects.
                     </p>
                     <div class="flex space-x-4">
-                        <Button aria-label="View Projects" onClick={() => goto('projects')}>
-                            View Projects
-                        </Button>
-                        <Button aria-label="Contact Me" onClick={() => goto('contact')} variant="outline">
-                            Contact Me
-                        </Button>
+                        <A href="/projects">
+                            <Button aria-label="View Projects">View Projects</Button>
+                        </A>
+                        <A href="/contact">
+                            <Button aria-label="Contact Me" variant="outline">
+                                Contact Me
+                            </Button>
+                        </A>
                     </div>
                 </div>
                 <img

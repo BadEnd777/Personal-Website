@@ -2,9 +2,9 @@
 import '@/styles/globals.css'
 
 import { ColorModeProvider, ColorModeScript, localStorageManager } from '@kobalte/core'
-import { Router, Route } from '@solidjs/router'
+import { Router } from '@solidjs/router'
 import { render } from 'solid-js/web'
-import { lazy } from 'solid-js'
+import { routes } from '@/routes'
 
 const root = document.getElementById('root')
 
@@ -14,18 +14,12 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     )
 }
 
-const Home = lazy(() => import('@/pages/home'))
-const NotFound = lazy(() => import('@/pages/not-found'))
-
 render(
     () => (
         <>
             <ColorModeScript />
             <ColorModeProvider storageManager={localStorageManager}>
-                <Router>
-                    <Route path="/" component={Home} />
-                    <Route path="*" component={NotFound} />
-                </Router>
+                <Router>{routes}</Router>
             </ColorModeProvider>
         </>
     ),

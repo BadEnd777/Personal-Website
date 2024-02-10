@@ -12,8 +12,8 @@ import { A } from '@solidjs/router'
 import { As } from '@kobalte/core'
 import { For } from 'solid-js'
 
-import { navLinks } from '@/data/nav-links'
-import { goto } from '@/helper/goto'
+import { slugToTitle } from '@/helper/slug-to-title'
+import { routes } from '@/routes'
 
 export const MobileNav = () => {
     return (
@@ -27,8 +27,14 @@ export const MobileNav = () => {
                     </As>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent class="min-w-[150px]">
-                    <For each={navLinks}>
-                        {(link) => <DropdownMenuItem onClick={() => goto(link.id)}>{link.name}</DropdownMenuItem>}
+                    <For each={routes.filter((route) => route.isNav)}>
+                        {(route) => (
+                            <A href={route.path}>
+                                <DropdownMenuItem>
+                                    {route.path === '/' ? 'Home' : slugToTitle(route.path.slice(1))}
+                                </DropdownMenuItem>
+                            </A>
+                        )}
                     </For>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
