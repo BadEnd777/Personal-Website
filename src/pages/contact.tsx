@@ -1,10 +1,12 @@
-const Contact = () => {
+import { Layout } from '@/components/layout'
+import { Contact } from '@/components/sections/contact'
+
+const ContactPage = () => {
     return (
-        <div>
-            <h1>Contact</h1>
-            <p>This is the Contact page</p>
-        </div>
+        <Layout class="py-4">
+            <Contact />
+        </Layout>
     )
 }
 
-export default Contact
+export default ContactPage

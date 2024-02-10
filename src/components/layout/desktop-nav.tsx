@@ -9,7 +9,7 @@ import { routes } from '@/routes'
 export const DesktopNav = (props: { isActive: (path: string) => boolean }) => {
     return (
         <div class="hidden items-center space-x-4 md:flex">
-            <nav class="flex space-x-10 font-medium">
+            <nav class="flex space-x-6 font-medium">
                 <For each={routes.filter((route) => route.isNav)}>
                     {(route) => (
                         <A

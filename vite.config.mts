@@ -5,7 +5,16 @@ import path from 'path'
 // Static site generation
 export default defineConfig({
     plugins: [
+        {
+            ...(await import('@mdx-js/rollup')).default({
+                jsx: true,
+                jsxImportSource: 'solid-js',
+                providerImportSource: 'solid-mdx',
+            }),
+            enforce: 'pre',
+        },
         solidPlugin({
+            extensions: ['mdx'],
             ssr: false,
         }),
     ],

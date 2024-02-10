@@ -9,12 +9,12 @@ interface TypographyProps {
 }
 
 const variants = {
-    h1: 'text-3xl font-extrabold lg:text-4xl',
-    h2: 'text-2xl font-semibold lg:text-3xl',
-    h3: 'text-xl font-semibold lg:text-2xl',
-    h4: 'text-lg font-medium lg:text-xl',
-    h5: 'text-base font-medium lg:text-lg',
-    h6: 'text-sm font-medium lg:text-base',
+    h1: 'text-2xl font-semibold leading-none tracking-tight',
+    h2: 'text-xl font-semibold leading-none tracking-tight',
+    h3: 'font-semibold leading-none tracking-tight',
+    h4: 'text-lg font-semibold leading-none tracking-tight',
+    h5: 'text-base font-semibold leading-none tracking-tight',
+    h6: 'text-sm font-semibold leading-none tracking-tight',
 }
 
 export const Typography: Component<TypographyProps> = (props) => {

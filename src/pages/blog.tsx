@@ -1,10 +1,11 @@
-const Blog = () => {
+import { Layout } from '@/components/layout'
+
+const BlogPage = () => {
     return (
-        <div>
-            <h1>Blog</h1>
-            <p>This is the Blog page</p>
-        </div>
+        <Layout class="py-4">
+            <div>Blog</div>
+        </Layout>
     )
 }
 
-export default Blog
+export default BlogPage

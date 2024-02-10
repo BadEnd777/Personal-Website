@@ -9,9 +9,7 @@ export const Layout = (props: {
     return (
         <div class="flex h-screen max-w-[100vw] flex-col overflow-x-hidden">
             <Header />
-            <main id="main" class={`container mt-[80px] flex-1 ${props.class}`}>
-                {props.children}
-            </main>
+            <main class={`container mt-[80px] flex-1 ${props.class}`}>{props.children}</main>
             <Footer />
         </div>
     )

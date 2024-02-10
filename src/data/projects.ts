@@ -1,3 +1,16 @@
+/* 
+title: 'Project Title' - The title of the project.
+description: 'Project description.' - The description of the project.
+image: '/projects/project-image.webp' - The path to the project image.
+status: {
+    text: 'Status' - The status of the project. (e.g. View Source, Coming Soon, Private Repository)
+    link: 'Link' - The link to the project status. (e.g. GitHub Repository, Website)
+    icon: 'icon-class' - The icon for the status. https://icon-sets.iconify.design/tabler/?query=mail&prefixes=tabler
+}
+isFeatured: true - Show the project in the featured section.
+isFullWidth: true - Make the project image full width.
+*/
+
 export const projects = [
     {
         title: 'Personal Website',
@@ -8,6 +21,7 @@ export const projects = [
             link: 'https://github.com/BadEnd777/Personal-Website',
             icon: 'icon-[tabler--arrow-right]',
         },
+        isFeatured: true,
         isFullWidth: true,
     },
     {
@@ -20,6 +34,7 @@ export const projects = [
             link: 'https://github.com/BadEnd777/Chat-Bridge',
             icon: 'icon-[tabler--arrow-right]',
         },
+        isFeatured: true,
     },
     {
         title: 'VRConnectivity Shield',
@@ -30,6 +45,7 @@ export const projects = [
             link: 'https://github.com/BadEnd777/VRConnectivity-Shield',
             icon: 'icon-[tabler--arrow-right]',
         },
+        isFeatured: true,
     },
     {
         title: 'TikTok Harbor',
@@ -40,6 +56,7 @@ export const projects = [
             link: 'https://github.com/BadEnd777/TikTok-Harbor',
             icon: 'icon-[tabler--arrow-right]',
         },
+        isFeatured: true,
         isFullWidth: true,
     },
 ]

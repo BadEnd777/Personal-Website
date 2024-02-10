@@ -1,10 +1,12 @@
-const About = () => {
+import { Layout } from '@/components/layout'
+import { About } from '@/components/sections/about'
+
+const AboutPage = () => {
     return (
-        <div>
-            <h1>About</h1>
-            <p>This is the About page</p>
-        </div>
+        <Layout class="py-4">
+            <About />
+        </Layout>
     )
 }
 
-export default About
+export default AboutPage
