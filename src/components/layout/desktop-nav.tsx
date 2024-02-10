@@ -1,5 +1,4 @@
 import { ModeToggle } from '@/components/mode-toggle'
-import { GitHubLogo } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { A } from '@solidjs/router'
 import { For } from 'solid-js'
@@ -27,7 +26,7 @@ export const DesktopNav = (props: { isActive: (path: string) => boolean }) => {
                 <ModeToggle />
                 <A href="https://github.com/BadEnd777/Portfolio-Website" target="_blank" aria-label="GitHub repository">
                     <Button variant="ghost" size="icon" aria-label="GitHub repository">
-                        <GitHubLogo />
+                        <span class="icon-[tabler--brand-github] size-4" />
                     </Button>
                 </A>
             </div>

@@ -1,5 +1,4 @@
 import { ModeToggle } from '@/components/mode-toggle'
-import { HamburgerMenu } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import {
     DropdownMenu,
@@ -22,7 +21,7 @@ export const MobileNav = () => {
             <DropdownMenu placement="bottom-end">
                 <DropdownMenuTrigger asChild>
                     <As component={Button} variant="ghost" size="icon">
-                        <HamburgerMenu />
+                        <span class="icon-[tabler--align-right] size-5" />
                         <span class="sr-only">Dropdown Menu</span>
                     </As>
                 </DropdownMenuTrigger>

@@ -2,11 +2,11 @@ import type { Component } from 'solid-js'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { Typography } from '@/components/typography'
-import { ArrowRight } from '@/components/icons'
 import { Button } from '@/components/ui/button'
 import { Layout } from '@/components/layout'
 import { A } from '@solidjs/router'
 import { For } from 'solid-js'
+import { SkillList } from '@/components/skill-list'
 
 import { education, experience, biography, projects, contact } from '@/data'
 
@@ -91,6 +91,10 @@ const Home: Component = () => {
                         </For>
                     </div>
                 </div>
+                <div class="flex flex-col space-y-6">
+                    <Typography variant="h3">My Skills</Typography>
+                    <SkillList />
+                </div>
             </section>
             <section id="projects" class="flex flex-col space-y-8 py-4">
                 <div class="flex items-center justify-between border-b pb-4">
@@ -104,7 +108,7 @@ const Home: Component = () => {
                                 aria-label="View on GitHub"
                             >
                                 <p class="hidden text-lg md:block">View on GitHub</p>
-                                <ArrowRight class="size-6" />
+                                <span class="icon-[tabler--arrow-right] size-6" />
                             </A>
                         </TooltipTrigger>
                         <TooltipContent>View on GitHub</TooltipContent>
@@ -132,7 +136,7 @@ const Home: Component = () => {
                                         aria-label={project.status.text}
                                     >
                                         <p>{project.status.text}</p>
-                                        <project.status.icon />
+                                        <span class={`${project.status.icon} size-4`} />
                                     </A>
                                 </div>
                                 <img
@@ -172,7 +176,7 @@ const Home: Component = () => {
                                         rel="noopener noreferrer"
                                         aria-label={item.label}
                                     >
-                                        <item.icon class="size-6" />
+                                        <span class={`${item.icon} size-6`} />
                                         <p class="transition-colors group-hover:text-primary">{item.label}</p>
                                     </a>
                                 )}

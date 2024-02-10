@@ -1,0 +1,7 @@
+{
+    "entry": ["src/index.tsx", "src/pages/**/*.{ts,tsx}"],
+    "extensions": [".ts", ".tsx"],
+    "ignorePatterns": ["**/node_modules/**", "private/**"],
+    "ignoreUnused": ["@iconify-json/tabler", "@iconify/tailwind", "tailwindcss-animate"],
+    "respectGitignore": true
+}

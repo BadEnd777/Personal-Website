@@ -1,5 +1,3 @@
-import { ArrowRight } from '@/components/icons/ArrowRight'
-
 export const projects = [
     {
         title: 'Personal Website',
@@ -8,7 +6,7 @@ export const projects = [
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Personal-Website',
-            icon: ArrowRight,
+            icon: 'icon-[tabler--arrow-right]',
         },
         isFullWidth: true,
     },
@@ -20,7 +18,7 @@ export const projects = [
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Chat-Bridge',
-            icon: ArrowRight,
+            icon: 'icon-[tabler--arrow-right]',
         },
     },
     {
@@ -30,7 +28,7 @@ export const projects = [
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/VRConnectivity-Shield',
-            icon: ArrowRight,
+            icon: 'icon-[tabler--arrow-right]',
         },
     },
     {
@@ -40,7 +38,7 @@ export const projects = [
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/TikTok-Harbor',
-            icon: ArrowRight,
+            icon: 'icon-[tabler--arrow-right]',
         },
         isFullWidth: true,
     },

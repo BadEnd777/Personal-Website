@@ -25,7 +25,7 @@ export const Footer = () => {
                         {(item) => (
                             // Use a normal anchor tag because there is a problem when the link is mailto:
                             <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
-                                {<item.icon class="size-6" />}
+                                <span class={`${item.icon} size-6`} />
                             </a>
                         )}
                     </For>

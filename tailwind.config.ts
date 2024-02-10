@@ -1,5 +1,8 @@
+import { fontFamily } from 'tailwindcss/defaultTheme'
+import { addDynamicIconSelectors } from '@iconify/tailwind'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     darkMode: ['class', '[data-kb-theme="dark"]'],
     content: ['index.html', 'src/**/*.{js,jsx,ts,tsx}'],
     theme: {
@@ -46,6 +49,9 @@ module.exports = {
                     foreground: 'hsl(var(--card-foreground))',
                 },
             },
+            fontFamily: {
+                sans: ['Inter Variable', ...fontFamily.sans],
+            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
@@ -77,5 +83,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require('tailwindcss-animate')],
+    plugins: [require('tailwindcss-animate'), addDynamicIconSelectors()],
 }
