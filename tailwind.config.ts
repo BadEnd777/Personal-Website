@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss'
 import { addDynamicIconSelectors } from '@iconify/tailwind'
+import type { Config } from 'tailwindcss'
 
 const config = {
     darkMode: ['class'],
@@ -69,7 +69,7 @@ const config = {
             },
         },
     },
-    plugins: [require('tailwindcss-animate'), addDynamicIconSelectors()],
+    plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography'), addDynamicIconSelectors()],
 } satisfies Config
 
 export default config

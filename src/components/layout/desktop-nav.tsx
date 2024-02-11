@@ -1,12 +1,12 @@
 'use client'
 
 import { ModeToggle } from '@/components/mode-toggle'
-import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
-import { usePathname } from 'next/navigation'
-import { useMemo } from 'react'
+import { Separator } from '@/components/ui/separator'
 import { routes } from '@/data'
 import NextLink from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useMemo } from 'react'
 
 export const DesktopNav = () => {
     const pathname = usePathname()
@@ -32,7 +32,7 @@ export const DesktopNav = () => {
                 ))}
             </nav>
             <Separator orientation="vertical" className="h-8" />
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center">
                 <ModeToggle />
                 <NextLink
                     href="https://github.com/BadEnd777/Portfolio-Website"

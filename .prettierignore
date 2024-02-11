@@ -1,2 +1,8 @@
+# Next.js
 .next
+
+# Build folder
 out
+
+# .prettierignore ignore all .mdx files
+*.mdx

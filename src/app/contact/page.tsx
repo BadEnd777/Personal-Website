@@ -1,7 +1,6 @@
-import type { Metadata } from 'next'
-
 import { Layout } from '@/components/layout'
 import { Contact } from '@/components/sections/contact'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: "Let's Connect",
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
     return (
-        <Layout className="py-4">
+        <Layout>
             <Contact />
         </Layout>
     )

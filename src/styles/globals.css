@@ -5,55 +5,77 @@
 @layer base {
     :root {
         --background: 0 0% 100%;
-        --foreground: 222.2 84% 4.9%;
+        --foreground: 240 10% 3.9%;
         --card: 0 0% 100%;
-        --card-foreground: 222.2 84% 4.9%;
+        --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222.2 84% 4.9%;
+        --popover-foreground: 240 10% 3.9%;
         --primary: 221.2 83.2% 53.3%;
         --primary-foreground: 210 40% 98%;
-        --secondary: 210 40% 96.1%;
-        --secondary-foreground: 222.2 47.4% 11.2%;
-        --muted: 210 40% 96.1%;
-        --muted-foreground: 215.4 16.3% 46.9%;
-        --accent: 210 40% 96.1%;
-        --accent-foreground: 222.2 47.4% 11.2%;
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
+        --muted: 240 4.8% 95.9%;
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 240 4.8% 95.9%;
+        --accent-foreground: 240 5.9% 10%;
         --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 40% 98%;
-        --border: 214.3 31.8% 91.4%;
-        --input: 214.3 31.8% 91.4%;
-        --ring: 221.2 83.2% 53.3%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 5.9% 90%;
+        --input: 240 5.9% 90%;
+        --ring: 240 5.9% 10%;
         --radius: 0.5rem;
+
+        --prism-bg-title: #dadadd;
+        --prism-fg-default: #18181b;
+        --prism-bg-code-block: #f4f4f5;
+        --prism-bg-inline-code-block: rgb(175 184 193 / 20%);
+        --prism-gray: #6e7781;
+        --prism-red: #cf222e;
+        --prism-green: #116329;
+        --prism-blue: #0550ae;
+        --prism-indigo: #0a3069;
+        --prism-purple: #8250df;
+        --prism-brown: #953800;
     }
 
     .dark {
-        --background: 224 71.4% 4.1%;
-        --foreground: 210 20% 98%;
-        --card: 224 71.4% 4.1%;
-        --card-foreground: 210 20% 98%;
-        --popover: 224 71.4% 4.1%;
-        --popover-foreground: 210 20% 98%;
-        --accent: 217.2 32.6% 17.5%;
-        --accent-foreground: 210 40% 98%;
-        --secondary: 215 27.9% 16.9%;
-        --secondary-foreground: 210 20% 98%;
-        --muted: 215 27.9% 16.9%;
-        --muted-foreground: 217.9 10.6% 64.9%;
-        --accent: 215 27.9% 16.9%;
-        --accent-foreground: 210 20% 98%;
+        --background: 240 10% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 240 10% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 10% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 221.2 83.2% 53.3%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 240 3.7% 15.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 3.7% 15.9%;
+        --muted-foreground: 240 5% 64.9%;
+        --accent: 240 3.7% 15.9%;
+        --accent-foreground: 0 0% 98%;
         --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 210 20% 98%;
-        --border: 215 27.9% 16.9%;
-        --input: 215 27.9% 16.9%;
-        --ring: 216 12.2% 83.9%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 3.7% 15.9%;
+        --input: 240 3.7% 15.9%;
+        --ring: 240 4.9% 83.9%;
+
+        --prism-bg-title: #242429;
+        --prism-fg-default: #f4f4f5;
+        --prism-bg-code-block: #18181b;
+        --prism-bg-inline-code-block: rgb(99 110 123 / 40%);
+        --prism-gray: #768390;
+        --prism-red: #f47067;
+        --prism-green: #8ddb8c;
+        --prism-blue: #96d0ff;
+        --prism-indigo: #6cb6ff;
+        --prism-purple: #dcbdfb;
+        --prism-brown: #f69d50;
     }
 
     [data-kb-theme='dark'] {
         @apply dark;
     }
-}
 
-@layer base {
     * {
         @apply border-border;
 
@@ -62,8 +84,17 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
     body {
         @apply bg-background text-foreground;
+    }
+
+    /* prose */
+    .prose {
+        @apply dark:prose-invert;
+    }
+    .prose > p > img {
+        @apply w-full;
     }
     ::-webkit-scrollbar {
         width: 10px;
@@ -78,4 +109,334 @@
     .link {
         @apply text-primary hover:underline;
     }
+}
+
+.rehype-code-title {
+    width: 100%;
+    background-color: var(--prism-bg-title);
+    color: var(--prism-fg-default);
+    font-size: 0.875rem;
+    font-weight: bold;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.rehype-code-title + pre {
+    margin-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+    background-color: var(--prism-bg-code-block);
+    color: var(--prism-fg-default);
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+    tab-size: 2;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+    font-size: 0.875rem;
+    font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
+
+/* Inline code */
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    font-size: 1rem;
+    background-color: var(--prism-bg-inline-code-block);
+    padding: 0.2em 0.3em;
+    border-radius: 0.3em;
+    white-space: normal;
+}
+
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::before,
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after {
+    content: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+    color: var(--prism-gray);
+}
+
+.token.doctype,
+.token.punctuation,
+.token.entity {
+    color: var(--prism-fg-default);
+}
+
+.token.attr-name,
+.token.class-name,
+.token.boolean,
+.token.constant,
+.token.number,
+.token.atrule {
+    color: var(--prism-blue);
+}
+
+.token.keyword {
+    color: var(--prism-indigo);
+}
+
+.token.property,
+.token.tag,
+.token.symbol,
+.token.deleted,
+.token.important {
+    color: var(--prism-green);
+}
+
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted,
+.token.regex,
+.token.attr-value,
+.token.attr-value > .token.punctuation {
+    color: var(--prism-blue);
+}
+
+.token.variable,
+.token.operator,
+.token.function {
+    color: var(--prism-indigo);
+}
+
+.token.url {
+    color: var(--prism-green);
+}
+
+/* HTML overrides */
+.token.attr-value > .token.punctuation.attr-equals,
+.token.special-attr > .token.attr-value > .token.value.css {
+    color: var(--prism-fg-default);
+}
+
+/* CSS overrides */
+.language-css .token.selector {
+    color: var(--prism-green);
+}
+
+.language-css .token.property {
+    color: var(--prism-blue);
+}
+
+.language-css .token.important,
+.language-css .token.atrule .token.rule {
+    color: var(--prism-red);
+}
+
+/* JS overrides */
+.language-js .token.keyword,
+.language-javascript .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-js .token.operator,
+.language-js .token.constant,
+.language-js .token.boolean,
+.language-js .token.number,
+.language-js .token.atrule,
+.language-javascript .token.operator,
+.language-javascript .token.constant,
+.language-javascript .token.boolean,
+.language-javascript .token.number,
+.language-javascript .token.atrule {
+    color: var(--prism-blue);
+}
+
+.language-js .token.function,
+.language-javascript .token.function {
+    color: var(--prism-purple);
+}
+
+.language-js .token.attr-name,
+.language-js .token.class-name,
+.language-js .token.function-variable,
+.language-javascript .token.attr-name,
+.language-javascript .token.class-name,
+.language-javascript .token.function-variable {
+    color: var(--prism-brown);
+}
+
+/* JSX overrides */
+.language-jsx .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-jsx .token.function {
+    color: var(--prism-purple);
+}
+
+.language-jsx .token.function-variable {
+    color: var(--prism-brown);
+}
+
+.language-jsx .token.punctuation {
+    color: var(--prism-blue);
+}
+
+.language-jsx .token.attr-name,
+.language-jsx .token.class-name {
+    color: var(--prism-green);
+}
+
+.language-jsx .token.string {
+    color: var(--prism-indigo);
+}
+
+/* JSON overrides */
+.language-json .token.operator {
+    color: var(--prism-fg-default);
+}
+
+.language-json .token.null.keyword {
+    color: var(--prism-blue);
+}
+
+/* Java overrides */
+.language-java .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-java .token.operator,
+.language-java .token.constant,
+.language-java .token.boolean,
+.language-java .token.number,
+.language-java .token.atrule {
+    color: var(--prism-blue);
+}
+
+.language-java .token.function {
+    color: var(--prism-purple);
+}
+
+.language-java .token.attr-name,
+.language-java .token.function-variable {
+    color: var(--prism-green);
+}
+
+/* Kotlin overrides */
+.language-kotlin .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-kotlin .token.operator,
+.language-kotlin .token.constant,
+.language-kotlin .token.boolean,
+.language-kotlin .token.number,
+.language-kotlin .token.atrule {
+    color: var(--prism-blue);
+}
+
+.language-kotlin .token.function {
+    color: var(--prism-purple);
+}
+
+.language-kotlin .token.attr-name,
+.language-kotlin .token.function-variable {
+    color: var(--prism-green);
+}
+
+/* Go overrides */
+.language-go .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-go .token.operator,
+.language-go .token.constant,
+.language-go .token.boolean,
+.language-go .token.number,
+.language-go .token.atrule {
+    color: var(--prism-blue);
+}
+
+.language-go .token.function {
+    color: var(--prism-purple);
+}
+
+.language-go .token.attr-name,
+.language-go .token.function-variable {
+    color: var(--prism-green);
+}
+
+/* YAML overrides */
+.language-yml .token.atrule,
+.language-yaml .token.atrule {
+    color: var(--prism-green);
+}
+
+/* Dockerfile overrides */
+.language-dockerfile .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-dockerfile .token.function {
+    color: var(--prism-purple);
+}
+
+.language-dockerfile .token.punctuation {
+    color: var(--prism-blue);
+}
+
+.language-dockerfile .token.attr-name,
+.language-dockerfile .token.class-name {
+    color: var(--prism-green);
+}
+
+.language-dockerfile .token.string {
+    color: var(--prism-indigo);
+}
+
+/* HCL overrides */
+.language-hcl .token.keyword {
+    color: var(--prism-red);
+}
+
+.language-hcl .token.keyword:not(:has(span)) {
+    color: var(--prism-purple);
+}
+
+.language-hcl .token.string {
+    color: var(--prism-indigo);
+}
+
+.language-hcl .token.property,
+.language-hcl .token.punctuation {
+    color: var(--prism-fg-default);
+}
+
+/* General */
+.token.bold {
+    font-weight: bold;
+}
+
+.token.comment,
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.namespace {
+    opacity: 0.8;
 }

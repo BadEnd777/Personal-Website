@@ -1,7 +1,6 @@
-import type { Metadata } from 'next'
-
 import { Layout } from '@/components/layout'
 import { About } from '@/components/sections/about'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'About Me',
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
     return (
-        <Layout className="py-4">
+        <Layout>
             <About />
         </Layout>
     )

@@ -1,9 +1,9 @@
+import { Typography } from '@/components/typography'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
-import { Typography } from '@/components/typography'
 import { projects } from '@/data'
-import NextLink from 'next/link'
 import Image from 'next/image'
+import NextLink from 'next/link'
 
 export const Projects = ({ featured }: { featured?: boolean }) => {
     return (
@@ -53,7 +53,7 @@ export const Projects = ({ featured }: { featured?: boolean }) => {
                                             <NextLink
                                                 href={project.status.link}
                                                 target="_blank"
-                                                className="flex items-center space-x-2"
+                                                className="flex items-center space-x-2 hover:underline"
                                             >
                                                 <p>{project.status.text}</p>
                                                 {project.status.icon && <span className={project.status.icon} />}
@@ -73,6 +73,7 @@ export const Projects = ({ featured }: { featured?: boolean }) => {
                                         width={500}
                                         height={500}
                                         className="rounded object-contain"
+                                        priority
                                     />
                                 </div>
                             </div>

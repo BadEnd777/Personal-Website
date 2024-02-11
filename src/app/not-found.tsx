@@ -1,7 +1,7 @@
 import { Typography } from '@/components/typography'
 import { Button } from '@/components/ui/button'
-import NextLink from 'next/link'
 import Image from 'next/image'
+import NextLink from 'next/link'
 
 const NotFound = () => {
     return (

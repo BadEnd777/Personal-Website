@@ -13,17 +13,17 @@ The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), a
 
 ## Table of Contents
 
-- [Personal Website](#personal-website)
-  - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
-  - [Technologies Used](#technologies-used)
-  - [Usage](#usage)
-    - [Development](#development)
-    - [Production](#production)
-  - [Project Structure](#project-structure)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Contact](#contact)
+-   [Personal Website](#personal-website)
+    -   [Table of Contents](#table-of-contents)
+    -   [Prerequisites](#prerequisites)
+    -   [Technologies Used](#technologies-used)
+    -   [Usage](#usage)
+        -   [Development](#development)
+        -   [Production](#production)
+    -   [Project Structure](#project-structure)
+    -   [Contributing](#contributing)
+    -   [License](#license)
+    -   [Contact](#contact)
 
 ## Prerequisites
 

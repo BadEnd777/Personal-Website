@@ -4,16 +4,15 @@ import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
-    DropdownMenuTrigger,
     DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import NextLink from 'next/link'
-
 import { routes } from '@/data'
+import NextLink from 'next/link'
 
 export const MobileNav = () => {
     return (
-        <div className="flex items-center space-x-1 md:hidden">
+        <div className="flex items-center md:hidden">
             <ModeToggle />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>

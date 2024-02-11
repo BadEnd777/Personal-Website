@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { SkillsCarousel } from '@/components/skills-carousel'
 import { Typography } from '@/components/typography'
-import { education, experience, biography } from '@/data'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { biography, education, experience } from '@/data'
 
 export const About = () => {
     return (

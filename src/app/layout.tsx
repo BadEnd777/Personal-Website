@@ -1,10 +1,7 @@
-import { ReactNode } from 'react'
-
-import type { Metadata } from 'next'
-import type { Viewport } from 'next'
-
 import { ThemeProvider } from '@/components/theme-provider'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import { ReactNode } from 'react'
 import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })

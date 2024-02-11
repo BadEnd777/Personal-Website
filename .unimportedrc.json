@@ -2,6 +2,15 @@
     "entry": ["src/**/*.{ts,tsx}"],
     "extensions": [".ts", ".tsx"],
     "ignorePatterns": ["**/node_modules/**"],
-    "ignoreUnused": ["@iconify-json/simple-icons", "@iconify-json/tabler", "@iconify/tailwind", "tailwindcss-animate"],
+    "ignoreUnused": [
+        "@iconify-json/simple-icons",
+        "@iconify-json/tabler",
+        "@iconify/tailwind",
+        "tailwindcss-animate",
+        "rehype-stringify",
+        "remark-parse",
+        "remark-rehype",
+        "unified"
+    ],
     "respectGitignore": true
 }

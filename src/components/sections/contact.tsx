@@ -19,6 +19,7 @@ export const Contact = () => {
                         width={400}
                         height={400}
                         className="size-[300px] rounded-full md:size-[400px]"
+                        priority
                     />
                     <Typography variant="h1">Contact Information</Typography>
                     <div className="flex space-x-4">

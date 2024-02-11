@@ -1,6 +1,6 @@
-import { Typography } from '@/components/typography'
 import { DesktopNav } from '@/components/layout/desktop-nav'
 import { MobileNav } from '@/components/layout/mobile-nav'
+import { Typography } from '@/components/typography'
 import NextLink from 'next/link'
 
 export const Header = () => {

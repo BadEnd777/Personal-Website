@@ -8,7 +8,7 @@
     ],
     "settings": {
         "mdx/code-blocks": true,
-        "mdx/language-mapper": {}
+        "mdx/code-blocks.language": "jsx"
     },
     "plugins": ["prettier"],
     "rules": {

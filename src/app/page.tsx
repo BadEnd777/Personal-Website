@@ -1,17 +1,15 @@
+import { Layout } from '@/components/layout'
+import { About } from '@/components/sections/about'
+import { Contact } from '@/components/sections/contact'
+import { Projects } from '@/components/sections/projects'
 import { Typography } from '@/components/typography'
 import { Button } from '@/components/ui/button'
-import { Layout } from '@/components/layout'
-
-import { About } from '@/components/sections/about'
-import { Projects } from '@/components/sections/projects'
-import { Contact } from '@/components/sections/contact'
-
-import NextLink from 'next/link'
 import Image from 'next/image'
+import NextLink from 'next/link'
 
 const HomePage = () => {
     return (
-        <Layout className="space-y-10">
+        <Layout>
             <section className="flex flex-col-reverse items-center justify-between space-x-6 py-12 lg:flex-row">
                 <div className="flex flex-col items-center space-y-6 text-center lg:items-start lg:text-left">
                     <div className="flex items-baseline space-x-1 space-y-6 lg:flex-col lg:space-x-0">
@@ -41,6 +39,7 @@ const HomePage = () => {
                     width={500}
                     height={500}
                     className="size-[300px] rounded-xl md:size-[450px] lg:size-[500px]"
+                    priority
                 />
             </section>
             <About />
