@@ -27,9 +27,9 @@ export const Projects = ({ featured }: { featured?: boolean }) => {
                     </Tooltip>
                 </TooltipProvider>
             </div>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-lg text-muted-foreground">
                 Here are some of the projects I&apos;ve worked on. You can find more on my GitHub profile.
-            </p>
+            </h2>
             <div className="flex h-full w-full flex-wrap justify-between gap-4">
                 {projects
                     .filter((project) => (featured ? project.isFeatured : true))

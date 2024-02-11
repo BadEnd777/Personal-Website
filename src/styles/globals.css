@@ -45,8 +45,10 @@
         --card-foreground: 0 0% 98%;
         --popover: 240 10% 3.9%;
         --popover-foreground: 0 0% 98%;
-        --primary: 221.2 83.2% 53.3%;
-        --primary-foreground: 210 40% 98%;
+        /* --primary: 221.2 83.2% 53.3%; Original */
+        --primary: 217 89% 68%; /* Adjusted to be more readable, Contrast Ratio = 7.15 : 1 (lighter) */
+        /* --primary-foreground: 210 40% 98%; Original */
+        --primary-foreground: 222 42% 6%; /* Adjusted to be more readable, Contrast Ratio = 7.15 : 1 (lighter) */
         --secondary: 240 3.7% 15.9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 240 3.7% 15.9%;
@@ -107,7 +109,7 @@
         border-radius: 9999px;
     }
     .link {
-        @apply text-primary hover:underline;
+        @apply text-primary underline;
     }
 }
 

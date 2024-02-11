@@ -1,5 +1,5 @@
 import { Layout } from '@/components/layout'
-import { getBlogData } from '@/lib/blog'
+import { getBlogData, getBlogList } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
@@ -19,3 +19,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
 }
 
 export default BlogPostPage
+
+export const generateStaticParams = async () => {
+    const blogs = await getBlogList()
+
+    const paths = blogs.map((blog) => ({
+        slug: blog.slug,
+    }))
+
+    return paths
+}

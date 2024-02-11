@@ -1,16 +1,27 @@
 {
-    "entry": ["src/**/*.{ts,tsx}"],
+    "entry": ["src/**/*.{ts,tsx,js,jsx}"],
     "extensions": [".ts", ".tsx"],
     "ignorePatterns": ["**/node_modules/**"],
     "ignoreUnused": [
         "@iconify-json/simple-icons",
         "@iconify-json/tabler",
         "@iconify/tailwind",
-        "tailwindcss-animate",
         "rehype-stringify",
         "remark-parse",
         "remark-rehype",
+        "tailwindcss-animate",
         "unified"
     ],
-    "respectGitignore": true
+    "ignoreUnresolved": [
+        "rehype-stringify",
+        ["rehype-stringify", ["src\\lib\\blog.ts"]],
+        "remark-parse",
+        ["remark-parse", ["src\\lib\\blog.ts"]],
+        "remark-rehype",
+        ["remark-rehype", ["src\\lib\\blog.ts"]],
+        "unified",
+        ["unified", ["src\\lib\\blog.ts"]]
+    ],
+    "respectGitignore": true,
+    "ignoreUnimported": []
 }

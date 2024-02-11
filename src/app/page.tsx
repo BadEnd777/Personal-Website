@@ -23,7 +23,9 @@ const HomePage = () => {
                     </p>
                     <div className="flex space-x-4">
                         <NextLink href="/projects">
-                            <Button aria-label="View Projects">View Projects</Button>
+                            <Button className="text-primary-foreground" aria-label="View Projects">
+                                View Projects
+                            </Button>
                         </NextLink>
                         <NextLink href="/contact">
                             <Button variant="outline" className="gap-2" aria-label="Contact Me">

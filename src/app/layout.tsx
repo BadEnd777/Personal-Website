@@ -82,8 +82,8 @@ export const viewport: Viewport = {
     themeColor: '#2563EB',
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
+    maximumScale: 5, // Update the maximumScale to allow zooming up to 5x
+    userScalable: true, // Enable user scalability
 }
 
 const Root = ({ children }: { children: ReactNode }) => {
