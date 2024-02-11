@@ -9,10 +9,33 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import NextLink from 'next/link'
 
+const title = 'Blog'
+const description =
+    'Explore a collection of articles and blog posts by BadEnd. Discover a variety of topics, ranging from web development to design and technology.'
+const image = 'https://badend.is-a.dev/images/open-graph.webp'
+
 export const metadata: Metadata = {
-    title: 'Blog',
-    description:
-        'Explore a collection of articles and blog posts by BadEnd. Discover a variety of topics, ranging from web development to design and technology.',
+    title: {
+        template: `${title} - %s`,
+        default: `${title} - Personal Website`,
+    },
+    description,
+    openGraph: {
+        title,
+        description,
+        images: [
+            {
+                url: image,
+                width: 800,
+                height: 600,
+            },
+        ],
+    },
+    twitter: {
+        title,
+        description,
+        images: [image],
+    },
 }
 
 const BlogPage = async () => {

@@ -38,6 +38,10 @@ export const getBlogData = async (slug: string): Promise<BlogData | null> => {
     const { content, data } = matter(await readFile(filePath, 'utf8'))
     const frontmatter = data as BlogFrontmatter
 
+    if (!frontmatter.date) {
+        return null
+    }
+
     const file = await unified()
         .use(remarkParse)
         .use(remarkRehype)

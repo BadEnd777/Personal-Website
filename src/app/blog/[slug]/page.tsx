@@ -1,6 +1,40 @@
 import { Layout } from '@/components/layout'
-import { getBlogData, getBlogList } from '@/lib/blog'
+import { BlogFrontmatter, getBlogData, getBlogList } from '@/lib/blog'
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+    const blog = await getBlogData(params.slug)
+
+    if (!blog) {
+        return notFound()
+    }
+
+    const { title, description, coverImage } = blog.metadata as BlogFrontmatter
+
+    const image = `https://badend.is-a.dev${coverImage}`
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: [
+                {
+                    url: image,
+                    width: 800,
+                    height: 600,
+                },
+            ],
+        },
+        twitter: {
+            title,
+            description,
+            images: [image],
+        },
+    }
+}
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     const blog = await getBlogData(params.slug)
