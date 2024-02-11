@@ -1,0 +1,131 @@
+---
+title: Finding and Fixing Dangling Files and Unused Dependencies in JavaScript Projects with unimported
+description: Learn how unimported can help you detect and address unused source files and dependencies in your JavaScript or TypeScript projects, ensuring cleaner and more efficient codebases.
+coverImage: https://raw.githubusercontent.com/smeijer/unimported/main/docs/unimported.png
+date: 2024-02-11
+---
+
+# Finding and Fixing Dangling Files and Unused Dependencies in JavaScript Projects with unimported
+
+Nowadays, maintaining clean and efficient JavaScript projects is crucial. However, identifying and removing dangling files and unused dependencies can be challenging. This is where unimported comes to the rescue.
+
+## Overview
+
+Unimported is a powerful tool designed to detect unused source files and dependencies in JavaScript and TypeScript projects. While linters can flag unused code within modules, they often fail to identify redundant files. Unimported addresses this gap by analyzing your codebase through require/import statements, starting from your entry file.
+
+### How it Works
+
+Unimported follows import statements from one or more entry files, providing a comprehensive report on unimported files, unresolved imports, and unused dependencies. Let's explore its usage and features:
+
+## Usage
+
+To get started, simply run the following command in the root of your project:
+
+```shell
+npx unimported
+```
+
+Unimported analyzes your codebase, providing valuable insights into unimported files and unused dependencies. Here are some key options and commands you can utilize:
+
+### Init
+
+Initialize default ignore patterns to the `.unimportedrc.json` settings file:
+
+```shell
+npx unimported --init
+```
+
+### Update
+
+Write current results to the ignore lists in `.unimportedrc.json`:
+
+```shell
+npx unimported --update
+```
+
+### Fix
+
+Automatically remove unimported files from your project:
+
+```shell
+npx unimported --fix
+```
+
+### Flow Type
+
+Strip flow types from files containing the `@flow` pragma:
+
+```shell
+npx unimported --flow
+```
+
+### CI Usage
+
+Integrate unimported into your CI pipeline for automated checks:
+
+```shell
+npx unimported
+```
+
+## Report
+
+Unimported provides a detailed report outlining unimported files, unresolved imports, and unused dependencies. Here's a glimpse of what you can expect:
+
+```shell
+Summary:
+- Entry files: 2
+- Unresolved imports: 2
+- Unused dependencies: 29
+- Unimported files: 86
+```
+
+## Example Config File
+
+Customize unimported's behavior by configuring `.unimportedrc.json`. Define entry points, extensions, ignore patterns, and more:
+
+```json
+{
+  "entry": ["src/main.ts", "src/pages/**/*.{js,ts}"],
+  "extensions": [".ts", ".js"],
+  "ignorePatterns": ["**/node_modules/**", "private/**"],
+  "ignoreUnresolved": ["some-npm-dependency"],
+  "ignoreUnimported": ["src/i18n/locales/en.ts", "src/i18n/locales/nl.ts"],
+  "ignoreUnused": ["bcrypt", "create-emotion"],
+  "respectGitignore": true,
+  "scannedDirs": ["./modules"]
+}
+```
+
+## Troubleshooting
+
+Encountering issues? Here are some common troubleshooting steps:
+
+### Export Default
+
+Replace `export default from` with `export { default } from` if encountered.
+
+### Stale Cache
+
+Clear the cache if experiencing unexpected results:
+
+```shell
+npx unimported --clear-cache
+```
+
+### TypeScript Declaration Files
+
+Include `.d.ts` extensions in your config for TypeScript projects:
+
+```json
+{
+  "extensions": [".ts", ".d.ts"]
+}
+```
+
+## Conclusion
+
+Unimported simplifies the process of identifying and removing dangling files and unused dependencies in your JavaScript projects. By integrating it into your workflow, you can ensure cleaner, more efficient codebases. Give it a try and experience the benefits firsthand!
+
+For more information, check out the [GitHub repository](https://github.com/smeijer/unimported).
+
+Happy coding! 🚀

@@ -1,5 +1,6 @@
 import { Layout } from '@/components/layout'
 import { Typography } from '@/components/typography'
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
@@ -55,14 +56,20 @@ const BlogPage = async () => {
                         return (
                             <Card key={slug} className="flex flex-col">
                                 <CardHeader>
-                                    <Image
-                                        src={coverImage}
-                                        alt={title}
-                                        className="mb-4 w-full rounded-t-lg object-cover"
-                                        width={500}
-                                        height={281}
-                                        priority
-                                    />
+                                    <AspectRatio
+                                        ratio={16 / 9}
+                                        className="rounded-t-lg overflow-hidden w-full relative"
+                                    >
+                                        <Image
+                                            src={coverImage}
+                                            alt={title}
+                                            className="object-cover w-full h-full"
+                                            width={500}
+                                            height={500}
+                                            priority
+                                        />
+                                    </AspectRatio>
+                                    <Separator className="my-2" />
                                     <CardTitle className="line-clamp-2 text-xl font-semibold leading-none tracking-tight">
                                         {title}
                                     </CardTitle>
