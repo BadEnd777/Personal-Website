@@ -1,14 +1,10 @@
-/* 
-Can you help me update the getBlogList function for can get a blog by tag, But is not requite can left it entry to get all post
-*/
 import { access, readdir, readFile } from 'fs/promises'
 import path from 'path'
 import dayjs from 'dayjs'
-import matter from 'gray-matter' // Parse frontmatter
-import rehypeCodeTitles from 'rehype-code-titles' // Add titles to code blocks
-import rehypePrismPlus from 'rehype-prism-plus' // Syntax highlighting
-import rehypeSlug from 'rehype-slug' // Add IDs to headings
-
+import matter from 'gray-matter'
+import rehypeCodeTitles from 'rehype-code-titles'
+import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
@@ -94,7 +90,7 @@ export const getBlogTags = async () => {
     const tagsSet = new Set<string>()
 
     posts.forEach((post) => {
-        post.metadata.tags.forEach((tag) => tagsSet.add(encodeURIComponent(tag)))
+        post.metadata.tags.forEach((tag) => tagsSet.add(tag))
     })
 
     const tags = Array.from(tagsSet).map((tag) => ({ tag }))

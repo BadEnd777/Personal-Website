@@ -1,6 +1,7 @@
 import { Layout } from '@/components/layout'
 import { Blog } from '@/components/sections/blog'
 import { getBlogList, getBlogTags } from '@/lib/blog'
+import { capitalize } from '@/utils/capitalize'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -11,10 +12,10 @@ export const generateMetadata = async ({ params }: { params: { tag: string } }):
         return notFound()
     }
 
-    const decodeTag = decodeURIComponent(tag)
+    const capita = capitalize(tag)
 
-    const title = `BadEnd Blog - ${decodeTag}`
-    const description = `Explore a collection of articles and blog posts with tag ${decodeTag} by BadEnd. Discover more ${decodeTag} related blogs.`
+    const title = `BadEnd Blog - ${capita}`
+    const description = `Explore a collection of articles and blog posts with tag ${capita} by BadEnd. Discover more ${capita} related blogs.`
     const image = 'https://badend.is-a.dev/images/open-graph.webp'
 
     return {
@@ -52,13 +53,11 @@ const BlogTagPage = async ({ params }: { params: { tag: string } }) => {
         return notFound
     }
 
-    const decodeTag = decodeURIComponent(tag)
-
-    const blogs = await getBlogList(decodeTag)
+    const blogs = await getBlogList(tag)
 
     return (
         <Layout>
-            <Blog blogs={blogs} tag={decodeTag} />
+            <Blog blogs={blogs} tag={capitalize(tag)} />
         </Layout>
     )
 }
