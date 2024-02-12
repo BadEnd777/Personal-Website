@@ -1,7 +1,7 @@
 /* 
 title: 'Project Title' - The title of the project.
 description: 'Project description.' - The description of the project.
-image: '/projects/project-image.webp' - The path to the project image.
+image: '/images/projects/project-image.webp' - The path to the project image.
 status: {
     text: 'Status' - The status of the project. (e.g. View Source, Coming Soon, Private Repository)
     link: 'Link' - The link to the project status. (e.g. GitHub Repository, Website)
@@ -15,7 +15,7 @@ export const projects = [
     {
         title: 'Personal Website',
         description: 'My personal website built with Next.js, TypeScript, Shadcn UI, and Tailwind CSS.',
-        image: '/projects/personal-website.webp',
+        image: '/images/projects/personal-website.webp',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Personal-Website',
@@ -28,7 +28,7 @@ export const projects = [
         title: 'Chat Bridge',
         description:
             'An npm package that makes it easier to integrate Facebook Page webhook into your Node.js application.',
-        image: '/projects/chat-bridge.webp',
+        image: '/images/projects/chat-bridge.webp',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/Chat-Bridge',
@@ -39,7 +39,7 @@ export const projects = [
     {
         title: 'VRConnectivity Shield',
         description: 'DNS blocking tool to prevent VRChat analytics and tracking.',
-        image: '/projects/vrconnectivity-shield.webp',
+        image: '/images/projects/vrconnectivity-shield.webp',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/VRConnectivity-Shield',
@@ -50,7 +50,7 @@ export const projects = [
     {
         title: 'TikTok Harbor',
         description: 'Free online tool to download TikTok videos/slideshows without watermark.',
-        image: '/projects/tiktok-harbor.webp',
+        image: '/images/projects/tiktok-harbor.webp',
         status: {
             text: 'View Source',
             link: 'https://github.com/BadEnd777/TikTok-Harbor',

@@ -7,7 +7,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useRef } from 'react'
 
 export const SkillsCarousel = () => {
-    const plugin = useRef(Autoplay({ delay: 5000, stopOnHover: true }))
+    const plugin = useRef(Autoplay({ delay: 3000, stopOnHover: true }))
 
     return (
         <Carousel opts={{ align: 'start', loop: true }} plugins={[plugin.current]}>
