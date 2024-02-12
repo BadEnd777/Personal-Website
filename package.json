@@ -71,7 +71,7 @@
         "prettier-plugin-pkg": "^0.18.1",
         "prettier-plugin-tailwindcss": "^0.5.11",
         "serve": "^14.2.1",
-        "shiki": "^1.1.1",
+        "shiki": "^1.1.2",
         "tailwindcss": "^3.4.1",
         "typescript": "^5.3.3",
         "unimported": "^1.31.1",
