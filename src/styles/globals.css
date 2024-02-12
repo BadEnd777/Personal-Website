@@ -64,7 +64,7 @@
         --prism-bg-title: #242429;
         --prism-fg-default: #f4f4f5;
         --prism-bg-code-block: #18181b;
-        --prism-bg-inline-code-block: rgb(99 110 123 / 40%);
+        --prism-bg-inline-code-block: rgb(175 184 193 / 20%);
         --prism-gray: #768390;
         --prism-red: #f47067;
         --prism-green: #8ddb8c;
@@ -169,6 +169,51 @@ pre[class*='language-'] {
 .prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::before,
 .prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after {
     content: none;
+}
+
+.code-highlight {
+    float: left;
+    min-width: 100%;
+}
+
+.code-line {
+    display: block;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    /* Set placeholder for highlight accent border color to transparent */
+    border-left: 4px solid transparent;
+}
+
+.code-line.inserted {
+    /* Set inserted line (+) color */
+    background-color: var(--prism-green);
+}
+
+.code-line.deleted {
+    /* Set deleted line (-) color */
+    background-color: var(--prism-red);
+}
+
+.highlight-line {
+    margin-left: -16px;
+    margin-right: -16px;
+    /* Set highlight bg color */
+    background-color: var(--prism-bg-inline-code-block);
+    /* Set highlight accent border color */
+    border-left: 4px solid var(--prism-blue);
+}
+
+.line-number::before {
+    display: inline-block;
+    width: 1rem;
+    text-align: right;
+    margin-right: 16px;
+    margin-left: -8px;
+    /* Line number color */
+    color: rgb(156, 163, 175);
+    content: attr(line);
 }
 
 .token.comment,

@@ -1,11 +1,10 @@
 ---
 title: How to Create a Blog Page with Syntax Highlighting
 description: Learn how to set up a blog page with syntax highlighting in Next.js using gray-matter, next-mdx-remote, rehype-prism-plus, and a custom Prism.js CSS theme.
-coverImage: /images/blog/nextjs-markdown-blog.jpeg
+tags: [Next.js, syntax highlighting, gray-matter, next-mdx-remote, rehype-prism-plus]
+image: /images/blog/nextjs-markdown-blog.jpeg
 date: 2023-08-19
 ---
-
-# How to Create a Blog Page with Syntax Highlighting
 
 In this tutorial, we will learn how to create a blog page with syntax highlighting using the following libraries:
 
@@ -19,12 +18,6 @@ In this tutorial, we will learn how to create a blog page with syntax highlighti
 ## Table of Contents
 
 -   [Prerequisites](#prerequisites)
--   [Set Up Your Next.js Project](#set-up-your-nextjs-project)
--   [Configure Front Matter](#configure-front-matter)
--   [Render MDX Content](#render-mdx-content)
--   [Add Syntax Highlighting](#add-syntax-highlighting)
--   [Style Syntax Highlighting](#style-syntax-highlighting)
--   [Conclusion](#conclusion)
 
 ## Prerequisites
 
@@ -36,39 +29,127 @@ In this tutorial, we will learn how to create a blog page with syntax highlighti
 Assuming you already have a Next.js project set up, navigate to the project directory and install the required dependencies:
 
 ```bash:Terminal
-npm install gray-matter next-mdx-remote rehype-prism-plus
+npm install gray-matter next-mdx-remote
 # or
-yarn add gray-matter next-mdx-remote rehype-prism-plus
+yarn add gray-matter next-mdx-remote
 # or
-pnpm add gray-matter next-mdx-remote rehype-prism-plus
+pnpm add gray-matter next-mdx-remote
 ```
+
+## Create MDX Files
+
+Create a directory to store your MDX files. For example, you can create a `posts` directory in the `src` directory of your Next.js project. Create an MDX file in the `posts` directory:
+
+````md:src/posts/blog-post.mdx
+# Simple Syntax Highlighting Example
+
+```ts
+const greeting: string = "Hello, World!";
+console.log(greeting);
+```
+````
 
 ## Configure Front Matter
 
 Use `gray-matter` to extract front matter (metadata) from your MDX files. Front matter typically includes information like the title and date of the blog post. Create an MDX file with front matter like this:
 
-```md:blog-post.mdx
+````md:blog-post.mdx {1-5}
 ---
-title: Getting Started with Syntax Highlighting
+title: "Simple Syntax Highlighting Example"
+date: "2023-08-19"
+// ... other front matter fields
 ---
 
-# Your MDX Content Goes Here
+# Simple Syntax Highlighting Example
+
+```ts
+const greeting: string = "Hello, World!";
+console.log(greeting);
+```
+````
+
+## Create a Blog Page
+
+Next, create a page to display the blog post. Create a file called `index.js` in the `pages/blog` directory:
+
+```jsx:pages/blog/index.js
+// Import the required libraries
+import NextLink from 'next/link'
+import matter from 'gray-matter'
+import path from 'path'
+import fs from 'fs'
+
+// Create a Blog component
+const Blog = ({ posts }) => {
+    console.log(posts);
+
+    // Render the blog posts
+    return (
+        <div>
+            {posts.map((post) => ( // Map through the posts
+                <div key={post.slug}>
+                    <h2>{post.frontMatter.title}</h2>
+                    <p>{post.frontMatter.date}</p>
+                    <NextLink href={`/blog/${post.slug}`}>
+                        Read more
+                    </NextLink>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default Blog
+
+// Fetch the blog posts at build time
+export const getStaticProps = async () => {
+    // Get the file paths of the MDX files in the posts directory
+    const postFilePaths = fs.readdirSync(path.join(process.cwd(), "src", "posts"));
+
+    // Map the file paths to the posts
+    const posts = postFilePaths.map((path) => {
+        const postFilePath = path.join(process.cwd(), "src", "posts", path);
+        const source = fs.readFileSync(postFilePath);
+
+        // Extract the front matter from the MDX file
+        const { content, data } = matter(source);
+
+        return {
+            slug: path.replace(/\.mdx/, ""),
+            frontMatter: {
+                slug: path.replace(/\.mdx/, ""),
+                ...data
+            }
+        }
+    });
+
+    // Return the posts as props
+    return {
+        props: {
+            posts
+        }
+    }
+}
 ```
 
 ## Render MDX Content
 
-Next, utilize `next-mdx-remote` to render the MDX content with the extracted front matter. Create a component that reads the MDX file, extracts front matter, and renders the MDX content:
+Use `next-mdx-remote` to render the MDX content. Create a file called `[slug].js` in the `pages/blog` directory:
 
 ```jsx:pages/blog/[slug].js
+// Import the required libraries
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
+import path from 'path'
 import fs from 'fs'
 
+// Create a BlogPost component
 const BlogPost = ({ source, frontMatter }) => {
     return (
         <div>
             <h1>{frontMatter.title}</h1>
+            <p>{frontMatter.date}</p>
             <MDXRemote {...source} />
         </div>
     )
@@ -76,68 +157,85 @@ const BlogPost = ({ source, frontMatter }) => {
 
 export default BlogPost
 
+// Fetch the blog post at build time
+export const getStaticProps = async ({ params }) => {
+    // Get the file path of the MDX file
+    const postFilePath = path.join(process.cwd(), "src", "posts", `${params.slug}.mdx`);
+    const source = fs.readFileSync(postFilePath);
+
+    // Extract the front matter from the MDX file
+    const { content, data } = matter(source);
+
+    // Serialize the MDX content
+    const mdxSource = await serialize(content);
+
+    // Return the blog post as props
+    return {
+        props: {
+            source: mdxSource,
+            frontMatter: data
+        }
+    }
+}
+
+// Fetch the paths of the blog posts at build time
 export const getStaticPaths = async () => {
+    // Get the file paths of the MDX files in the posts directory
     const postFilePaths = fs.readdirSync(path.join(process.cwd(), "src", "posts"));
 
+    // Map the file paths to the paths
     const paths = postFilePaths.map((path) => ({
         params: {
             slug: path.replace(/\.mdx/, "")
         }
     }));
 
+    // Return the paths
     return {
         paths,
         fallback: false
     }
 }
-
-export const getStaticProps = async ({ params }) => {
-    const postFilePath = path.join(process.cwd(), "src", "posts", `${params.slug}.mdx`);
-    const source = fs.readFileSync(postFilePath);
-
-    const { content, data } = matter(source);
-
-    const mdxSource = await serialize(content, {
-        mdxOptions: {
-            rehypePlugins: [rehypePrism]
-        }
-    });
-
-    return {
-        props: {
-            source: mdxSource,
-            frontMatter: {
-                slug: params.slug,
-                ...data
-            }
-        }
-    }
-}
 ```
+
+Now you can navigate to the blog page and see the blog post. However, the code snippet is not highlighted. Let's add syntax highlighting to the code snippet.
 
 ## Add Syntax Highlighting
 
-To add syntax highlighting, we'll use the `rehype-prism-plus` library. First, install the Prism.js CSS theme from the [PrismJS Themes Repository](https://github.com/PrismJS/prism-themes), and include it in your project.
+Use `rehype-prism-plus` to add syntax highlighting to the code snippet. First, install the `rehype-prism-plus` package:
 
-Then, modify the `getStaticProps` function in `BlogPost.js` component to include `rehype-prism-plus`:
+```bash:Terminal
+npm install rehype-prism-plus
+# or
+yarn add rehype-prism-plus
+# or
+pnpm add rehype-prism-plus
+```
 
-```jsx:pages/blog/[slug].js
-import rehypePrism from 'rehype-prism-plus'
+Next, update the `[slug].js` file to use `rehype-prism-plus` plugin to serialize the MDX content:
 
-// ...
+```jsx:pages/blog/[slug].js {2, 11-15}
+// ... other imports
+import rehypePrismPlus from 'rehype-prism-plus'
 
-export async function getStaticProps() {
-    // ...
+// ... other code
 
+// Fetch the blog post at build time
+export const getStaticProps = async ({ params }) => {
+    // ... other code
+
+    // Serialize the MDX content with rehypePrismPlus
     const mdxSource = await serialize(content, {
         mdxOptions: {
-            rehypePlugins: [rehypePrism]
+            rehypePlugins: [rehypePrismPlus]
         }
-    })
+    });
 
-    // ...
+    // ... other code
 }
 ```
+
+The code snippet in the blog post is now highlighted. However, the style of the syntax highlighting is not applied. Let's apply the Prism.js CSS theme to your Next.js project.
 
 ## Style Syntax Highlighting
 
@@ -153,4 +251,6 @@ In this tutorial, we learned how to create a blog page with syntax highlighting 
 
 Now you can create a blog page with syntax highlighting for your Next.js project.
 
-Happy coding!
+Happy coding 🚀!
+
+---

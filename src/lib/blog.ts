@@ -1,3 +1,6 @@
+/* 
+Can you help me update the getBlogList function for can get a blog by tag, But is not requite can left it entry to get all post
+*/
 import { access, readdir, readFile } from 'fs/promises'
 import path from 'path'
 import dayjs from 'dayjs'
@@ -16,7 +19,8 @@ const blogPath = path.join(process.cwd(), 'src', 'blog')
 export type BlogFrontmatter = {
     title: string
     description: string
-    coverImage: string
+    tags: string[]
+    image: string
     date: string
 }
 
@@ -58,31 +62,42 @@ export const getBlogData = async (slug: string): Promise<BlogData | null> => {
     }
 }
 
-export const getBlogList = async (): Promise<BlogData[]> => {
+export const getBlogList = async (tag?: string): Promise<BlogData[]> => {
     const files = await readdir(blogPath)
 
     const posts = await Promise.all(
         files.map(async (file) => {
             const slug = file.replace(/\.mdx$/, '')
-            return getBlogData(slug)
+            const blogData = await getBlogData(slug)
+            if (!tag || (blogData && blogData.metadata.tags.includes(tag))) {
+                return blogData
+            }
+            return null
         }),
     )
 
-    /*
-    // Sort by date (descending)
-    const sorted = posts.sort((a, b) => {
-        const dateA = dayjs(a?.metadata?.date || '')
-        const dateB = dayjs(b?.metadata?.date || '')
-        return dateA.isValid() && dateB.isValid() ? dateA.diff(dateB) : 0
-    }) 
-    */
+    // Remove null entries
+    const filteredPosts = posts.filter(Boolean) as BlogData[]
 
     // Sort by date (ascending)
-    const sorted = posts.sort((a, b) => {
+    const sorted = filteredPosts.sort((a, b) => {
         const dateA = dayjs(a?.metadata?.date || '')
         const dateB = dayjs(b?.metadata?.date || '')
         return dateA.isValid() && dateB.isValid() ? dateB.diff(dateA) : 0
     })
 
-    return sorted as BlogData[]
+    return sorted
+}
+
+export const getBlogTags = async () => {
+    const posts = await getBlogList()
+    const tagsSet = new Set<string>()
+
+    posts.forEach((post) => {
+        post.metadata.tags.forEach((tag) => tagsSet.add(encodeURIComponent(tag)))
+    })
+
+    const tags = Array.from(tagsSet).map((tag) => ({ tag }))
+
+    return tags
 }

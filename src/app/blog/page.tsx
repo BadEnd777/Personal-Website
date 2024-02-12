@@ -1,14 +1,7 @@
 import { Layout } from '@/components/layout'
-import { Typography } from '@/components/typography'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Separator } from '@/components/ui/separator'
+import { Blog } from '@/components/sections/blog'
 import { getBlogList } from '@/lib/blog'
-import dayjs from 'dayjs'
 import type { Metadata } from 'next'
-import Image from 'next/image'
-import NextLink from 'next/link'
 
 const title = 'Blog'
 const description =
@@ -16,10 +9,7 @@ const description =
 const image = 'https://badend.is-a.dev/images/open-graph.webp'
 
 export const metadata: Metadata = {
-    title: {
-        template: `${title} - %s`,
-        default: `${title} - Personal Website`,
-    },
+    title,
     description,
     openGraph: {
         title,
@@ -44,56 +34,7 @@ const BlogPage = async () => {
 
     return (
         <Layout>
-            <section className="flex flex-col space-y-8 pb-20 pt-4">
-                <Typography variant="h2" underline>
-                    📝 Blog
-                </Typography>
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    {blogs.map((blog) => {
-                        const { slug, metadata } = blog
-                        const { title, description, coverImage, date } = metadata
-
-                        return (
-                            <Card key={slug} className="flex flex-col">
-                                <CardHeader>
-                                    <AspectRatio
-                                        ratio={16 / 9}
-                                        className="rounded-t-lg overflow-hidden w-full relative"
-                                    >
-                                        <Image
-                                            src={coverImage}
-                                            alt={title}
-                                            className="object-cover w-full h-full"
-                                            width={500}
-                                            height={500}
-                                            priority
-                                        />
-                                    </AspectRatio>
-                                    <Separator className="my-2" />
-                                    <CardTitle className="line-clamp-2 text-xl font-semibold leading-none tracking-tight">
-                                        {title}
-                                    </CardTitle>
-                                    <Separator className="my-2" />
-                                    <p className="text-sm text-muted-foreground">
-                                        {dayjs(date).format('MMMM D, YYYY')}
-                                    </p>
-                                </CardHeader>
-                                <CardContent>
-                                    <CardDescription className="line-clamp-3">{description}</CardDescription>
-                                </CardContent>
-                                <CardFooter className="mt-auto">
-                                    <NextLink href={`/blog/${slug}`}>
-                                        <Button variant="outline" className="gap-2" aria-label="Read More">
-                                            Read Full Article
-                                            <span className="icon-[tabler--arrow-narrow-right] size-4" />
-                                        </Button>
-                                    </NextLink>
-                                </CardFooter>
-                            </Card>
-                        )
-                    })}
-                </div>
-            </section>
+            <Blog blogs={blogs} />
         </Layout>
     )
 }

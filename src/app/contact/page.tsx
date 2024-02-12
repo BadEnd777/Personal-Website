@@ -8,10 +8,7 @@ const description =
 const image = 'https://badend.is-a.dev/images/open-graph.webp'
 
 export const metadata: Metadata = {
-    title: {
-        template: `${title} - %s`,
-        default: `${title} - Personal Website`,
-    },
+    title,
     description,
     openGraph: {
         title,
