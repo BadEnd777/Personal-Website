@@ -6,8 +6,8 @@ settings:
 
 dependencies:
     '@iconify-json/simple-icons':
-        specifier: ^1.1.90
-        version: 1.1.90
+        specifier: ^1.1.91
+        version: 1.1.91
     '@iconify-json/tabler':
         specifier: ^1.1.105
         version: 1.1.105
@@ -97,12 +97,6 @@ devDependencies:
     '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.1.1
         version: 4.1.1(prettier@3.2.5)
-    '@shikijs/rehype':
-        specifier: ^1.1.1
-        version: 1.1.1
-    '@shikijs/transformers':
-        specifier: ^1.1.1
-        version: 1.1.1
     '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.10(tailwindcss@3.4.1)
@@ -157,9 +151,6 @@ devDependencies:
     serve:
         specifier: ^14.2.1
         version: 14.2.1
-    shiki:
-        specifier: ^1.1.1
-        version: 1.1.1
     tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1
@@ -499,10 +490,10 @@ packages:
             '@floating-ui/utils': 0.2.1
         dev: false
 
-    /@floating-ui/dom@1.6.1:
+    /@floating-ui/dom@1.6.3:
         resolution:
             {
-                integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==,
+                integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==,
             }
         dependencies:
             '@floating-ui/core': 1.6.0
@@ -518,7 +509,7 @@ packages:
             react: '>=16.8.0'
             react-dom: '>=16.8.0'
         dependencies:
-            '@floating-ui/dom': 1.6.1
+            '@floating-ui/dom': 1.6.3
             react: 18.2.0
             react-dom: 18.2.0(react@18.2.0)
         dev: false
@@ -582,10 +573,10 @@ packages:
             - supports-color
         dev: true
 
-    /@iconify-json/simple-icons@1.1.90:
+    /@iconify-json/simple-icons@1.1.91:
         resolution:
             {
-                integrity: sha512-IYDCQD3VJ5verAwWwMgnbJ6SvPzEqH0SG6JsI2ySuI64d7qVbcJMFycc0kGPfSsi2yAPYHk+tD6Iln17y1MuNA==,
+                integrity: sha512-hFWxeQWjCh26nObKnEm+AMB5W+bh4pXtmT3PnecS7rP2Crh0AHi5QBHPtH+6L8R6xZtBk5I2TLoA0TRzCgrF8A==,
             }
         dependencies:
             '@iconify/types': 2.0.0
@@ -1561,36 +1552,6 @@ packages:
             }
         dev: true
 
-    /@shikijs/core@1.1.1:
-        resolution:
-            {
-                integrity: sha512-WSHuW0i4W04+UZgim378oxHBAp4S5X3hVI2zXh+t5v2fx2u/7QXz9VNisoOD/CA4O9Lc6Zs97TrKiDbWyZua6Q==,
-            }
-        dev: true
-
-    /@shikijs/rehype@1.1.1:
-        resolution:
-            {
-                integrity: sha512-7JJIr7v89sudUol7BwzIXSh5n7fFa8KnqUVjRmJLvQBy31gxUBF2j1kvMD32SCXZdxIy/XRIeKMgKiNCRpFPvg==,
-            }
-        dependencies:
-            '@shikijs/transformers': 1.1.1
-            '@types/hast': 3.0.4
-            hast-util-to-string: 3.0.0
-            shiki: 1.1.1
-            unified: 11.0.4
-            unist-util-visit: 5.0.0
-        dev: true
-
-    /@shikijs/transformers@1.1.1:
-        resolution:
-            {
-                integrity: sha512-kOGqxMWtgPxivmDB6WH/lq3oUv0FrGPleovfBCqNVYsyGwRDa01OBOqQxO6oz8a7QbdEq0fbt7CaK1yjv4epXw==,
-            }
-        dependencies:
-            shiki: 1.1.1
-        dev: true
-
     /@swc/helpers@0.5.2:
         resolution:
             {
@@ -2074,7 +2035,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             is-array-buffer: 3.0.4
         dev: true
 
@@ -2085,7 +2046,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             get-intrinsic: 1.2.4
@@ -2107,7 +2068,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-array-method-boxes-properly: 1.0.0
@@ -2121,7 +2082,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -2135,7 +2096,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-shim-unscopables: 1.0.2
@@ -2148,7 +2109,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-shim-unscopables: 1.0.2
@@ -2160,7 +2121,7 @@ packages:
                 integrity: sha512-/DdH4TiTmOKzyQbp/eadcCVexiCb36xJg7HshYOYJnNZFDj33GEv0P7GxsynpShhq4OLYJzbGcBDkLsDt7MnNg==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -2175,7 +2136,7 @@ packages:
         engines: { node: '>= 0.4' }
         dependencies:
             array-buffer-byte-length: 1.0.1
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -2211,7 +2172,7 @@ packages:
             postcss: ^8.1.0
         dependencies:
             browserslist: 4.22.3
-            caniuse-lite: 1.0.30001585
+            caniuse-lite: 1.0.30001587
             fraction.js: 4.3.7
             normalize-range: 0.1.2
             picocolors: 1.0.0
@@ -2297,7 +2258,7 @@ packages:
         dependencies:
             ansi-align: 3.0.1
             camelcase: 7.0.1
-            chalk: 5.3.0
+            chalk: 5.0.1
             cli-boxes: 3.0.0
             string-width: 5.1.2
             type-fest: 2.19.0
@@ -2340,8 +2301,8 @@ packages:
         engines: { node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7 }
         hasBin: true
         dependencies:
-            caniuse-lite: 1.0.30001585
-            electron-to-chromium: 1.4.665
+            caniuse-lite: 1.0.30001587
+            electron-to-chromium: 1.4.667
             node-releases: 2.0.14
             update-browserslist-db: 1.0.13(browserslist@4.22.3)
 
@@ -2380,13 +2341,14 @@ packages:
         engines: { node: '>= 0.8' }
         dev: true
 
-    /call-bind@1.0.6:
+    /call-bind@1.0.7:
         resolution:
             {
-                integrity: sha512-Mj50FLHtlsoVfRfnHaZvyrooHcrlceNZdL/QBvJJVd9Ta55qCQK0gs4ss2oZDeV9zFCs6ewzYgVE5yfVmfFpVg==,
+                integrity: sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==,
             }
         engines: { node: '>= 0.4' }
         dependencies:
+            es-define-property: 1.0.0
             es-errors: 1.3.0
             function-bind: 1.1.2
             get-intrinsic: 1.2.4
@@ -2416,10 +2378,10 @@ packages:
         engines: { node: '>=14.16' }
         dev: true
 
-    /caniuse-lite@1.0.30001585:
+    /caniuse-lite@1.0.30001587:
         resolution:
             {
-                integrity: sha512-yr2BWR1yLXQ8fMpdS/4ZZXpseBgE7o4g41x3a6AJOqZuOi+iE/WdJYAuZ6Y95i4Ohd2Y+9MzIWRR+uGABH4s3Q==,
+                integrity: sha512-HMFNotUmLXn71BQxg8cijvqxnIAofforZOwGsxyXJ0qugTdspUF4sPSJ2vhgprHCB996tIDzEq1ubumPDV8ULA==,
             }
 
     /ccount@2.0.1:
@@ -2952,17 +2914,17 @@ packages:
             clone: 1.0.4
         dev: true
 
-    /define-data-property@1.1.2:
+    /define-data-property@1.1.3:
         resolution:
             {
-                integrity: sha512-SRtsSqsDbgpJBbW3pABMCOt6rQyeM8s8RiyeSN8jYG8sYmt/kGJejbydttUsnDs1tadr19tvhT4ShwMyoqAm4g==,
+                integrity: sha512-h3GBouC+RPtNX2N0hHVLo2ZwPYurq8mLmXpOLTsw71gr7lHt5VaI4vVkDUNOfiWmm48JEXe3VM7PmLX45AMmmg==,
             }
         engines: { node: '>= 0.4' }
         dependencies:
             es-errors: 1.3.0
             get-intrinsic: 1.2.4
             gopd: 1.0.1
-            has-property-descriptors: 1.0.1
+            has-property-descriptors: 1.0.2
         dev: true
 
     /define-properties@1.2.1:
@@ -2972,8 +2934,8 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            define-data-property: 1.1.2
-            has-property-descriptors: 1.0.1
+            define-data-property: 1.1.3
+            has-property-descriptors: 1.0.2
             object-keys: 1.1.1
         dev: true
 
@@ -3005,10 +2967,10 @@ packages:
                 integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==,
             }
 
-    /diff@5.1.0:
+    /diff@5.2.0:
         resolution:
             {
-                integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==,
+                integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==,
             }
         engines: { node: '>=0.3.1' }
         dev: true
@@ -3055,10 +3017,10 @@ packages:
                 integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==,
             }
 
-    /electron-to-chromium@1.4.665:
+    /electron-to-chromium@1.4.667:
         resolution:
             {
-                integrity: sha512-UpyCWObBoD+nSZgOC2ToaIdZB0r9GhqT2WahPKiSki6ckkSuKhQNso8V2PrFcHBMleI/eqbKgVQgVC4Wni4ilw==,
+                integrity: sha512-66L3pLlWhTNVUhnmSA5+qDM3fwnXsM6KAqE36e2w4KN0g6pkEtlT5bs41FQtQwVwKnfhNBXiWRLPs30HSxd7Kw==,
             }
 
     /embla-carousel-autoplay@8.0.0-rc22(embla-carousel@8.0.0-rc22):
@@ -3160,7 +3122,7 @@ packages:
             array-buffer-byte-length: 1.0.1
             arraybuffer.prototype.slice: 1.0.3
             available-typed-arrays: 1.0.6
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             es-set-tostringtag: 2.0.2
             es-to-primitive: 1.2.1
             function.prototype.name: 1.1.6
@@ -3168,10 +3130,10 @@ packages:
             get-symbol-description: 1.0.2
             globalthis: 1.0.3
             gopd: 1.0.1
-            has-property-descriptors: 1.0.1
+            has-property-descriptors: 1.0.2
             has-proto: 1.0.1
             has-symbols: 1.0.3
-            hasown: 2.0.0
+            hasown: 2.0.1
             internal-slot: 1.0.7
             is-array-buffer: 3.0.4
             is-callable: 1.2.7
@@ -3184,7 +3146,7 @@ packages:
             object-inspect: 1.13.1
             object-keys: 1.1.1
             object.assign: 4.1.5
-            regexp.prototype.flags: 1.5.1
+            regexp.prototype.flags: 1.5.2
             safe-array-concat: 1.1.0
             safe-regex-test: 1.0.3
             string.prototype.trim: 1.2.8
@@ -3205,6 +3167,16 @@ packages:
             }
         dev: true
 
+    /es-define-property@1.0.0:
+        resolution:
+            {
+                integrity: sha512-jxayLKShrEqqzJ0eumQbVhTYQM27CfT1T35+gCgDFoL82JLsXqTJ76zv6A0YLOgEnLUMvLzsDsGIrl8NFpT2gQ==,
+            }
+        engines: { node: '>= 0.4' }
+        dependencies:
+            get-intrinsic: 1.2.4
+        dev: true
+
     /es-errors@1.3.0:
         resolution:
             {
@@ -3221,7 +3193,7 @@ packages:
         engines: { node: '>= 0.4' }
         dependencies:
             asynciterator.prototype: 1.0.0
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -3229,7 +3201,7 @@ packages:
             function-bind: 1.1.2
             get-intrinsic: 1.2.4
             globalthis: 1.0.3
-            has-property-descriptors: 1.0.1
+            has-property-descriptors: 1.0.2
             has-proto: 1.0.1
             has-symbols: 1.0.3
             internal-slot: 1.0.7
@@ -3246,7 +3218,7 @@ packages:
         dependencies:
             get-intrinsic: 1.2.4
             has-tostringtag: 1.0.2
-            hasown: 2.0.0
+            hasown: 2.0.1
         dev: true
 
     /es-shim-unscopables@1.0.2:
@@ -3255,7 +3227,7 @@ packages:
                 integrity: sha512-J3yBRXCzDu4ULnQwxyToo/OjdMx6akgVC7K6few0a7F/0wLtmKKN7I73AH5T2836UuXRqN7Qg+IIUw/+YJksRw==,
             }
         dependencies:
-            hasown: 2.0.0
+            hasown: 2.0.1
         dev: true
 
     /es-to-primitive@1.2.1:
@@ -3385,7 +3357,7 @@ packages:
             eslint: 8.56.0
             espree: 9.6.1
             estree-util-visit: 2.0.0
-            remark-mdx: 3.0.0
+            remark-mdx: 3.0.1
             remark-parse: 11.0.0
             remark-stringify: 11.0.0
             synckit: 0.9.0
@@ -3455,7 +3427,7 @@ packages:
             eslint: 8.56.0
             eslint-import-resolver-node: 0.3.9
             eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.21.0)(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@8.56.0)
-            hasown: 2.0.0
+            hasown: 2.0.1
             is-core-module: 2.13.1
             is-glob: 4.0.3
             minimatch: 3.1.2
@@ -3490,7 +3462,7 @@ packages:
             emoji-regex: 9.2.2
             es-iterator-helpers: 1.0.16
             eslint: 8.56.0
-            hasown: 2.0.0
+            hasown: 2.0.1
             jsx-ast-utils: 3.3.5
             language-tags: 1.0.9
             minimatch: 3.1.2
@@ -3525,7 +3497,7 @@ packages:
             eslint: 8.56.0
             eslint-mdx: 3.1.5(eslint@8.56.0)
             eslint-plugin-markdown: 3.0.1(eslint@8.56.0)
-            remark-mdx: 3.0.0
+            remark-mdx: 3.0.1
             remark-parse: 11.0.0
             remark-stringify: 11.0.0
             tslib: 2.6.2
@@ -4019,7 +3991,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             functions-have-names: 1.2.3
@@ -4066,7 +4038,7 @@ packages:
             function-bind: 1.1.2
             has-proto: 1.0.1
             has-symbols: 1.0.3
-            hasown: 2.0.0
+            hasown: 2.0.1
         dev: true
 
     /get-nonce@1.0.1:
@@ -4108,7 +4080,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             es-errors: 1.3.0
             get-intrinsic: 1.2.4
         dev: true
@@ -4274,13 +4246,13 @@ packages:
         engines: { node: '>=8' }
         dev: true
 
-    /has-property-descriptors@1.0.1:
+    /has-property-descriptors@1.0.2:
         resolution:
             {
-                integrity: sha512-VsX8eaIewvas0xnvinAe9bw4WfIeODpGYikiWYLH+dma0Jw6KHYqWiWfhQlgOVK8D6PvjubK5Uc4P0iIhIcNVg==,
+                integrity: sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg==,
             }
         dependencies:
-            get-intrinsic: 1.2.4
+            es-define-property: 1.0.0
         dev: true
 
     /has-proto@1.0.1:
@@ -4309,10 +4281,10 @@ packages:
             has-symbols: 1.0.3
         dev: true
 
-    /hasown@2.0.0:
+    /hasown@2.0.1:
         resolution:
             {
-                integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==,
+                integrity: sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==,
             }
         engines: { node: '>= 0.4' }
         dependencies:
@@ -4438,6 +4410,7 @@ packages:
             }
         dependencies:
             '@types/hast': 3.0.4
+        dev: false
 
     /hast-util-whitespace@3.0.0:
         resolution:
@@ -4602,7 +4575,7 @@ packages:
         engines: { node: '>= 0.4' }
         dependencies:
             es-errors: 1.3.0
-            hasown: 2.0.0
+            hasown: 2.0.1
             side-channel: 1.0.5
         dev: true
 
@@ -4654,7 +4627,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             get-intrinsic: 1.2.4
         dev: true
 
@@ -4700,7 +4673,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             has-tostringtag: 1.0.2
         dev: true
 
@@ -4718,7 +4691,7 @@ packages:
                 integrity: sha512-hHrIjvZsftOsvKSn2TRYl63zvxsgE0K+0mYMoH6gD4omR5IWB2KynivBQczo3+wF1cCkjzvptnI9Q0sPU66ilw==,
             }
         dependencies:
-            hasown: 2.0.0
+            hasown: 2.0.1
 
     /is-date-object@1.0.5:
         resolution:
@@ -4780,7 +4753,7 @@ packages:
                 integrity: sha512-0by5vtUJs8iFQb5TYUHHPudOR+qXYIMKtiUzvLIZITZUjknFmziyBJuLhVRc+Ds0dREFlskDNJKYIdIzu/9pfw==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
         dev: true
 
     /is-fullwidth-code-point@3.0.0:
@@ -4920,7 +4893,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             has-tostringtag: 1.0.2
         dev: true
 
@@ -4937,7 +4910,7 @@ packages:
                 integrity: sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
         dev: true
 
     /is-stream@1.1.0:
@@ -5015,7 +4988,7 @@ packages:
                 integrity: sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
         dev: true
 
     /is-weakset@2.0.2:
@@ -5024,7 +4997,7 @@ packages:
                 integrity: sha512-t2yVvttHkQktwnNNmBQ98AhENLdPUTDTE21uPqAQ0ARwQfGeQKRVS0NNurH7bTf7RrvcVn1OOge45CnBeHCSmg==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             get-intrinsic: 1.2.4
         dev: true
 
@@ -6142,7 +6115,7 @@ packages:
             '@next/env': 14.1.0
             '@swc/helpers': 0.5.2
             busboy: 1.6.0
-            caniuse-lite: 1.0.30001585
+            caniuse-lite: 1.0.30001587
             graceful-fs: 4.2.11
             postcss: 8.4.31
             react: 18.2.0
@@ -6289,7 +6262,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             has-symbols: 1.0.3
             object-keys: 1.1.1
@@ -6302,7 +6275,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -6314,7 +6287,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -6326,7 +6299,7 @@ packages:
             }
         dependencies:
             array.prototype.filter: 1.0.3
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -6349,7 +6322,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -7138,7 +7111,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             es-errors: 1.3.0
@@ -7165,15 +7138,16 @@ packages:
                 integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==,
             }
 
-    /regexp.prototype.flags@1.5.1:
+    /regexp.prototype.flags@1.5.2:
         resolution:
             {
-                integrity: sha512-sy6TXMN+hnP/wMy+ISxg3krXx7BAtWVO4UouuCN/ziM9UEne0euamVNafDfvC83bRNr95y0V5iijeDQFUNpvrg==,
+                integrity: sha512-NcDiDkTLuPR+++OCKB0nWafEmhg/Da8aUPLPMQbK+bxKKCm1/S5he+AqYa4PlMCVBalb4/yxIRub6qkEx5yJbw==,
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
+            es-errors: 1.3.0
             set-function-name: 2.0.1
         dev: true
 
@@ -7258,10 +7232,10 @@ packages:
             unified: 11.0.4
         dev: false
 
-    /remark-mdx@3.0.0:
+    /remark-mdx@3.0.1:
         resolution:
             {
-                integrity: sha512-O7yfjuC6ra3NHPbRVxfflafAj3LTwx3b73aBvkEFU5z4PsD6FD4vrqJAkE5iNGLz71GdjXfgRqm3SQ0h0VuE7g==,
+                integrity: sha512-3Pz3yPQ5Rht2pM5R+0J2MrGoBSrzf+tJG94N+t/ilfdh8YLyyKYtidAYwTveB20BoHAcwIopOUqhcmh2F7hGYA==,
             }
         dependencies:
             mdast-util-mdx: 3.0.0
@@ -7432,7 +7406,7 @@ packages:
             }
         engines: { node: '>=0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             get-intrinsic: 1.2.4
             has-symbols: 1.0.3
             isarray: 2.0.5
@@ -7459,7 +7433,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             es-errors: 1.3.0
             is-regex: 1.1.4
         dev: true
@@ -7556,12 +7530,12 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            define-data-property: 1.1.2
+            define-data-property: 1.1.3
             es-errors: 1.3.0
             function-bind: 1.1.2
             get-intrinsic: 1.2.4
             gopd: 1.0.1
-            has-property-descriptors: 1.0.1
+            has-property-descriptors: 1.0.2
         dev: true
 
     /set-function-name@2.0.1:
@@ -7571,9 +7545,9 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            define-data-property: 1.1.2
+            define-data-property: 1.1.3
             functions-have-names: 1.2.3
-            has-property-descriptors: 1.0.1
+            has-property-descriptors: 1.0.2
         dev: true
 
     /shebang-command@1.2.0:
@@ -7610,15 +7584,6 @@ packages:
             }
         engines: { node: '>=8' }
 
-    /shiki@1.1.1:
-        resolution:
-            {
-                integrity: sha512-7ksyiu01NltBvEcLq9GcguF+7RGa5lDwozjgdbiXnlkro1FtMCcrVtHUWbKuYBSOZW74gC4KlnBcgRCwK2ERAw==,
-            }
-        dependencies:
-            '@shikijs/core': 1.1.1
-        dev: true
-
     /side-channel@1.0.5:
         resolution:
             {
@@ -7626,7 +7591,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             es-errors: 1.3.0
             get-intrinsic: 1.2.4
             object-inspect: 1.13.1
@@ -7812,13 +7777,13 @@ packages:
                 integrity: sha512-rGXbGmOEosIQi6Qva94HUjgPs9vKW+dkG7Y8Q5O2OYkWL6wFaTRZO8zM4mhP94uX55wgyrXzfS2aGtGzUL7EJQ==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
             get-intrinsic: 1.2.4
             has-symbols: 1.0.3
             internal-slot: 1.0.7
-            regexp.prototype.flags: 1.5.1
+            regexp.prototype.flags: 1.5.2
             set-function-name: 2.0.1
             side-channel: 1.0.5
         dev: true
@@ -7830,7 +7795,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -7841,7 +7806,7 @@ packages:
                 integrity: sha512-Ni79DqeB72ZFq1uH/L6zJ+DKZTkOtPIHovb3YZHQViE+HDouuU4mBrLOLDn5Dde3RF8qw5qVETEjhu9locMLvA==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -7852,7 +7817,7 @@ packages:
                 integrity: sha512-NGhtDFu3jCEm7B4Fy0DpLewdJQOZcQ0rGbwQ/+stjnrp2i+rlKeCvos9hOIeCmqwratM47OBxY7uFZzjxHXmrg==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             define-properties: 1.2.1
             es-abstract: 1.22.3
         dev: true
@@ -8257,7 +8222,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             es-errors: 1.3.0
             is-typed-array: 1.1.13
         dev: true
@@ -8269,7 +8234,7 @@ packages:
             }
         engines: { node: '>= 0.4' }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             for-each: 0.3.3
             has-proto: 1.0.1
             is-typed-array: 1.1.13
@@ -8283,7 +8248,7 @@ packages:
         engines: { node: '>= 0.4' }
         dependencies:
             available-typed-arrays: 1.0.6
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             for-each: 0.3.3
             has-proto: 1.0.1
             is-typed-array: 1.1.13
@@ -8295,7 +8260,7 @@ packages:
                 integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             for-each: 0.3.3
             is-typed-array: 1.1.13
         dev: true
@@ -8322,7 +8287,7 @@ packages:
                 integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==,
             }
         dependencies:
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             has-bigints: 1.0.2
             has-symbols: 1.0.3
             which-boxed-primitive: 1.0.2
@@ -8616,7 +8581,7 @@ packages:
         hasBin: true
         dependencies:
             dequal: 2.0.3
-            diff: 5.1.0
+            diff: 5.2.0
             kleur: 4.1.5
             sade: 1.8.1
         dev: true
@@ -8800,7 +8765,7 @@ packages:
         engines: { node: '>= 0.4' }
         dependencies:
             available-typed-arrays: 1.0.6
-            call-bind: 1.0.6
+            call-bind: 1.0.7
             for-each: 0.3.3
             gopd: 1.0.1
             has-tostringtag: 1.0.2
