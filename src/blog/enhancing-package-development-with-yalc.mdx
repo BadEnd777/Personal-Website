@@ -1,0 +1,98 @@
+---
+title: "Enhancing Package Development with Yalc: A Better Alternative to npm and Yarn Link"
+description: Discover Yalc, a powerful tool for package authors to manage locally developed packages without publishing to remote registries. Simplify dependency management and streamline your workflow with Yalc.
+tags: [yalc, package-development, npm, yarn, local-packages, dependency-management]
+image: /images/blog/yalc.png
+date: 2024-02-14
+---
+
+In the realm of package development, managing locally developed packages without publishing them to remote registries can be a daunting task. Traditional approaches like `npm link` and `yarn link` often introduce complexities and constraints, hindering productivity. Enter Yalc – a game-changer for package authors seeking a seamless workflow.
+
+## Why Yalc?
+
+While `npm link` and `yarn link` offer a similar solution for locally developed packages, they come with their own set of challenges. Dependency resolution issues, symlink interoperability between file systems, and other constraints can impede development progress. Yalc addresses these pain points by providing a robust alternative.
+
+## What is Yalc?
+
+Yalc serves as a straightforward local repository for your locally developed packages, enabling seamless sharing across your development environment. Key features include:
+
+- **Effortless Publishing**: With `yalc publish`, selectively publish only the files intended for distribution to the Yalc store, ensuring clean and efficient package distribution.
+- **Dependency Injection**: Use `yalc add` to inject package content into your project, updating `package.json` with `file:` or `link:` dependencies for seamless integration.
+- **Package Versioning**: Ensure consistency with a `yalc.lock` file, mirroring the functionality of `yarn.lock` and `package-lock.json`.
+- **Compatibility**: Yalc seamlessly integrates with projects managed by `yarn` or `npm`, offering flexibility without sacrificing compatibility.
+
+## Installation
+
+Getting started with Yalc is a breeze:
+
+- Using npm:
+
+```shell
+npm i yalc -g
+```
+
+- Using Yarn:
+
+```shell
+yarn global add yalc
+```
+
+## Usage
+
+### Publish
+
+Publish your package to the Yalc store:
+
+```shell
+yalc publish
+```
+
+### Add
+
+Inject package content into your project:
+
+```shell
+yalc add my-package
+```
+
+### Link
+
+Create a symlink to package content:
+
+```shell
+yalc link my-package
+```
+
+### Update
+
+Update package content:
+
+```shell
+yalc update my-package
+```
+
+### Remove
+
+Remove a package from your project:
+
+```shell
+yalc remove my-package
+```
+
+## Advanced Usage
+
+Take your package development to the next level with advanced Yalc features:
+
+- **Automatic Updates**: Propagate package updates to all installations with `yalc push`, simplifying package management across projects.
+- **Customization**: Fine-tune your workflow with options like `--pure` for minimal intrusion into `package.json` or `--workspace` for compatibility with yarn workspaces.
+- **Clean-Up**: Keep your project clean with `yalc installations clean`, removing obsolete package installations.
+
+## Conclusion
+
+Yalc revolutionizes package development by offering a seamless and efficient workflow for managing locally developed packages. Say goodbye to dependency resolution headaches and compatibility issues – embrace Yalc and elevate your package development experience.
+
+Ready to simplify your package development workflow? Give Yalc a try today!
+
+For more information, check out the [official Yalc repository](https://github.com/whitecolor/yalc).
+
+Happy coding! 🚀

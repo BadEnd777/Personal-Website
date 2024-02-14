@@ -10,11 +10,16 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 
 export const Blog = async ({ blogs, tag }: { blogs: BlogData[]; tag?: string }) => {
+    const count = blogs.length
+
     return (
         <section className="flex flex-col space-y-8 pb-20 pt-4">
-            <Typography variant="h2" underline>
-                📝 Blog{tag && `: ${tag}`}
-            </Typography>
+            <div className="flex items-center justify-between border-b pb-4">
+                <Typography variant="h2">📝 Blog{tag && `: ${tag}`}</Typography>
+                <p className="text-sm">
+                    {count} article{count > 1 && 's'}
+                </p>
+            </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {blogs.map((blog) => {
                     const { slug, metadata } = blog
