@@ -1,11 +1,11 @@
 import { Layout } from '@/components/layout'
 import { Contact } from '@/components/sections/contact'
+import { OPEN_GRAPH_IMAGE } from '@/config'
 import type { Metadata } from 'next'
 
 const title = "Let's Connect"
 const description =
     'Get in touch with BadEnd, a passionate Full Stack Developer. Reach out to discuss projects, collaborations, or anything else.'
-const image = 'https://badend.is-a.dev/images/open-graph.webp'
 
 export const metadata: Metadata = {
     title,
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         description,
         images: [
             {
-                url: image,
+                url: OPEN_GRAPH_IMAGE,
                 width: 800,
                 height: 600,
             },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     twitter: {
         title,
         description,
-        images: [image],
+        images: [OPEN_GRAPH_IMAGE],
     },
 }
 

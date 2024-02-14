@@ -14,7 +14,7 @@ isFullWidth: true - Make the project image full width.
 export const projects = [
     {
         title: 'Personal Website',
-        description: 'My personal website built with Next.js, TypeScript, Shadcn UI, and Tailwind CSS.',
+        description: 'My personal website built with Next.js, TypeScript, shadcn/ui, and Tailwind CSS.',
         image: '/images/projects/personal-website.webp',
         status: {
             text: 'View Source',

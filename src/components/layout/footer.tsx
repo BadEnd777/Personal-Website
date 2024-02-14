@@ -2,11 +2,13 @@ import { contact } from '@/data'
 import NextLink from 'next/link'
 
 export const Footer = () => {
+    const date = new Date().getFullYear()
+
     return (
         <footer className="w-full border-t bg-background">
             <div className="container flex h-full flex-col items-center justify-between space-y-2 py-4 md:flex-row md:space-y-0">
                 <div className="flex flex-col items-center space-y-2 md:items-start">
-                    <p>&copy; {new Date().getFullYear()} BadEnd, All Rights Reserved</p>
+                    <p>&copy; {date} BadEnd, All Rights Reserved</p>
                     <p>
                         This website is open source.{' '}
                         <NextLink

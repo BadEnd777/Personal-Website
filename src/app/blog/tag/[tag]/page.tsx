@@ -1,11 +1,18 @@
 import { Layout } from '@/components/layout'
 import { Blog } from '@/components/sections/blog'
+import { OPEN_GRAPH_IMAGE } from '@/config'
 import { getBlogList, getBlogTags } from '@/lib/blog'
 import { capitalize } from '@/utils/capitalize'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-export const generateMetadata = async ({ params }: { params: { tag: string } }): Promise<Metadata> => {
+interface BlogTagPageProps {
+    params: {
+        tag: string
+    }
+}
+
+export const generateMetadata = async ({ params }: BlogTagPageProps): Promise<Metadata> => {
     const { tag } = params
 
     if (!tag) {
@@ -16,7 +23,6 @@ export const generateMetadata = async ({ params }: { params: { tag: string } }):
 
     const title = `BadEnd Blog - ${capita}`
     const description = `Explore a collection of articles and blog posts with tag ${capita} by BadEnd. Discover more ${capita} related blogs.`
-    const image = 'https://badend.is-a.dev/images/open-graph.webp'
 
     return {
         title: {
@@ -30,7 +36,7 @@ export const generateMetadata = async ({ params }: { params: { tag: string } }):
             description,
             images: [
                 {
-                    url: image,
+                    url: OPEN_GRAPH_IMAGE,
                     width: 800,
                     height: 600,
                 },
@@ -41,12 +47,12 @@ export const generateMetadata = async ({ params }: { params: { tag: string } }):
                 absolute: title,
             },
             description,
-            images: [image],
+            images: [OPEN_GRAPH_IMAGE],
         },
     }
 }
 
-const BlogTagPage = async ({ params }: { params: { tag: string } }) => {
+const BlogTagPage = async ({ params }: BlogTagPageProps) => {
     const { tag } = params
 
     if (!tag) {

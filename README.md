@@ -34,7 +34,7 @@ The website is hosted on [https://badend.is-a.dev/](https://badend.is-a.dev/), a
 ## Technologies Used
 
 -   [Next.js](https://nextjs.org/) — The React framework for production
--   [Shadcn UI](https://ui.shadcn.com/) — A JavaScript library for building user interfaces
+-   [shadcn/ui](https://ui.shadcn.com/) — Beautiful design components for modern web applications
 -   [Tailwind CSS](https://tailwindcss.com/) — A utility-first CSS framework for rapid UI development
 -   [TypeScript](https://www.typescriptlang.org/) — A typed superset of JavaScript that compiles to plain JavaScript
 

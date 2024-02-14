@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
-interface TypographyProps extends React.HTMLAttributes<HTMLHeadingElement> {
+interface TypographyProps extends HTMLAttributes<HTMLHeadingElement> {
     variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
     underline?: boolean
     classes?: string

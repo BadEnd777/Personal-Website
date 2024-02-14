@@ -3,7 +3,13 @@
 import { Button } from '@/components/ui/button'
 import { RWebShare } from 'react-web-share'
 
-export const ShareButton = ({ title, text, url }: { title: string; text: string; url: string }) => {
+export interface ShareButtonProps {
+    title: string
+    text: string
+    url: string
+}
+
+export const ShareButton = ({ title, text, url }: ShareButtonProps) => {
     return (
         <RWebShare
             data={{

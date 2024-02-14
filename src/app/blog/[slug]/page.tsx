@@ -3,6 +3,7 @@ import { ShareButton } from '@/components/share-button'
 import { Typography } from '@/components/typography'
 import { badgeVariants } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
+import { BASE_URL } from '@/config'
 import { getBlogData, getBlogList } from '@/lib/blog'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
@@ -10,9 +11,13 @@ import Image from 'next/image'
 import NextLink from 'next/link'
 import { notFound } from 'next/navigation'
 
-const BASE_URL = 'https://badend.is-a.dev'
+interface BlogPostPageProps {
+    params: {
+        slug: string
+    }
+}
 
-export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<Metadata> => {
     const blog = await getBlogData(params.slug)
 
     if (!blog) {
@@ -23,7 +28,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 
     const isExternal = !preview.startsWith('/images/blog/')
 
-    const image = isExternal ? preview : `${BASE_URL}${preview}`
+    const image = isExternal ? preview : `${BASE_URL()}${preview}`
 
     const title = `BadEnd Blog - ${metaTitle}`
 
@@ -55,7 +60,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
     }
 }
 
-const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
+const BlogPostPage = async ({ params }: BlogPostPageProps) => {
     const { slug } = params
     const blog = await getBlogData(slug)
 
@@ -80,7 +85,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
                         </NextLink>
                     ))}
                 </div>
-                <ShareButton title={title} text={`${title}\n\n${description}`} url={`${BASE_URL}/blog/${slug}`} />
+                <ShareButton title={title} text={`${title}\n\n${description}`} url={`${BASE_URL()}/blog/${slug}`} />
             </div>
             <Separator />
             <article className="prose prose-a:text-primary max-w-none pb-20">

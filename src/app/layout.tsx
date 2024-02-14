@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/components/theme-provider'
+import { BASE_URL, OPEN_GRAPH_IMAGE } from '@/config'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -9,8 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 const title = 'BadEnd'
 const description =
     "👋 Hello! I'm BadEnd, a passionate Full Stack Developer with expertise in efficient web solutions. Explore my portfolio and contact me on GitHub."
-const url = 'https://badend.is-a.dev/'
-const image = 'https://badend.is-a.dev/images/open-graph.webp'
+const url = BASE_URL()
 
 export const metadata: Metadata = {
     title: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         siteName: title,
         images: [
             {
-                url: image, // or an array of images
+                url: OPEN_GRAPH_IMAGE, // or an array of images
                 width: 800,
                 height: 600,
             },
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         },
         description,
         creator: '@BadEnd777',
-        images: [image], // or an array of images
+        images: [OPEN_GRAPH_IMAGE], // or an array of images
     },
     robots: {
         index: false,
@@ -86,7 +86,11 @@ export const viewport: Viewport = {
     userScalable: true, // Enable user scalability
 }
 
-const Root = ({ children }: { children: ReactNode }) => {
+interface RootLayoutProps {
+    children: ReactNode
+}
+
+const RootLayout = ({ children }: RootLayoutProps) => {
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
@@ -100,7 +104,7 @@ const Root = ({ children }: { children: ReactNode }) => {
                 <script src="https://afarkas.github.io/lazysizes/lazysizes.min.js" async></script>
             </head>
             <body className={inter.className}>
-                <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
                     {children}
                 </ThemeProvider>
             </body>
@@ -108,4 +112,4 @@ const Root = ({ children }: { children: ReactNode }) => {
     )
 }
 
-export default Root
+export default RootLayout

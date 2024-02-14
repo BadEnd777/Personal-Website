@@ -1,8 +1,8 @@
 import { Footer } from '@/components/layout/footer'
 import { Header } from '@/components/layout/header'
-import React, { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
-interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode
 }
 

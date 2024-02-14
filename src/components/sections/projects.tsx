@@ -5,7 +5,11 @@ import { projects } from '@/data'
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-export const Projects = ({ featured }: { featured?: boolean }) => {
+export interface ProjectsSectionProps {
+    featured?: boolean
+}
+
+export const Projects = ({ featured }: ProjectsSectionProps) => {
     return (
         <section className="flex flex-col space-y-8 py-4">
             <div className="flex items-center justify-between border-b pb-4">
