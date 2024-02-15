@@ -50,6 +50,9 @@ dependencies:
     gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
+    guard-env:
+        specifier: ^0.0.1
+        version: 0.0.1
     next:
         specifier: 14.1.0
         version: 14.1.0(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
@@ -4222,6 +4225,13 @@ packages:
             kind-of: 6.0.3
             section-matter: 1.0.0
             strip-bom-string: 1.0.0
+        dev: false
+
+    /guard-env@0.0.1:
+        resolution:
+            {
+                integrity: sha512-ucO7dL8I0yn54SwZoKDum+nvGQDrd8ykouQog4HayqYQ4QvhpsiPijsBD+0XcEfnUPkCYo8c9WI0b2jg+7Gzjw==,
+            }
         dev: false
 
     /has-bigints@1.0.2:

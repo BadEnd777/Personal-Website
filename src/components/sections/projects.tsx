@@ -1,4 +1,5 @@
 import { Typography } from '@/components/typography'
+import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { projects } from '@/data'
@@ -46,8 +47,13 @@ export const Projects = ({ featured }: ProjectsSectionProps) => {
                                 className={`flex h-full flex-col justify-between ${project.isFullWidth && 'md:flex-row'}`}
                             >
                                 <div className={project.isFullWidth ? 'basis-1/2' : ''}>
-                                    <CardHeader>
+                                    <CardHeader className="flex flex-row items-center justify-between">
                                         <CardTitle>{project.title}</CardTitle>
+                                        {project.note && (
+                                            <Badge variant="secondary" className="rounded-full">
+                                                {project.note}
+                                            </Badge>
+                                        )}
                                     </CardHeader>
                                     <CardContent>
                                         <CardDescription>{project.description}</CardDescription>

@@ -1,0 +1,116 @@
+---
+title: Type-Checking and Guarding Environment Variables with guard-env
+description: Learn how to use guard-env, a Node.js module for type-checking and guarding environment variables based on specified configurations.
+tags: [node, environment-variables, type-checking, guard-env]
+image: /images/blog/guard-env.webp
+date: 2024-02-15
+---
+
+`guard-env` is a versatile Node.js module designed to ensure the integrity and correctness of environment variables by enforcing type-checking based on specified configurations. In this guide, we'll explore how to leverage guard-env to enhance the robustness of your Node.js applications.
+
+## Why guard-env?
+
+Environment variables are a fundamental aspect of Node.js applications, providing a convenient way to configure and customize the behavior of your applications across different environments. However, managing environment variables can be error-prone, especially when dealing with complex configurations and multiple environments.
+
+`guard-env` addresses these challenges by providing a simple yet powerful mechanism to enforce type-checking and guarding of environment variables based on specified configurations. By leveraging `guard-env`, you can ensure that your application's environment variables are always of the expected types, thereby reducing the likelihood of runtime errors and enhancing the reliability of your applications.
+
+## Without guard-env
+
+Consider the following example of a Node.js application that relies on environment variables for configuration:
+
+```plaintext:.env
+PORT=3000
+ENABLED=true
+API_KEY=secret
+```
+
+```typescript:app.ts
+import 'dotenv/config'; // Load environment variables from .env file
+
+// Accessing environment variables
+const port = process.env.PORT;
+const enabled = process.env.ENABLED;
+
+// Type-checking environment variables
+if (!port) {
+    throw new Error('PORT is not defined in the environment');
+}
+
+if (!enabled) {
+    throw new Error('ENABLED is not defined in the environment');
+}
+
+// Parsing environment variables
+console.log(Number(port) + 100); // 3100
+console.log(enabled === 'true'); // true
+
+// Accessing non-existent variable will throw an error
+console.log(process.env.NON_EXISTENT); // undefined, But application still runs without any error
+```
+
+In this example, we're manually type-checking and parsing the environment variables, which can be error-prone and cumbersome, especially when dealing with a large number of variables and complex configurations.
+
+Let's see how we can simplify this process using `guard-env`.
+
+## Installation
+
+You can easily install guard-env via npm:
+
+```bash:Terminal
+npm install guard-env
+```
+
+## Usage
+
+Using guard-env is straightforward. Here's a basic example demonstrating its usage:
+
+```typescript:app.ts
+import { guardEnv } from 'guard-env';
+import 'dotenv/config'; // Load environment variables from .env file
+
+// Example configuration
+const config = {
+    PORT: Number,
+    ENABLED: Boolean,
+    API_KEY: String
+};
+
+// Guarding environment variables
+const env = guardEnv(process.env, config);
+
+// Accessing type-checked environment variables
+console.log(env.PORT); // 3000
+console.log(env.ENABLED); // true
+console.log(env.API_KEY); // 'secret'
+
+// Accessing non-existent variable will throw an error
+console.log(env.NON_EXISTENT); // Error: 'NON_EXISTENT' is not defined in 'guard-env' config
+```
+
+## API
+
+### guardEnv
+
+Guards the environment variables based on the provided configuration and returns a proxy object with type-checked values.
+
+-   `env`: The Node.js process environment variables.
+-   `setConfig`: The configuration object specifying the expected types for each environment variable.
+
+Returns a proxy object with type-checked values.
+
+Throws an Error if:
+
+-   Configuration is empty.
+-   A variable is not defined in the environment.
+-   A variable is not of the expected type (number, boolean, or string).
+-   An unsupported type is specified in the configuration.
+
+## Examples
+
+For more advanced usage scenarios, check out the [examples](https://github.com/BadEnd777/guard-env/tree/main/examples) directory.
+
+## License
+
+guard-env is licensed under the MIT License. See the [LICENSE](https://github.com/BadEnd777/guard-env/blob/main/LICENSE) file for details.
+
+Start safeguarding your environment variables with guard-env today and ensure the reliability of your Node.js applications! 🛡️

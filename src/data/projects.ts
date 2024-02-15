@@ -7,6 +7,7 @@ status: {
     link: 'Link' - The link to the project status. (e.g. GitHub Repository, Website)
     icon: 'icon-class' - The icon for the status. https://icon-sets.iconify.design/tabler/?query=mail&prefixes=tabler
 }
+note: 'Note' - A note for the project. (e.g. In development, Coming Soon)
 isFeatured: true - Show the project in the featured section.
 isFullWidth: true - Make the project image full width.
 */
@@ -37,6 +38,19 @@ export const projects = [
         isFeatured: true,
     },
     {
+        title: 'guard-env',
+        description:
+            'Node.js module for type-checking and guarding environment variables based on specified configurations.',
+        image: '/images/projects/guard-env.webp',
+        status: {
+            text: 'View Source',
+            link: 'https://github.com/BadEnd777/guard-env',
+            icon: 'icon-[tabler--arrow-right]',
+        },
+        note: 'In development',
+        isFeatured: true,
+    },
+    {
         title: 'VRConnectivity Shield',
         description: 'DNS blocking tool to prevent VRChat analytics and tracking.',
         image: '/images/projects/vrconnectivity-shield.webp',
@@ -57,6 +71,5 @@ export const projects = [
             icon: 'icon-[tabler--arrow-right]',
         },
         isFeatured: true,
-        isFullWidth: true,
     },
 ]

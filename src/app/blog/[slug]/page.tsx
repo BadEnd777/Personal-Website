@@ -28,7 +28,7 @@ export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<M
 
     const isExternal = !preview.startsWith('/images/blog/')
 
-    const image = isExternal ? preview : `${BASE_URL()}${preview}`
+    const image = isExternal ? preview : `${BASE_URL}${preview}`
 
     const title = `BadEnd Blog - ${metaTitle}`
 
@@ -85,7 +85,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
                         </NextLink>
                     ))}
                 </div>
-                <ShareButton title={title} text={`${title}\n\n${description}`} url={`${BASE_URL()}/blog/${slug}`} />
+                <ShareButton title={title} text={`${title}\n\n${description}`} url={`${BASE_URL}/blog/${slug}`} />
             </div>
             <Separator />
             <article className="prose prose-a:text-primary max-w-none pb-20">

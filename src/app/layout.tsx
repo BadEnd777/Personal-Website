@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 const title = 'BadEnd'
 const description =
     "👋 Hello! I'm BadEnd, a passionate Full Stack Developer with expertise in efficient web solutions. Explore my portfolio and contact me on GitHub."
-const url = BASE_URL()
+const url = BASE_URL
 
 export const metadata: Metadata = {
     title: {
