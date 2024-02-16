@@ -17,18 +17,18 @@ export const Projects = ({ featured }: ProjectsSectionProps) => {
                 <Typography variant="h1">🚀 {featured && 'Featured '}Projects</Typography>
                 <TooltipProvider>
                     <Tooltip>
-                        <TooltipTrigger>
+                        <TooltipTrigger>View on GitHub</TooltipTrigger>
+                        <TooltipContent aria-label="View on GitHub">
                             <NextLink
                                 href="https://github.com/BadEnd777"
-                                className="flex items-center space-x-2 text-muted-foreground"
+                                className="flex items-center space-x-2"
                                 target="_blank"
                                 aria-label="View on GitHub"
                             >
                                 <p className="hidden text-sm md:block">View on GitHub</p>
                                 <span className="icon-[tabler--arrow-right] size-6" />
                             </NextLink>
-                        </TooltipTrigger>
-                        <TooltipContent>View on GitHub</TooltipContent>
+                        </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
             </div>
