@@ -32,7 +32,7 @@ export const DesktopNav = () => {
                 ))}
             </nav>
             <Separator orientation="vertical" className="h-8" />
-            <div className="flex items-center">
+            <div className="flex items-center space-x-1">
                 <ModeToggle />
                 <NextLink
                     href="https://github.com/BadEnd777/Portfolio-Website"

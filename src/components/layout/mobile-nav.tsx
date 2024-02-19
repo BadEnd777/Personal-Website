@@ -12,7 +12,7 @@ import NextLink from 'next/link'
 
 export const MobileNav = () => {
     return (
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden space-x-1">
             <ModeToggle />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
