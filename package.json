@@ -19,7 +19,7 @@
         "start": "next start"
     },
     "dependencies": {
-        "@iconify-json/simple-icons": "^1.1.91",
+        "@iconify-json/simple-icons": "^1.1.92",
         "@iconify-json/tabler": "^1.1.105",
         "@iconify/tailwind": "^0.1.4",
         "@radix-ui/react-aspect-ratio": "^1.0.3",
