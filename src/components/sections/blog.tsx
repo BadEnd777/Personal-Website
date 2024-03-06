@@ -4,10 +4,12 @@ import { badgeVariants } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { Skeleton } from '@/components/ui/skeleton'
 import { BlogData } from '@/lib/blog'
 import dayjs from 'dayjs'
 import Image from 'next/image'
 import NextLink from 'next/link'
+import { Suspense } from 'react'
 
 export interface BlogSectionProps {
     blogs: BlogData[]
@@ -33,14 +35,16 @@ export const Blog = ({ blogs, tag }: BlogSectionProps) => {
                         <Card key={slug} className="flex flex-col">
                             <CardHeader>
                                 <AspectRatio ratio={16 / 9} className="rounded-t-lg overflow-hidden w-full relative">
-                                    <Image
-                                        src={image}
-                                        alt={title}
-                                        className="object-cover w-full h-full"
-                                        width={500}
-                                        height={500}
-                                        priority
-                                    />
+                                    <Suspense fallback={<Skeleton className="w-full h-full" />}>
+                                        <Image
+                                            src={image}
+                                            alt={title}
+                                            className="object-cover w-full h-full"
+                                            width={500}
+                                            height={500}
+                                            priority
+                                        />
+                                    </Suspense>
                                 </AspectRatio>
                                 <CardTitle className="line-clamp-2 text-xl font-semibold leading-none tracking-tight">
                                     {title}
