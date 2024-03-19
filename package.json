@@ -33,7 +33,7 @@
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "dayjs": "^1.11.10",
-        "embla-carousel-autoplay": "8.0.0-rc22",
+        "embla-carousel-autoplay": "8.0.0",
         "embla-carousel-react": "8.0.0-rc22",
         "framer-motion": "^11.0.14",
         "gray-matter": "^4.0.3",
